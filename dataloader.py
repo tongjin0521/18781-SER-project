@@ -150,21 +150,18 @@ def create_loader_five_fold(
         test_loader = DataLoader(
             dataset=test_dataset,
             num_workers=params.nworkers,
-            batch_size=params.batch_size,
             pin_memory=True,
         )
         
         train_loader = DataLoader(
             dataset=train_dataset,
             num_workers=params.nworkers,
-            batch_size=params.batch_size,
             pin_memory=True,
         )
         
         valid_loader = DataLoader(
             dataset=valid_dataset,
             num_workers=params.nworkers,
-            batch_size=params.batch_size,
             pin_memory=True,
         )
             
@@ -405,7 +402,7 @@ class EmoDataset(data.Dataset):
             target = torch.nn.functional.one_hot(torch.tensor(target), num_classes = 4).float()
         if self.batch_enable:
             return audio_feat, feat_len, target, idx
-        return audio_feat, target
+        return audio_feat, feat_len, target, idx
     
     def getData(self):
         return self.data

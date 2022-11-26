@@ -56,6 +56,9 @@ def get_parser(parser=None, required=True):
         "--pad", default=0, type=int, help="Padding Index for Audio features"
     )
     parser.add_argument(
+        "--handcrafted_features", default=False, type=bool, help="Include handcrafted features"
+    )
+    parser.add_argument(
         "--target_pad", default=0, type=int, help="???"
     )
     parser.add_argument(
@@ -142,7 +145,7 @@ def main(cmd_args):
     ## Return the arguments from parser
     parser = get_parser()
     args, _ = parser.parse_known_args(cmd_args)
-
+    
     ## Set Random Seed for Reproducibility
     random.seed(args.seed)
     np.random.seed(args.seed)
