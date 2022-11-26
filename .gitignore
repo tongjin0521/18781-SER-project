@@ -1,1 +1,3 @@
 inputdata/
+exp/
+slurm-*.out

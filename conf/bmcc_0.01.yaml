@@ -1,0 +1,18 @@
+idim: 768
+hidden_dim: 256
+
+accum_grad: 4
+nepochs: 60
+nworkers: 2
+log_interval: 100
+five_fold: True
+batch_enable: True
+batch_size: 4
+batch_bins: 6000000
+mcc: True
+
+train_json: "inputdata/sample.json"
+
+lr: 1e-3
+
+transfer_loss_factor: 0.01
