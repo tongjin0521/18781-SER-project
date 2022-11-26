@@ -38,9 +38,6 @@ def get_parser(parser=None, required=True):
         "--audio_pad", default=0, type=int, help="Padding Index for Audio features"
     )
     parser.add_argument(
-        "--five_fold", default=True, type=bool, help="Activate five_fold_train"
-    )
-    parser.add_argument(
         "--mcc", default=False, type=bool, help="Activate mimimum class confusion loss"
     )
     parser.add_argument(

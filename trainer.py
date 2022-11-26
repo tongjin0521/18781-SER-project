@@ -55,7 +55,6 @@ class Trainer:
         
         # - flag
         self.batch_enable = params.batch_enable
-        self.five_fold = params.five_fold
         self.fold = params.fold
         self.fold_prefix = "five"
         if self.fold == 10:
@@ -99,10 +98,7 @@ class Trainer:
         else:
             with open(params.train_json, "rb") as f:
                 train_json = json.load(f)
-            if self.fold == 10:
-                self.train_datasets, self.train_loaders, self.valid_datasets, self.valid_loaders, self.test_datasets, self.test_loaders = create_loader_ten_fold(train_json, params, is_train = True, is_aug = False)
-            else:
-                self.train_datasets, self.train_loaders, self.valid_datasets, self.valid_loaders, self.test_datasets, self.test_loaders = create_loader_five_fold(train_json, params, is_train = True, is_aug = False)
+            self.train_datasets, self.train_loaders, self.valid_datasets, self.valid_loaders, self.test_datasets, self.test_loaders = create_loader_with_folds(train_json, params, is_train = True, is_aug = False)
 
         ## Build Model: TODO need to check this part
         self.model = MeanPoolingLinear(params.idim, params.odim, params.hidden_dim)

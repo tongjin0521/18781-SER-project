@@ -11,9 +11,6 @@ log_interval: 100
 batch_size: 1
 train_json: "inputdata/sample.json"
 
-# - five fold acc
-five_fold: True
-
 # - MFCC
 mcc: False
 transfer_loss_factor: 10

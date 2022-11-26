@@ -5,7 +5,6 @@ accum_grad: 4
 nepochs: 40
 nworkers: 2
 log_interval: 100
-five_fold: True
 batch_enable: True
 batch_size: 1
 batch_bins: 6000000

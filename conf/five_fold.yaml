@@ -5,7 +5,6 @@ accum_grad: 2
 nepochs: 2
 nworkers: 2
 log_interval: 100
-five_fold: True
 
 train_json: "inputdata/sample.json"
 
