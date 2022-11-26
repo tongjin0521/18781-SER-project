@@ -1,0 +1,16 @@
+>> Directories
+- conf: configFiles
+- feature_extractor: feature extractions
+- inputdata: IEMOCAP rawdata, downsampled data, handcraft feature(json), MFCC feature(pk)
+- losses: loss
+- models: model
+
+>> pythons files
+- dataloader.py usage:
+    from dataloader import CustomEmoDataset
+    datadir = "inputdata/Audio_16k/"
+    labeldirs = ["inputdata/labels_sess/label_1.json", "inputdata/labels_sess/label_2.json", "inputdata/labels_sess/label_3.json", "inputdata/labels_sess/label_4.json", "inputdata/labels_sess/label_5.json"]
+    for session, labeldir in enumerate(labeldirs):
+        dataset = CustomEmoDataset(datadir, labeldir)
+- weilunc.py:
+    flow testing

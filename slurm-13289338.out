@@ -1,0 +1,14 @@
+batch_enable.
+[info] #Utts: 3557 | Created 890 minibatches containing 1 to 4 samples, and on average 3 samples
+Traceback (most recent call last):
+  File "/ocean/projects/tra220029p/tjin1/term_project/train_batch.py", line 171, in <module>
+    main(sys.argv[1:])
+  File "/ocean/projects/tra220029p/tjin1/term_project/train_batch.py", line 166, in main
+    trainer = Trainer(args)
+  File "/ocean/projects/tra220029p/tjin1/term_project/trainer_batch.py", line 75, in __init__
+    train_dataset, train_loader, _ =  _create_loader(
+  File "/ocean/projects/tra220029p/tjin1/term_project/dataloader.py", line 269, in _create_loader
+    dataset = EmoDataset(data, params, is_train = is_train, is_aug = is_aug)
+  File "/ocean/projects/tra220029p/tjin1/term_project/dataloader.py", line 378, in __init__
+    self.handcrafted_features = params.handcrafted_features
+AttributeError: 'Namespace' object has no attribute 'handcrafted_features'

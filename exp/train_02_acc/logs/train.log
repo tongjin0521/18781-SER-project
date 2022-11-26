@@ -1,0 +1,57 @@
+03:10:27,646 root INFO MeanPoolingLinear(
+  (hidden_layers): Sequential(
+    (0): Linear(in_features=768, out_features=256, bias=True)
+  )
+  (pooling): MeanPooling()
+  (final_proj): Linear(in_features=256, out_features=4, bias=True)
+)
+03:10:27,647 root INFO Built a model with 0.20M Params
+03:10:29,7 root INFO Start to train epoch 0
+03:10:30,11 root INFO [Epoch 0, Batch=99] Train: loss=0.4881, lr=0.001
+03:10:30,219 root INFO [Epoch 0, Batch=199] Train: loss=0.8606, lr=0.001
+03:10:30,421 root INFO [Epoch 0, Batch=299] Train: loss=0.9382, lr=0.001
+03:10:30,620 root INFO [Epoch 0, Batch=399] Train: loss=0.5815, lr=0.001
+03:10:30,816 root INFO [Epoch 0, Batch=499] Train: loss=0.1483, lr=0.001
+03:10:31,15 root INFO [Epoch 0, Batch=599] Train: loss=0.1220, lr=0.001
+03:10:31,211 root INFO [Epoch 0, Batch=699] Train: loss=0.7848, lr=0.001
+03:10:31,416 root INFO [Epoch 0, Batch=799] Train: loss=0.6867, lr=0.001
+03:10:31,612 root INFO [Epoch 0, Batch=899] Train: loss=0.4774, lr=0.001
+03:10:31,802 root INFO [Epoch 0, Batch=999] Train: loss=0.4484, lr=0.001
+03:10:32,35 root INFO [Epoch 0, Batch=1099] Train: loss=0.7446, lr=0.001
+03:10:32,241 root INFO [Epoch 0, Batch=1199] Train: loss=0.6763, lr=0.001
+03:10:32,441 root INFO [Epoch 0, Batch=1299] Train: loss=0.3888, lr=0.001
+03:10:32,646 root INFO [Epoch 0, Batch=1399] Train: loss=1.1162, lr=0.001
+03:10:32,847 root INFO [Epoch 0, Batch=1499] Train: loss=0.1276, lr=0.001
+03:10:33,62 root INFO [Epoch 0, Batch=1599] Train: loss=0.4575, lr=0.001
+03:10:33,262 root INFO [Epoch 0, Batch=1699] Train: loss=0.6731, lr=0.001
+03:10:33,464 root INFO [Epoch 0, Batch=1799] Train: loss=0.7342, lr=0.001
+03:10:33,722 root INFO [Epoch 0, Batch=1899] Train: loss=1.3352, lr=0.001
+03:10:33,931 root INFO [Epoch 0, Batch=1999] Train: loss=0.6620, lr=0.001
+03:10:34,137 root INFO [Epoch 0, Batch=2099] Train: loss=0.1761, lr=0.001
+03:10:34,339 root INFO [Epoch 0, Batch=2199] Train: loss=0.3096, lr=0.001
+03:10:34,545 root INFO [Epoch 0, Batch=2299] Train: loss=0.3553, lr=0.001
+03:10:34,744 root INFO [Epoch 0, Batch=2399] Train: loss=0.2682, lr=0.001
+03:10:34,946 root INFO [Epoch 0, Batch=2499] Train: loss=0.1733, lr=0.001
+03:10:35,149 root INFO [Epoch 0, Batch=2599] Train: loss=0.7579, lr=0.001
+03:10:35,353 root INFO [Epoch 0, Batch=2699] Train: loss=0.0725, lr=0.001
+03:10:35,559 root INFO [Epoch 0, Batch=2799] Train: loss=0.4280, lr=0.001
+03:10:35,762 root INFO [Epoch 0, Batch=2899] Train: loss=0.5678, lr=0.001
+03:10:35,966 root INFO [Epoch 0, Batch=2999] Train: loss=0.4548, lr=0.001
+03:10:36,176 root INFO [Epoch 0, Batch=3099] Train: loss=0.2560, lr=0.001
+03:10:36,383 root INFO [Epoch 0, Batch=3199] Train: loss=0.4502, lr=0.001
+03:10:36,588 root INFO [Epoch 0, Batch=3299] Train: loss=0.4849, lr=0.001
+03:10:36,788 root INFO [Epoch 0, Batch=3399] Train: loss=0.1476, lr=0.001
+03:10:37,25 root INFO [Epoch 0, Batch=3499] Train: loss=1.5191, lr=0.001
+03:10:37,227 root INFO [Epoch 0, Batch=3599] Train: loss=1.0252, lr=0.001
+03:10:37,424 root INFO [Epoch 0, Batch=3699] Train: loss=0.4016, lr=0.001
+03:10:37,629 root INFO [Epoch 0, Batch=3799] Train: loss=0.8091, lr=0.001
+03:10:37,835 root INFO [Epoch 0, Batch=3899] Train: loss=0.0352, lr=0.001
+03:10:38,39 root INFO [Epoch 0, Batch=3999] Train: loss=0.2242, lr=0.001
+03:10:38,240 root INFO [Epoch 0, Batch=4099] Train: loss=0.0137, lr=0.001
+03:10:38,436 root INFO [Epoch 0, Batch=4199] Train: loss=0.7571, lr=0.001
+03:10:38,633 root INFO [Epoch 0, Batch=4299] Train: loss=0.5497, lr=0.001
+03:10:38,829 root INFO [Epoch 0, Batch=4399] Train: loss=0.0583, lr=0.001
+03:10:38,895 root INFO Start to validate epoch 0
+03:10:40,398 root INFO Epoch 00, lr=0.001 | Train: acc=0.6130 | Val: acc=0.6260 | Time: this epoch 11.39s, elapsed 11.39s
+03:10:40,408 root INFO [info] Save model after epoch 0
+

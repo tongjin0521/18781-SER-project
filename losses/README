@@ -1,0 +1,21 @@
+#TODO
+# - 1. There is no impact if we dont split target/source. -> find target/source strategy
+
+MCC(MinimumClassConfusionLoss) usage:
+    from losses.mcc import MinimumClassConfusionLoss
+    import torch.nn.functional as F # - for cross_entropy
+    mcc_loss = MinimumClassConfusionLoss()
+    # [important]: you need to seperate the train dataset into source(s) and target(t)
+    x_s, labels_s = next(train_source_iter)[:2]
+    x_t, = next(train_target_iter)[:1]
+    x_s = x_s.to(device)
+    x_t = x_t.to(device)
+    x = torch.cat((x_s, x_t), dim=0)
+    # [important]: the "forward" of your classifier need to return both the argmax and orginal y
+    pred, y = model(x) # - a fake model just for usage demo
+    y_s, y_t = y.chunk(2, dim=0)
+    cls_loss = F.cross_entropy(y_s, labels_s) 
+    transfer_loss = mcc(y_t)
+    loss = cls_loss + transfer_loss * args.trade_off # - args.trade_off is a hyperparameter
+    loss.backward()
+    

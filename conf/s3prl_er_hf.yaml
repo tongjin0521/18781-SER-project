@@ -1,0 +1,19 @@
+# - train_09_s3prl_config_no_warmup_67.49%
+
+# - basic setup
+idim: 768 # - input dimension(embedding)
+hidden_dim: 256
+lr: 1e-4
+accum_grad: 4
+nepochs: 20
+nworkers: 2
+log_interval: 100
+batch_size: 1
+train_json: "inputdata/sample.json"
+
+# - five fold acc
+five_fold: True
+
+# - MFCC
+mcc: False
+transfer_loss_factor: 10

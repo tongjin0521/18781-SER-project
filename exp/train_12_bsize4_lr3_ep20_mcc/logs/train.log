@@ -1,0 +1,1558 @@
+23:52:41,953 root INFO MeanPoolingLinear(
+  (hidden_layers): Sequential(
+    (0): Linear(in_features=768, out_features=256, bias=True)
+  )
+  (pooling): MeanPooling()
+  (final_proj): Linear(in_features=256, out_features=4, bias=True)
+)
+23:52:41,954 root INFO Built a model with 0.20M Params
+23:52:41,957 root INFO Start to run five fold 1/5
+23:52:41,957 root INFO Model initialized
+23:52:41,958 root INFO Start to train epoch 0
+23:52:55,769 root INFO [Epoch 0, Batch=99] Train: loss=0.3449, lr=0.002
+23:53:01,465 root INFO [Epoch 0, Batch=199] Train: loss=0.2568, lr=0.002
+23:53:06,638 root INFO [Epoch 0, Batch=299] Train: loss=0.4049, lr=0.002
+23:53:11,87 root INFO [Epoch 0, Batch=399] Train: loss=0.3853, lr=0.002
+23:53:15,108 root INFO [Epoch 0, Batch=499] Train: loss=0.1121, lr=0.002
+23:53:18,576 root INFO [Epoch 0, Batch=599] Train: loss=0.2834, lr=0.002
+23:53:22,107 root INFO [Epoch 0, Batch=699] Train: loss=0.2626, lr=0.002
+23:53:25,468 root INFO [Epoch 0, Batch=799] Train: loss=0.1121, lr=0.002
+23:53:35,152 root INFO [Epoch 0, Batch=99] Train(target): MCCloss=0.1651, lr=0.002
+23:53:38,987 root INFO [Epoch 0, Batch=199] Train(target): MCCloss=0.1305, lr=0.002
+23:53:41,793 root INFO Start to validate epoch 0
+23:53:51,297 root INFO Start to test epoch 0
+23:53:52,520 root INFO Epoch 00, lr=0.002 | Train: acc=0.5860 | Val: acc=0.5572 | Test: acc=0.5772 | Time: this epoch 70.56s, elapsed 70.56s
+23:53:52,530 root INFO [info] Save model after epoch 0
+
+23:53:52,530 root INFO Start to train epoch 1
+23:53:53,520 root INFO [Epoch 1, Batch=99] Train: loss=0.2077, lr=0.002
+23:53:54,52 root INFO [Epoch 1, Batch=199] Train: loss=0.2080, lr=0.002
+23:53:54,503 root INFO [Epoch 1, Batch=299] Train: loss=0.3880, lr=0.002
+23:53:54,893 root INFO [Epoch 1, Batch=399] Train: loss=0.3322, lr=0.002
+23:53:55,213 root INFO [Epoch 1, Batch=499] Train: loss=0.1417, lr=0.002
+23:53:55,483 root INFO [Epoch 1, Batch=599] Train: loss=0.2773, lr=0.002
+23:53:55,735 root INFO [Epoch 1, Batch=699] Train: loss=0.2158, lr=0.002
+23:53:55,953 root INFO [Epoch 1, Batch=799] Train: loss=0.0801, lr=0.002
+23:53:56,866 root INFO [Epoch 1, Batch=99] Train(target): MCCloss=0.1530, lr=0.002
+23:53:57,151 root INFO [Epoch 1, Batch=199] Train(target): MCCloss=0.1112, lr=0.002
+23:53:57,362 root INFO Start to validate epoch 1
+23:53:58,51 root INFO Start to test epoch 1
+23:53:59,207 root INFO Epoch 01, lr=0.002 | Train: acc=0.6680 | Val: acc=0.5280 | Test: acc=0.5827 | Time: this epoch 6.68s, elapsed 77.25s
+23:53:59,208 root INFO Start to train epoch 2
+23:54:00,197 root INFO [Epoch 2, Batch=99] Train: loss=0.1455, lr=0.002
+23:54:00,786 root INFO [Epoch 2, Batch=199] Train: loss=0.1927, lr=0.002
+23:54:01,237 root INFO [Epoch 2, Batch=299] Train: loss=0.3644, lr=0.002
+23:54:01,603 root INFO [Epoch 2, Batch=399] Train: loss=0.3349, lr=0.002
+23:54:01,932 root INFO [Epoch 2, Batch=499] Train: loss=0.1446, lr=0.002
+23:54:02,203 root INFO [Epoch 2, Batch=599] Train: loss=0.2854, lr=0.002
+23:54:02,455 root INFO [Epoch 2, Batch=699] Train: loss=0.2078, lr=0.002
+23:54:02,693 root INFO [Epoch 2, Batch=799] Train: loss=0.0668, lr=0.002
+23:54:03,581 root INFO [Epoch 2, Batch=99] Train(target): MCCloss=0.1479, lr=0.002
+23:54:03,877 root INFO [Epoch 2, Batch=199] Train(target): MCCloss=0.1023, lr=0.002
+23:54:04,91 root INFO Start to validate epoch 2
+23:54:04,678 root INFO Start to test epoch 2
+23:54:05,701 root INFO Epoch 02, lr=0.002 | Train: acc=0.6961 | Val: acc=0.5291 | Test: acc=0.5855 | Time: this epoch 6.49s, elapsed 83.74s
+23:54:05,702 root INFO Start to train epoch 3
+23:54:06,625 root INFO [Epoch 3, Batch=99] Train: loss=0.1349, lr=0.002
+23:54:07,161 root INFO [Epoch 3, Batch=199] Train: loss=0.1740, lr=0.002
+23:54:07,613 root INFO [Epoch 3, Batch=299] Train: loss=0.3425, lr=0.002
+23:54:07,962 root INFO [Epoch 3, Batch=399] Train: loss=0.3357, lr=0.002
+23:54:08,285 root INFO [Epoch 3, Batch=499] Train: loss=0.1452, lr=0.002
+23:54:08,533 root INFO [Epoch 3, Batch=599] Train: loss=0.2977, lr=0.002
+23:54:08,788 root INFO [Epoch 3, Batch=699] Train: loss=0.1894, lr=0.002
+23:54:09,24 root INFO [Epoch 3, Batch=799] Train: loss=0.0564, lr=0.002
+23:54:10,54 root INFO [Epoch 3, Batch=99] Train(target): MCCloss=0.1449, lr=0.002
+23:54:10,404 root INFO [Epoch 3, Batch=199] Train(target): MCCloss=0.0971, lr=0.002
+23:54:10,656 root INFO Start to validate epoch 3
+23:54:11,319 root INFO Start to test epoch 3
+23:54:12,698 root INFO Epoch 03, lr=0.002 | Train: acc=0.7180 | Val: acc=0.5291 | Test: acc=0.5910 | Time: this epoch 7.00s, elapsed 90.74s
+23:54:12,699 root INFO Start to train epoch 4
+23:54:13,799 root INFO [Epoch 4, Batch=99] Train: loss=0.1342, lr=0.002
+23:54:14,422 root INFO [Epoch 4, Batch=199] Train: loss=0.1553, lr=0.002
+23:54:14,934 root INFO [Epoch 4, Batch=299] Train: loss=0.3220, lr=0.002
+23:54:15,336 root INFO [Epoch 4, Batch=399] Train: loss=0.3332, lr=0.002
+23:54:15,626 root INFO [Epoch 4, Batch=499] Train: loss=0.1436, lr=0.002
+23:54:15,901 root INFO [Epoch 4, Batch=599] Train: loss=0.3085, lr=0.002
+23:54:16,162 root INFO [Epoch 4, Batch=699] Train: loss=0.1638, lr=0.002
+23:54:16,398 root INFO [Epoch 4, Batch=799] Train: loss=0.0474, lr=0.002
+23:54:17,434 root INFO [Epoch 4, Batch=99] Train(target): MCCloss=0.1431, lr=0.002
+23:54:17,777 root INFO [Epoch 4, Batch=199] Train(target): MCCloss=0.0937, lr=0.002
+23:54:18,38 root INFO Start to validate epoch 4
+23:54:18,649 root INFO Start to test epoch 4
+23:54:19,951 root INFO Epoch 04, lr=0.002 | Train: acc=0.7289 | Val: acc=0.5291 | Test: acc=0.5974 | Time: this epoch 7.25s, elapsed 97.99s
+23:54:19,952 root INFO Start to train epoch 5
+23:54:21,58 root INFO [Epoch 5, Batch=99] Train: loss=0.1339, lr=0.002
+23:54:21,726 root INFO [Epoch 5, Batch=199] Train: loss=0.1394, lr=0.002
+23:54:22,167 root INFO [Epoch 5, Batch=299] Train: loss=0.3041, lr=0.002
+23:54:22,528 root INFO [Epoch 5, Batch=399] Train: loss=0.3283, lr=0.002
+23:54:22,813 root INFO [Epoch 5, Batch=499] Train: loss=0.1420, lr=0.002
+23:54:23,61 root INFO [Epoch 5, Batch=599] Train: loss=0.3171, lr=0.002
+23:54:23,274 root INFO [Epoch 5, Batch=699] Train: loss=0.1409, lr=0.002
+23:54:23,478 root INFO [Epoch 5, Batch=799] Train: loss=0.0401, lr=0.002
+23:54:24,560 root INFO [Epoch 5, Batch=99] Train(target): MCCloss=0.1417, lr=0.002
+23:54:24,891 root INFO [Epoch 5, Batch=199] Train(target): MCCloss=0.0911, lr=0.002
+23:54:25,128 root INFO Start to validate epoch 5
+23:54:25,777 root INFO Start to test epoch 5
+23:54:27,121 root INFO Epoch 05, lr=0.002 | Train: acc=0.7435 | Val: acc=0.5392 | Test: acc=0.5983 | Time: this epoch 7.17s, elapsed 105.16s
+23:54:27,122 root INFO Start to train epoch 6
+23:54:28,211 root INFO [Epoch 6, Batch=99] Train: loss=0.1337, lr=0.002
+23:54:28,845 root INFO [Epoch 6, Batch=199] Train: loss=0.1264, lr=0.002
+23:54:29,348 root INFO [Epoch 6, Batch=299] Train: loss=0.2886, lr=0.002
+23:54:29,792 root INFO [Epoch 6, Batch=399] Train: loss=0.3201, lr=0.002
+23:54:30,159 root INFO [Epoch 6, Batch=499] Train: loss=0.1407, lr=0.002
+23:54:30,439 root INFO [Epoch 6, Batch=599] Train: loss=0.3247, lr=0.002
+23:54:30,664 root INFO [Epoch 6, Batch=699] Train: loss=0.1231, lr=0.002
+23:54:30,894 root INFO [Epoch 6, Batch=799] Train: loss=0.0346, lr=0.002
+23:54:32,25 root INFO [Epoch 6, Batch=99] Train(target): MCCloss=0.1410, lr=0.002
+23:54:32,336 root INFO [Epoch 6, Batch=199] Train(target): MCCloss=0.0892, lr=0.002
+23:54:32,548 root INFO Start to validate epoch 6
+23:54:33,230 root INFO Start to test epoch 6
+23:54:34,575 root INFO Epoch 06, lr=0.002 | Train: acc=0.7573 | Val: acc=0.5381 | Test: acc=0.6020 | Time: this epoch 7.45s, elapsed 112.62s
+23:54:34,576 root INFO Start to train epoch 7
+23:54:35,708 root INFO [Epoch 7, Batch=99] Train: loss=0.1332, lr=0.002
+23:54:36,316 root INFO [Epoch 7, Batch=199] Train: loss=0.1160, lr=0.002
+23:54:36,871 root INFO [Epoch 7, Batch=299] Train: loss=0.2751, lr=0.002
+23:54:37,307 root INFO [Epoch 7, Batch=399] Train: loss=0.3094, lr=0.002
+23:54:37,647 root INFO [Epoch 7, Batch=499] Train: loss=0.1393, lr=0.002
+23:54:37,954 root INFO [Epoch 7, Batch=599] Train: loss=0.3331, lr=0.002
+23:54:38,205 root INFO [Epoch 7, Batch=699] Train: loss=0.1093, lr=0.002
+23:54:38,422 root INFO [Epoch 7, Batch=799] Train: loss=0.0308, lr=0.002
+23:54:39,369 root INFO [Epoch 7, Batch=99] Train(target): MCCloss=0.1406, lr=0.002
+23:54:39,680 root INFO [Epoch 7, Batch=199] Train(target): MCCloss=0.0877, lr=0.002
+23:54:39,903 root INFO Start to validate epoch 7
+23:54:40,828 root INFO Start to test epoch 7
+23:54:42,56 root INFO Epoch 07, lr=0.002 | Train: acc=0.7643 | Val: acc=0.5381 | Test: acc=0.6112 | Time: this epoch 7.48s, elapsed 120.10s
+23:54:42,57 root INFO Start to train epoch 8
+23:54:43,161 root INFO [Epoch 8, Batch=99] Train: loss=0.1329, lr=0.002
+23:54:43,823 root INFO [Epoch 8, Batch=199] Train: loss=0.1082, lr=0.002
+23:54:44,391 root INFO [Epoch 8, Batch=299] Train: loss=0.2624, lr=0.002
+23:54:44,811 root INFO [Epoch 8, Batch=399] Train: loss=0.2986, lr=0.002
+23:54:45,172 root INFO [Epoch 8, Batch=499] Train: loss=0.1379, lr=0.002
+23:54:45,467 root INFO [Epoch 8, Batch=599] Train: loss=0.3416, lr=0.002
+23:54:45,702 root INFO [Epoch 8, Batch=699] Train: loss=0.0985, lr=0.002
+23:54:45,944 root INFO [Epoch 8, Batch=799] Train: loss=0.0279, lr=0.002
+23:54:46,912 root INFO [Epoch 8, Batch=99] Train(target): MCCloss=0.1406, lr=0.002
+23:54:47,221 root INFO [Epoch 8, Batch=199] Train(target): MCCloss=0.0866, lr=0.002
+23:54:47,441 root INFO Start to validate epoch 8
+23:54:48,81 root INFO Start to test epoch 8
+23:54:49,265 root INFO Epoch 08, lr=0.002 | Train: acc=0.7694 | Val: acc=0.5448 | Test: acc=0.6140 | Time: this epoch 7.21s, elapsed 127.31s
+23:54:49,266 root INFO Start to train epoch 9
+23:54:50,365 root INFO [Epoch 9, Batch=99] Train: loss=0.1327, lr=0.002
+23:54:50,985 root INFO [Epoch 9, Batch=199] Train: loss=0.1022, lr=0.002
+23:54:51,499 root INFO [Epoch 9, Batch=299] Train: loss=0.2506, lr=0.002
+23:54:51,930 root INFO [Epoch 9, Batch=399] Train: loss=0.2876, lr=0.002
+23:54:52,288 root INFO [Epoch 9, Batch=499] Train: loss=0.1367, lr=0.002
+23:54:52,610 root INFO [Epoch 9, Batch=599] Train: loss=0.3490, lr=0.002
+23:54:52,858 root INFO [Epoch 9, Batch=699] Train: loss=0.0897, lr=0.002
+23:54:53,97 root INFO [Epoch 9, Batch=799] Train: loss=0.0256, lr=0.002
+23:54:54,36 root INFO [Epoch 9, Batch=99] Train(target): MCCloss=0.1408, lr=0.002
+23:54:54,358 root INFO [Epoch 9, Batch=199] Train(target): MCCloss=0.0857, lr=0.002
+23:54:54,575 root INFO Start to validate epoch 9
+23:54:55,287 root INFO Start to test epoch 9
+23:54:56,443 root INFO Epoch 09, lr=0.002 | Train: acc=0.7784 | Val: acc=0.5448 | Test: acc=0.6167 | Time: this epoch 7.18s, elapsed 134.49s
+23:54:56,444 root INFO Start to train epoch 10
+23:54:57,498 root INFO [Epoch 10, Batch=99] Train: loss=0.1326, lr=0.002
+23:54:58,133 root INFO [Epoch 10, Batch=199] Train: loss=0.0977, lr=0.002
+23:54:58,627 root INFO [Epoch 10, Batch=299] Train: loss=0.2393, lr=0.002
+23:54:59,53 root INFO [Epoch 10, Batch=399] Train: loss=0.2745, lr=0.002
+23:54:59,383 root INFO [Epoch 10, Batch=499] Train: loss=0.1354, lr=0.002
+23:54:59,655 root INFO [Epoch 10, Batch=599] Train: loss=0.3562, lr=0.002
+23:54:59,890 root INFO [Epoch 10, Batch=699] Train: loss=0.0824, lr=0.002
+23:55:00,131 root INFO [Epoch 10, Batch=799] Train: loss=0.0238, lr=0.002
+23:55:01,61 root INFO [Epoch 10, Batch=99] Train(target): MCCloss=0.1410, lr=0.002
+23:55:01,387 root INFO [Epoch 10, Batch=199] Train(target): MCCloss=0.0851, lr=0.002
+23:55:01,633 root INFO Start to validate epoch 10
+23:55:02,309 root INFO Start to test epoch 10
+23:55:03,510 root INFO Epoch 10, lr=0.002 | Train: acc=0.7851 | Val: acc=0.5493 | Test: acc=0.6176 | Time: this epoch 7.07s, elapsed 141.55s
+23:55:03,511 root INFO Start to train epoch 11
+23:55:04,853 root INFO [Epoch 11, Batch=99] Train: loss=0.1325, lr=0.002
+23:55:05,671 root INFO [Epoch 11, Batch=199] Train: loss=0.0946, lr=0.002
+23:55:06,196 root INFO [Epoch 11, Batch=299] Train: loss=0.2295, lr=0.002
+23:55:06,652 root INFO [Epoch 11, Batch=399] Train: loss=0.2619, lr=0.002
+23:55:07,579 root INFO [Epoch 11, Batch=499] Train: loss=0.1344, lr=0.002
+23:55:07,888 root INFO [Epoch 11, Batch=599] Train: loss=0.3629, lr=0.002
+23:55:08,165 root INFO [Epoch 11, Batch=699] Train: loss=0.0765, lr=0.002
+23:55:08,416 root INFO [Epoch 11, Batch=799] Train: loss=0.0224, lr=0.002
+23:55:09,593 root INFO [Epoch 11, Batch=99] Train(target): MCCloss=0.1409, lr=0.002
+23:55:09,921 root INFO [Epoch 11, Batch=199] Train(target): MCCloss=0.0848, lr=0.002
+23:55:10,160 root INFO Start to validate epoch 11
+23:55:10,868 root INFO Start to test epoch 11
+23:55:12,104 root INFO Epoch 11, lr=0.002 | Train: acc=0.7907 | Val: acc=0.5594 | Test: acc=0.6204 | Time: this epoch 8.59s, elapsed 150.15s
+23:55:12,115 root INFO [info] Save model after epoch 11
+
+23:55:12,115 root INFO Start to train epoch 12
+23:55:13,343 root INFO [Epoch 12, Batch=99] Train: loss=0.1320, lr=0.002
+23:55:14,381 root INFO [Epoch 12, Batch=199] Train: loss=0.0925, lr=0.002
+23:55:14,888 root INFO [Epoch 12, Batch=299] Train: loss=0.2209, lr=0.002
+23:55:15,312 root INFO [Epoch 12, Batch=399] Train: loss=0.2498, lr=0.002
+23:55:15,664 root INFO [Epoch 12, Batch=499] Train: loss=0.1339, lr=0.002
+23:55:15,946 root INFO [Epoch 12, Batch=599] Train: loss=0.3684, lr=0.002
+23:55:16,192 root INFO [Epoch 12, Batch=699] Train: loss=0.0716, lr=0.002
+23:55:16,406 root INFO [Epoch 12, Batch=799] Train: loss=0.0205, lr=0.002
+23:55:17,460 root INFO [Epoch 12, Batch=99] Train(target): MCCloss=0.1408, lr=0.002
+23:55:17,761 root INFO [Epoch 12, Batch=199] Train(target): MCCloss=0.0848, lr=0.002
+23:55:18,18 root INFO Start to validate epoch 12
+23:55:18,663 root INFO Start to test epoch 12
+23:55:20,39 root INFO Epoch 12, lr=0.002 | Train: acc=0.7949 | Val: acc=0.5639 | Test: acc=0.6222 | Time: this epoch 7.92s, elapsed 158.08s
+23:55:20,48 root INFO [info] Save model after epoch 12
+
+23:55:20,48 root INFO Start to train epoch 13
+23:55:21,563 root INFO [Epoch 13, Batch=99] Train: loss=0.1315, lr=0.002
+23:55:22,321 root INFO [Epoch 13, Batch=199] Train: loss=0.0912, lr=0.002
+23:55:23,82 root INFO [Epoch 13, Batch=299] Train: loss=0.2138, lr=0.002
+23:55:23,721 root INFO [Epoch 13, Batch=399] Train: loss=0.2383, lr=0.002
+23:55:24,38 root INFO [Epoch 13, Batch=499] Train: loss=0.1341, lr=0.002
+23:55:24,340 root INFO [Epoch 13, Batch=599] Train: loss=0.3729, lr=0.002
+23:55:24,623 root INFO [Epoch 13, Batch=699] Train: loss=0.0673, lr=0.002
+23:55:24,860 root INFO [Epoch 13, Batch=799] Train: loss=0.0184, lr=0.002
+23:55:25,961 root INFO [Epoch 13, Batch=99] Train(target): MCCloss=0.1405, lr=0.002
+23:55:26,283 root INFO [Epoch 13, Batch=199] Train(target): MCCloss=0.0850, lr=0.002
+23:55:26,513 root INFO Start to validate epoch 13
+23:55:27,175 root INFO Start to test epoch 13
+23:55:28,496 root INFO Epoch 13, lr=0.002 | Train: acc=0.7978 | Val: acc=0.5695 | Test: acc=0.6213 | Time: this epoch 8.45s, elapsed 166.54s
+23:55:28,508 root INFO [info] Save model after epoch 13
+
+23:55:28,508 root INFO Start to train epoch 14
+23:55:29,933 root INFO [Epoch 14, Batch=99] Train: loss=0.1310, lr=0.002
+23:55:30,878 root INFO [Epoch 14, Batch=199] Train: loss=0.0904, lr=0.002
+23:55:31,656 root INFO [Epoch 14, Batch=299] Train: loss=0.2080, lr=0.002
+23:55:32,273 root INFO [Epoch 14, Batch=399] Train: loss=0.2273, lr=0.002
+23:55:32,850 root INFO [Epoch 14, Batch=499] Train: loss=0.1350, lr=0.002
+23:55:33,90 root INFO [Epoch 14, Batch=599] Train: loss=0.3763, lr=0.002
+23:55:33,344 root INFO [Epoch 14, Batch=699] Train: loss=0.0633, lr=0.002
+23:55:33,566 root INFO [Epoch 14, Batch=799] Train: loss=0.0159, lr=0.002
+23:55:34,442 root INFO [Epoch 14, Batch=99] Train(target): MCCloss=0.1399, lr=0.002
+23:55:34,719 root INFO [Epoch 14, Batch=199] Train(target): MCCloss=0.0853, lr=0.002
+23:55:34,936 root INFO Start to validate epoch 14
+23:55:35,591 root INFO Start to test epoch 14
+23:55:36,740 root INFO Epoch 14, lr=0.002 | Train: acc=0.8025 | Val: acc=0.5740 | Test: acc=0.6259 | Time: this epoch 8.23s, elapsed 174.78s
+23:55:36,750 root INFO [info] Save model after epoch 14
+
+23:55:36,750 root INFO Start to train epoch 15
+23:55:37,973 root INFO [Epoch 15, Batch=99] Train: loss=0.1305, lr=0.002
+23:55:38,890 root INFO [Epoch 15, Batch=199] Train: loss=0.0899, lr=0.002
+23:55:39,421 root INFO [Epoch 15, Batch=299] Train: loss=0.2035, lr=0.002
+23:55:39,833 root INFO [Epoch 15, Batch=399] Train: loss=0.2168, lr=0.002
+23:55:40,177 root INFO [Epoch 15, Batch=499] Train: loss=0.1368, lr=0.002
+23:55:40,442 root INFO [Epoch 15, Batch=599] Train: loss=0.3788, lr=0.002
+23:55:40,683 root INFO [Epoch 15, Batch=699] Train: loss=0.0595, lr=0.002
+23:55:40,882 root INFO [Epoch 15, Batch=799] Train: loss=0.0139, lr=0.002
+23:55:41,827 root INFO [Epoch 15, Batch=99] Train(target): MCCloss=0.1393, lr=0.002
+23:55:42,106 root INFO [Epoch 15, Batch=199] Train(target): MCCloss=0.0857, lr=0.002
+23:55:42,329 root INFO Start to validate epoch 15
+23:55:43,18 root INFO Start to test epoch 15
+23:55:44,126 root INFO Epoch 15, lr=0.002 | Train: acc=0.8037 | Val: acc=0.5785 | Test: acc=0.6232 | Time: this epoch 7.38s, elapsed 182.17s
+23:55:44,136 root INFO [info] Save model after epoch 15
+
+23:55:44,136 root INFO Start to train epoch 16
+23:55:46,673 root INFO [Epoch 16, Batch=99] Train: loss=0.1298, lr=0.002
+23:55:47,294 root INFO [Epoch 16, Batch=199] Train: loss=0.0894, lr=0.002
+23:55:47,849 root INFO [Epoch 16, Batch=299] Train: loss=0.2000, lr=0.002
+23:55:48,280 root INFO [Epoch 16, Batch=399] Train: loss=0.2068, lr=0.002
+23:55:48,581 root INFO [Epoch 16, Batch=499] Train: loss=0.1384, lr=0.002
+23:55:48,836 root INFO [Epoch 16, Batch=599] Train: loss=0.3799, lr=0.002
+23:55:49,65 root INFO [Epoch 16, Batch=699] Train: loss=0.0561, lr=0.002
+23:55:49,289 root INFO [Epoch 16, Batch=799] Train: loss=0.0122, lr=0.002
+23:55:50,508 root INFO [Epoch 16, Batch=99] Train(target): MCCloss=0.1384, lr=0.002
+23:55:50,829 root INFO [Epoch 16, Batch=199] Train(target): MCCloss=0.0860, lr=0.002
+23:55:51,84 root INFO Start to validate epoch 16
+23:55:51,782 root INFO Start to test epoch 16
+23:55:53,133 root INFO Epoch 16, lr=0.002 | Train: acc=0.8062 | Val: acc=0.5841 | Test: acc=0.6222 | Time: this epoch 9.00s, elapsed 191.18s
+23:55:53,250 root INFO [info] Save model after epoch 16
+
+23:55:53,250 root INFO Start to train epoch 17
+23:55:54,666 root INFO [Epoch 17, Batch=99] Train: loss=0.1292, lr=0.002
+23:55:55,407 root INFO [Epoch 17, Batch=199] Train: loss=0.0886, lr=0.002
+23:55:55,930 root INFO [Epoch 17, Batch=299] Train: loss=0.1978, lr=0.002
+23:55:56,371 root INFO [Epoch 17, Batch=399] Train: loss=0.1972, lr=0.002
+23:55:56,731 root INFO [Epoch 17, Batch=499] Train: loss=0.1403, lr=0.002
+23:55:57,44 root INFO [Epoch 17, Batch=599] Train: loss=0.3807, lr=0.002
+23:55:57,271 root INFO [Epoch 17, Batch=699] Train: loss=0.0528, lr=0.002
+23:55:57,482 root INFO [Epoch 17, Batch=799] Train: loss=0.0107, lr=0.002
+23:55:58,668 root INFO [Epoch 17, Batch=99] Train(target): MCCloss=0.1375, lr=0.002
+23:55:59,8 root INFO [Epoch 17, Batch=199] Train(target): MCCloss=0.0862, lr=0.002
+23:55:59,229 root INFO Start to validate epoch 17
+23:55:59,930 root INFO Start to test epoch 17
+23:56:01,62 root INFO Epoch 17, lr=0.002 | Train: acc=0.8076 | Val: acc=0.5841 | Test: acc=0.6232 | Time: this epoch 7.81s, elapsed 199.11s
+23:56:01,76 root INFO Start to train epoch 18
+23:56:02,172 root INFO [Epoch 18, Batch=99] Train: loss=0.1286, lr=0.002
+23:56:02,809 root INFO [Epoch 18, Batch=199] Train: loss=0.0879, lr=0.002
+23:56:03,311 root INFO [Epoch 18, Batch=299] Train: loss=0.1957, lr=0.002
+23:56:03,729 root INFO [Epoch 18, Batch=399] Train: loss=0.1879, lr=0.002
+23:56:04,90 root INFO [Epoch 18, Batch=499] Train: loss=0.1421, lr=0.002
+23:56:04,379 root INFO [Epoch 18, Batch=599] Train: loss=0.3815, lr=0.002
+23:56:04,629 root INFO [Epoch 18, Batch=699] Train: loss=0.0495, lr=0.002
+23:56:04,890 root INFO [Epoch 18, Batch=799] Train: loss=0.0094, lr=0.002
+23:56:05,773 root INFO [Epoch 18, Batch=99] Train(target): MCCloss=0.1366, lr=0.002
+23:56:06,54 root INFO [Epoch 18, Batch=199] Train(target): MCCloss=0.0863, lr=0.002
+23:56:06,279 root INFO Start to validate epoch 18
+23:56:06,951 root INFO Start to test epoch 18
+23:56:08,308 root INFO Epoch 18, lr=0.002 | Train: acc=0.8124 | Val: acc=0.5852 | Test: acc=0.6250 | Time: this epoch 7.23s, elapsed 206.35s
+23:56:08,319 root INFO [info] Save model after epoch 18
+
+23:56:08,319 root INFO Start to train epoch 19
+23:56:09,532 root INFO [Epoch 19, Batch=99] Train: loss=0.1281, lr=0.002
+23:56:10,764 root INFO [Epoch 19, Batch=199] Train: loss=0.0874, lr=0.002
+23:56:11,294 root INFO [Epoch 19, Batch=299] Train: loss=0.1936, lr=0.002
+23:56:11,731 root INFO [Epoch 19, Batch=399] Train: loss=0.1794, lr=0.002
+23:56:12,27 root INFO [Epoch 19, Batch=499] Train: loss=0.1426, lr=0.002
+23:56:12,308 root INFO [Epoch 19, Batch=599] Train: loss=0.3819, lr=0.002
+23:56:12,521 root INFO [Epoch 19, Batch=699] Train: loss=0.0465, lr=0.002
+23:56:12,765 root INFO [Epoch 19, Batch=799] Train: loss=0.0083, lr=0.002
+23:56:13,924 root INFO [Epoch 19, Batch=99] Train(target): MCCloss=0.1356, lr=0.002
+23:56:14,262 root INFO [Epoch 19, Batch=199] Train(target): MCCloss=0.0864, lr=0.002
+23:56:14,512 root INFO Start to validate epoch 19
+23:56:15,114 root INFO Start to test epoch 19
+23:56:16,522 root INFO Epoch 19, lr=0.002 | Train: acc=0.8160 | Val: acc=0.5930 | Test: acc=0.6259 | Time: this epoch 8.20s, elapsed 214.56s
+23:56:16,540 root INFO [info] Save model after epoch 19
+
+23:56:16,540 root INFO Best test acc=0.6259191036224365
+23:56:16,540 root INFO Start to run five fold 2/5
+23:56:16,540 root INFO Model initialized
+23:56:17,43 root INFO Start to train epoch 0
+23:56:17,985 root INFO [Epoch 0, Batch=99] Train: loss=0.2626, lr=0.002
+23:56:18,523 root INFO [Epoch 0, Batch=199] Train: loss=0.2857, lr=0.002
+23:56:19,238 root INFO [Epoch 0, Batch=299] Train: loss=0.2693, lr=0.002
+23:56:19,668 root INFO [Epoch 0, Batch=399] Train: loss=0.1491, lr=0.002
+23:56:20,5 root INFO [Epoch 0, Batch=499] Train: loss=0.4633, lr=0.002
+23:56:20,283 root INFO [Epoch 0, Batch=599] Train: loss=0.2956, lr=0.002
+23:56:20,551 root INFO [Epoch 0, Batch=699] Train: loss=0.1644, lr=0.002
+23:56:20,783 root INFO [Epoch 0, Batch=799] Train: loss=0.3287, lr=0.002
+23:56:20,999 root INFO [Epoch 0, Batch=899] Train: loss=0.2098, lr=0.002
+23:56:22,117 root INFO [Epoch 0, Batch=99] Train(target): MCCloss=0.1807, lr=0.002
+23:56:22,432 root INFO [Epoch 0, Batch=199] Train(target): MCCloss=0.1770, lr=0.002
+23:56:22,612 root INFO Start to validate epoch 0
+23:56:23,276 root INFO Start to test epoch 0
+23:56:24,281 root INFO Epoch 00, lr=0.002 | Train: acc=0.5698 | Val: acc=0.5409 | Test: acc=0.4844 | Time: this epoch 7.24s, elapsed 222.32s
+23:56:24,292 root INFO [info] Save model after epoch 0
+
+23:56:24,292 root INFO Start to train epoch 1
+23:56:26,70 root INFO [Epoch 1, Batch=99] Train: loss=0.1199, lr=0.002
+23:56:27,757 root INFO [Epoch 1, Batch=199] Train: loss=0.2486, lr=0.002
+23:56:28,296 root INFO [Epoch 1, Batch=299] Train: loss=0.3009, lr=0.002
+23:56:28,826 root INFO [Epoch 1, Batch=399] Train: loss=0.1021, lr=0.002
+23:56:29,180 root INFO [Epoch 1, Batch=499] Train: loss=0.3852, lr=0.002
+23:56:29,622 root INFO [Epoch 1, Batch=599] Train: loss=0.2553, lr=0.002
+23:56:30,17 root INFO [Epoch 1, Batch=699] Train: loss=0.1152, lr=0.002
+23:56:30,410 root INFO [Epoch 1, Batch=799] Train: loss=0.2467, lr=0.002
+23:56:30,629 root INFO [Epoch 1, Batch=899] Train: loss=0.1752, lr=0.002
+23:56:31,690 root INFO [Epoch 1, Batch=99] Train(target): MCCloss=0.1715, lr=0.002
+23:56:32,154 root INFO [Epoch 1, Batch=199] Train(target): MCCloss=0.1716, lr=0.002
+23:56:32,338 root INFO Start to validate epoch 1
+23:56:33,34 root INFO Start to test epoch 1
+23:56:34,88 root INFO Epoch 01, lr=0.002 | Train: acc=0.6554 | Val: acc=0.5874 | Test: acc=0.6169 | Time: this epoch 9.80s, elapsed 232.13s
+23:56:34,99 root INFO [info] Save model after epoch 1
+
+23:56:34,100 root INFO Start to train epoch 2
+23:56:35,430 root INFO [Epoch 2, Batch=99] Train: loss=0.0621, lr=0.002
+23:56:36,128 root INFO [Epoch 2, Batch=199] Train: loss=0.2088, lr=0.002
+23:56:36,980 root INFO [Epoch 2, Batch=299] Train: loss=0.2918, lr=0.002
+23:56:37,503 root INFO [Epoch 2, Batch=399] Train: loss=0.0729, lr=0.002
+23:56:38,65 root INFO [Epoch 2, Batch=499] Train: loss=0.3610, lr=0.002
+23:56:38,494 root INFO [Epoch 2, Batch=599] Train: loss=0.2325, lr=0.002
+23:56:38,802 root INFO [Epoch 2, Batch=699] Train: loss=0.1145, lr=0.002
+23:56:39,31 root INFO [Epoch 2, Batch=799] Train: loss=0.1938, lr=0.002
+23:56:39,237 root INFO [Epoch 2, Batch=899] Train: loss=0.1536, lr=0.002
+23:56:40,264 root INFO [Epoch 2, Batch=99] Train(target): MCCloss=0.1701, lr=0.002
+23:56:40,871 root INFO [Epoch 2, Batch=199] Train(target): MCCloss=0.1667, lr=0.002
+23:56:41,63 root INFO Start to validate epoch 2
+23:56:41,768 root INFO Start to test epoch 2
+23:56:42,781 root INFO Epoch 02, lr=0.002 | Train: acc=0.6964 | Val: acc=0.5940 | Test: acc=0.6344 | Time: this epoch 8.68s, elapsed 240.82s
+23:56:42,792 root INFO [info] Save model after epoch 2
+
+23:56:42,792 root INFO Start to train epoch 3
+23:56:44,335 root INFO [Epoch 3, Batch=99] Train: loss=0.0585, lr=0.002
+23:56:45,514 root INFO [Epoch 3, Batch=199] Train: loss=0.2057, lr=0.002
+23:56:46,290 root INFO [Epoch 3, Batch=299] Train: loss=0.2713, lr=0.002
+23:56:46,816 root INFO [Epoch 3, Batch=399] Train: loss=0.0502, lr=0.002
+23:56:47,342 root INFO [Epoch 3, Batch=499] Train: loss=0.3337, lr=0.002
+23:56:47,790 root INFO [Epoch 3, Batch=599] Train: loss=0.2200, lr=0.002
+23:56:48,75 root INFO [Epoch 3, Batch=699] Train: loss=0.1175, lr=0.002
+23:56:48,436 root INFO [Epoch 3, Batch=799] Train: loss=0.1436, lr=0.002
+23:56:48,665 root INFO [Epoch 3, Batch=899] Train: loss=0.1375, lr=0.002
+23:56:49,620 root INFO [Epoch 3, Batch=99] Train(target): MCCloss=0.1698, lr=0.002
+23:56:50,69 root INFO [Epoch 3, Batch=199] Train(target): MCCloss=0.1656, lr=0.002
+23:56:50,292 root INFO Start to validate epoch 3
+23:56:50,958 root INFO Start to test epoch 3
+23:56:51,989 root INFO Epoch 03, lr=0.002 | Train: acc=0.7186 | Val: acc=0.6095 | Test: acc=0.6410 | Time: this epoch 9.20s, elapsed 250.03s
+23:56:52,0 root INFO [info] Save model after epoch 3
+
+23:56:52,0 root INFO Start to train epoch 4
+23:56:53,505 root INFO [Epoch 4, Batch=99] Train: loss=0.0622, lr=0.002
+23:56:54,133 root INFO [Epoch 4, Batch=199] Train: loss=0.2041, lr=0.002
+23:56:54,685 root INFO [Epoch 4, Batch=299] Train: loss=0.2527, lr=0.002
+23:56:55,176 root INFO [Epoch 4, Batch=399] Train: loss=0.0380, lr=0.002
+23:56:55,574 root INFO [Epoch 4, Batch=499] Train: loss=0.3089, lr=0.002
+23:56:55,881 root INFO [Epoch 4, Batch=599] Train: loss=0.1961, lr=0.002
+23:56:56,342 root INFO [Epoch 4, Batch=699] Train: loss=0.1199, lr=0.002
+23:56:56,883 root INFO [Epoch 4, Batch=799] Train: loss=0.1072, lr=0.002
+23:56:57,213 root INFO [Epoch 4, Batch=899] Train: loss=0.1242, lr=0.002
+23:56:57,952 root INFO [Epoch 4, Batch=99] Train(target): MCCloss=0.1690, lr=0.002
+23:56:58,303 root INFO [Epoch 4, Batch=199] Train(target): MCCloss=0.1654, lr=0.002
+23:56:58,612 root INFO Start to validate epoch 4
+23:56:59,652 root INFO Start to test epoch 4
+23:57:00,599 root INFO Epoch 04, lr=0.002 | Train: acc=0.7323 | Val: acc=0.6228 | Test: acc=0.6449 | Time: this epoch 8.60s, elapsed 258.64s
+23:57:00,608 root INFO [info] Save model after epoch 4
+
+23:57:00,608 root INFO Start to train epoch 5
+23:57:01,864 root INFO [Epoch 5, Batch=99] Train: loss=0.0663, lr=0.002
+23:57:02,809 root INFO [Epoch 5, Batch=199] Train: loss=0.2031, lr=0.002
+23:57:03,442 root INFO [Epoch 5, Batch=299] Train: loss=0.2387, lr=0.002
+23:57:04,128 root INFO [Epoch 5, Batch=399] Train: loss=0.0309, lr=0.002
+23:57:04,592 root INFO [Epoch 5, Batch=499] Train: loss=0.2896, lr=0.002
+23:57:05,7 root INFO [Epoch 5, Batch=599] Train: loss=0.1716, lr=0.002
+23:57:05,432 root INFO [Epoch 5, Batch=699] Train: loss=0.1187, lr=0.002
+23:57:05,851 root INFO [Epoch 5, Batch=799] Train: loss=0.0831, lr=0.002
+23:57:06,169 root INFO [Epoch 5, Batch=899] Train: loss=0.1118, lr=0.002
+23:57:07,129 root INFO [Epoch 5, Batch=99] Train(target): MCCloss=0.1672, lr=0.002
+23:57:07,578 root INFO [Epoch 5, Batch=199] Train(target): MCCloss=0.1652, lr=0.002
+23:57:07,812 root INFO Start to validate epoch 5
+23:57:08,717 root INFO Start to test epoch 5
+23:57:09,792 root INFO Epoch 05, lr=0.002 | Train: acc=0.7420 | Val: acc=0.6316 | Test: acc=0.6468 | Time: this epoch 9.18s, elapsed 267.83s
+23:57:10,137 root INFO [info] Save model after epoch 5
+
+23:57:10,138 root INFO Start to train epoch 6
+23:57:12,897 root INFO [Epoch 6, Batch=99] Train: loss=0.0691, lr=0.002
+23:57:13,687 root INFO [Epoch 6, Batch=199] Train: loss=0.2014, lr=0.002
+23:57:14,688 root INFO [Epoch 6, Batch=299] Train: loss=0.2267, lr=0.002
+23:57:15,271 root INFO [Epoch 6, Batch=399] Train: loss=0.0267, lr=0.002
+23:57:15,786 root INFO [Epoch 6, Batch=499] Train: loss=0.2750, lr=0.002
+23:57:16,401 root INFO [Epoch 6, Batch=599] Train: loss=0.1631, lr=0.002
+23:57:16,838 root INFO [Epoch 6, Batch=699] Train: loss=0.1164, lr=0.002
+23:57:17,246 root INFO [Epoch 6, Batch=799] Train: loss=0.0663, lr=0.002
+23:57:17,756 root INFO [Epoch 6, Batch=899] Train: loss=0.0983, lr=0.002
+23:57:19,217 root INFO [Epoch 6, Batch=99] Train(target): MCCloss=0.1639, lr=0.002
+23:57:19,594 root INFO [Epoch 6, Batch=199] Train(target): MCCloss=0.1642, lr=0.002
+23:57:19,886 root INFO Start to validate epoch 6
+23:57:20,969 root INFO Start to test epoch 6
+23:57:22,92 root INFO Epoch 06, lr=0.002 | Train: acc=0.7553 | Val: acc=0.6117 | Test: acc=0.6478 | Time: this epoch 11.95s, elapsed 280.13s
+23:57:22,106 root INFO Start to train epoch 7
+23:57:23,123 root INFO [Epoch 7, Batch=99] Train: loss=0.0707, lr=0.002
+23:57:23,732 root INFO [Epoch 7, Batch=199] Train: loss=0.2015, lr=0.002
+23:57:24,243 root INFO [Epoch 7, Batch=299] Train: loss=0.2103, lr=0.002
+23:57:24,661 root INFO [Epoch 7, Batch=399] Train: loss=0.0237, lr=0.002
+23:57:25,16 root INFO [Epoch 7, Batch=499] Train: loss=0.2627, lr=0.002
+23:57:25,284 root INFO [Epoch 7, Batch=599] Train: loss=0.1706, lr=0.002
+23:57:25,521 root INFO [Epoch 7, Batch=699] Train: loss=0.1144, lr=0.002
+23:57:25,723 root INFO [Epoch 7, Batch=799] Train: loss=0.0557, lr=0.002
+23:57:25,937 root INFO [Epoch 7, Batch=899] Train: loss=0.0870, lr=0.002
+23:57:26,655 root INFO [Epoch 7, Batch=99] Train(target): MCCloss=0.1606, lr=0.002
+23:57:26,973 root INFO [Epoch 7, Batch=199] Train(target): MCCloss=0.1633, lr=0.002
+23:57:27,153 root INFO Start to validate epoch 7
+23:57:27,829 root INFO Start to test epoch 7
+23:57:28,942 root INFO Epoch 07, lr=0.002 | Train: acc=0.7605 | Val: acc=0.6051 | Test: acc=0.6468 | Time: this epoch 6.84s, elapsed 286.99s
+23:57:28,943 root INFO Start to train epoch 8
+23:57:30,65 root INFO [Epoch 8, Batch=99] Train: loss=0.0731, lr=0.002
+23:57:30,651 root INFO [Epoch 8, Batch=199] Train: loss=0.2027, lr=0.002
+23:57:31,192 root INFO [Epoch 8, Batch=299] Train: loss=0.1932, lr=0.002
+23:57:31,703 root INFO [Epoch 8, Batch=399] Train: loss=0.0215, lr=0.002
+23:57:32,532 root INFO [Epoch 8, Batch=499] Train: loss=0.2521, lr=0.002
+23:57:33,424 root INFO [Epoch 8, Batch=599] Train: loss=0.1831, lr=0.002
+23:57:34,149 root INFO [Epoch 8, Batch=699] Train: loss=0.1132, lr=0.002
+23:57:35,42 root INFO [Epoch 8, Batch=799] Train: loss=0.0484, lr=0.002
+23:57:35,842 root INFO [Epoch 8, Batch=899] Train: loss=0.0791, lr=0.002
+23:57:36,866 root INFO [Epoch 8, Batch=99] Train(target): MCCloss=0.1577, lr=0.002
+23:57:37,504 root INFO [Epoch 8, Batch=199] Train(target): MCCloss=0.1625, lr=0.002
+23:57:37,872 root INFO Start to validate epoch 8
+23:57:39,889 root INFO Start to test epoch 8
+23:57:41,3 root INFO Epoch 08, lr=0.002 | Train: acc=0.7658 | Val: acc=0.6040 | Test: acc=0.6468 | Time: this epoch 12.06s, elapsed 299.05s
+23:57:41,3 root INFO Start to train epoch 9
+23:57:42,742 root INFO [Epoch 9, Batch=99] Train: loss=0.0763, lr=0.002
+23:57:43,592 root INFO [Epoch 9, Batch=199] Train: loss=0.2038, lr=0.002
+23:57:44,313 root INFO [Epoch 9, Batch=299] Train: loss=0.1785, lr=0.002
+23:57:44,836 root INFO [Epoch 9, Batch=399] Train: loss=0.0200, lr=0.002
+23:57:45,174 root INFO [Epoch 9, Batch=499] Train: loss=0.2437, lr=0.002
+23:57:45,435 root INFO [Epoch 9, Batch=599] Train: loss=0.1907, lr=0.002
+23:57:45,711 root INFO [Epoch 9, Batch=699] Train: loss=0.1124, lr=0.002
+23:57:45,936 root INFO [Epoch 9, Batch=799] Train: loss=0.0428, lr=0.002
+23:57:46,134 root INFO [Epoch 9, Batch=899] Train: loss=0.0741, lr=0.002
+23:57:46,924 root INFO [Epoch 9, Batch=99] Train(target): MCCloss=0.1554, lr=0.002
+23:57:47,212 root INFO [Epoch 9, Batch=199] Train(target): MCCloss=0.1618, lr=0.002
+23:57:47,391 root INFO Start to validate epoch 9
+23:57:48,65 root INFO Start to test epoch 9
+23:57:49,142 root INFO Epoch 09, lr=0.002 | Train: acc=0.7705 | Val: acc=0.5940 | Test: acc=0.6419 | Time: this epoch 8.14s, elapsed 307.18s
+23:57:49,143 root INFO Start to train epoch 10
+23:57:50,184 root INFO [Epoch 10, Batch=99] Train: loss=0.0801, lr=0.002
+23:57:50,777 root INFO [Epoch 10, Batch=199] Train: loss=0.2045, lr=0.002
+23:57:51,266 root INFO [Epoch 10, Batch=299] Train: loss=0.1665, lr=0.002
+23:57:51,692 root INFO [Epoch 10, Batch=399] Train: loss=0.0191, lr=0.002
+23:57:52,39 root INFO [Epoch 10, Batch=499] Train: loss=0.2369, lr=0.002
+23:57:52,351 root INFO [Epoch 10, Batch=599] Train: loss=0.1915, lr=0.002
+23:57:52,572 root INFO [Epoch 10, Batch=699] Train: loss=0.1119, lr=0.002
+23:57:52,816 root INFO [Epoch 10, Batch=799] Train: loss=0.0381, lr=0.002
+23:57:53,28 root INFO [Epoch 10, Batch=899] Train: loss=0.0710, lr=0.002
+23:57:53,827 root INFO [Epoch 10, Batch=99] Train(target): MCCloss=0.1535, lr=0.002
+23:57:54,133 root INFO [Epoch 10, Batch=199] Train(target): MCCloss=0.1614, lr=0.002
+23:57:54,328 root INFO Start to validate epoch 10
+23:57:54,995 root INFO Start to test epoch 10
+23:57:56,98 root INFO Epoch 10, lr=0.002 | Train: acc=0.7763 | Val: acc=0.5962 | Test: acc=0.6419 | Time: this epoch 6.95s, elapsed 314.14s
+23:57:56,98 root INFO Start to train epoch 11
+23:57:57,98 root INFO [Epoch 11, Batch=99] Train: loss=0.0843, lr=0.002
+23:57:57,679 root INFO [Epoch 11, Batch=199] Train: loss=0.2049, lr=0.002
+23:57:58,132 root INFO [Epoch 11, Batch=299] Train: loss=0.1566, lr=0.002
+23:57:58,488 root INFO [Epoch 11, Batch=399] Train: loss=0.0187, lr=0.002
+23:57:58,763 root INFO [Epoch 11, Batch=499] Train: loss=0.2319, lr=0.002
+23:57:59,28 root INFO [Epoch 11, Batch=599] Train: loss=0.1898, lr=0.002
+23:57:59,268 root INFO [Epoch 11, Batch=699] Train: loss=0.1111, lr=0.002
+23:57:59,505 root INFO [Epoch 11, Batch=799] Train: loss=0.0339, lr=0.002
+23:57:59,719 root INFO [Epoch 11, Batch=899] Train: loss=0.0690, lr=0.002
+23:58:00,458 root INFO [Epoch 11, Batch=99] Train(target): MCCloss=0.1517, lr=0.002
+23:58:00,742 root INFO [Epoch 11, Batch=199] Train(target): MCCloss=0.1608, lr=0.002
+23:58:00,933 root INFO Start to validate epoch 11
+23:58:01,601 root INFO Start to test epoch 11
+23:58:02,616 root INFO Epoch 11, lr=0.002 | Train: acc=0.7797 | Val: acc=0.5918 | Test: acc=0.6439 | Time: this epoch 6.52s, elapsed 320.66s
+23:58:02,616 root INFO Start to train epoch 12
+23:58:03,619 root INFO [Epoch 12, Batch=99] Train: loss=0.0885, lr=0.002
+23:58:04,204 root INFO [Epoch 12, Batch=199] Train: loss=0.2049, lr=0.002
+23:58:04,657 root INFO [Epoch 12, Batch=299] Train: loss=0.1480, lr=0.002
+23:58:05,13 root INFO [Epoch 12, Batch=399] Train: loss=0.0185, lr=0.002
+23:58:05,302 root INFO [Epoch 12, Batch=499] Train: loss=0.2295, lr=0.002
+23:58:05,575 root INFO [Epoch 12, Batch=599] Train: loss=0.1872, lr=0.002
+23:58:05,823 root INFO [Epoch 12, Batch=699] Train: loss=0.1098, lr=0.002
+23:58:06,39 root INFO [Epoch 12, Batch=799] Train: loss=0.0307, lr=0.002
+23:58:06,243 root INFO [Epoch 12, Batch=899] Train: loss=0.0675, lr=0.002
+23:58:07,64 root INFO [Epoch 12, Batch=99] Train(target): MCCloss=0.1500, lr=0.002
+23:58:07,356 root INFO [Epoch 12, Batch=199] Train(target): MCCloss=0.1601, lr=0.002
+23:58:07,537 root INFO Start to validate epoch 12
+23:58:08,512 root INFO Start to test epoch 12
+23:58:09,753 root INFO Epoch 12, lr=0.002 | Train: acc=0.7819 | Val: acc=0.5973 | Test: acc=0.6410 | Time: this epoch 7.14s, elapsed 327.80s
+23:58:09,754 root INFO Start to train epoch 13
+23:58:10,952 root INFO [Epoch 13, Batch=99] Train: loss=0.0935, lr=0.002
+23:58:11,730 root INFO [Epoch 13, Batch=199] Train: loss=0.2044, lr=0.002
+23:58:12,270 root INFO [Epoch 13, Batch=299] Train: loss=0.1406, lr=0.002
+23:58:12,741 root INFO [Epoch 13, Batch=399] Train: loss=0.0185, lr=0.002
+23:58:13,97 root INFO [Epoch 13, Batch=499] Train: loss=0.2302, lr=0.002
+23:58:13,412 root INFO [Epoch 13, Batch=599] Train: loss=0.1846, lr=0.002
+23:58:13,737 root INFO [Epoch 13, Batch=699] Train: loss=0.1085, lr=0.002
+23:58:14,26 root INFO [Epoch 13, Batch=799] Train: loss=0.0282, lr=0.002
+23:58:14,366 root INFO [Epoch 13, Batch=899] Train: loss=0.0661, lr=0.002
+23:58:15,156 root INFO [Epoch 13, Batch=99] Train(target): MCCloss=0.1485, lr=0.002
+23:58:15,450 root INFO [Epoch 13, Batch=199] Train(target): MCCloss=0.1594, lr=0.002
+23:58:15,618 root INFO Start to validate epoch 13
+23:58:16,585 root INFO Start to test epoch 13
+23:58:17,639 root INFO Epoch 13, lr=0.002 | Train: acc=0.7866 | Val: acc=0.5962 | Test: acc=0.6413 | Time: this epoch 7.89s, elapsed 335.68s
+23:58:17,640 root INFO Start to train epoch 14
+23:58:18,665 root INFO [Epoch 14, Batch=99] Train: loss=0.0987, lr=0.002
+23:58:19,254 root INFO [Epoch 14, Batch=199] Train: loss=0.2034, lr=0.002
+23:58:19,734 root INFO [Epoch 14, Batch=299] Train: loss=0.1342, lr=0.002
+23:58:20,146 root INFO [Epoch 14, Batch=399] Train: loss=0.0185, lr=0.002
+23:58:20,470 root INFO [Epoch 14, Batch=499] Train: loss=0.2328, lr=0.002
+23:58:20,738 root INFO [Epoch 14, Batch=599] Train: loss=0.1826, lr=0.002
+23:58:20,978 root INFO [Epoch 14, Batch=699] Train: loss=0.1068, lr=0.002
+23:58:21,184 root INFO [Epoch 14, Batch=799] Train: loss=0.0258, lr=0.002
+23:58:21,408 root INFO [Epoch 14, Batch=899] Train: loss=0.0652, lr=0.002
+23:58:22,124 root INFO [Epoch 14, Batch=99] Train(target): MCCloss=0.1471, lr=0.002
+23:58:22,414 root INFO [Epoch 14, Batch=199] Train(target): MCCloss=0.1585, lr=0.002
+23:58:22,580 root INFO Start to validate epoch 14
+23:58:23,253 root INFO Start to test epoch 14
+23:58:24,315 root INFO Epoch 14, lr=0.002 | Train: acc=0.7907 | Val: acc=0.5918 | Test: acc=0.6403 | Time: this epoch 6.67s, elapsed 342.36s
+23:58:24,315 root INFO Start to train epoch 15
+23:58:25,316 root INFO [Epoch 15, Batch=99] Train: loss=0.1031, lr=0.002
+23:58:25,933 root INFO [Epoch 15, Batch=199] Train: loss=0.2026, lr=0.002
+23:58:26,411 root INFO [Epoch 15, Batch=299] Train: loss=0.1281, lr=0.002
+23:58:26,809 root INFO [Epoch 15, Batch=399] Train: loss=0.0186, lr=0.002
+23:58:27,172 root INFO [Epoch 15, Batch=499] Train: loss=0.2362, lr=0.002
+23:58:27,495 root INFO [Epoch 15, Batch=599] Train: loss=0.1813, lr=0.002
+23:58:27,780 root INFO [Epoch 15, Batch=699] Train: loss=0.1050, lr=0.002
+23:58:28,12 root INFO [Epoch 15, Batch=799] Train: loss=0.0232, lr=0.002
+23:58:28,223 root INFO [Epoch 15, Batch=899] Train: loss=0.0641, lr=0.002
+23:58:28,944 root INFO [Epoch 15, Batch=99] Train(target): MCCloss=0.1458, lr=0.002
+23:58:29,256 root INFO [Epoch 15, Batch=199] Train(target): MCCloss=0.1577, lr=0.002
+23:58:29,433 root INFO Start to validate epoch 15
+23:58:30,105 root INFO Start to test epoch 15
+23:58:31,145 root INFO Epoch 15, lr=0.002 | Train: acc=0.7946 | Val: acc=0.5885 | Test: acc=0.6403 | Time: this epoch 6.83s, elapsed 349.19s
+23:58:31,146 root INFO Start to train epoch 16
+23:58:32,159 root INFO [Epoch 16, Batch=99] Train: loss=0.1063, lr=0.002
+23:58:32,755 root INFO [Epoch 16, Batch=199] Train: loss=0.2020, lr=0.002
+23:58:33,593 root INFO [Epoch 16, Batch=299] Train: loss=0.1224, lr=0.002
+23:58:34,474 root INFO [Epoch 16, Batch=399] Train: loss=0.0188, lr=0.002
+23:58:35,869 root INFO [Epoch 16, Batch=499] Train: loss=0.2400, lr=0.002
+23:58:36,795 root INFO [Epoch 16, Batch=599] Train: loss=0.1797, lr=0.002
+23:58:37,694 root INFO [Epoch 16, Batch=699] Train: loss=0.1027, lr=0.002
+23:58:38,501 root INFO [Epoch 16, Batch=799] Train: loss=0.0209, lr=0.002
+23:58:39,674 root INFO [Epoch 16, Batch=899] Train: loss=0.0633, lr=0.002
+23:58:41,7 root INFO [Epoch 16, Batch=99] Train(target): MCCloss=0.1446, lr=0.002
+23:58:41,695 root INFO [Epoch 16, Batch=199] Train(target): MCCloss=0.1568, lr=0.002
+23:58:42,159 root INFO Start to validate epoch 16
+23:58:44,157 root INFO Start to test epoch 16
+23:58:45,338 root INFO Epoch 16, lr=0.002 | Train: acc=0.7977 | Val: acc=0.5874 | Test: acc=0.6383 | Time: this epoch 14.19s, elapsed 363.38s
+23:58:45,339 root INFO Start to train epoch 17
+23:58:46,777 root INFO [Epoch 17, Batch=99] Train: loss=0.1090, lr=0.002
+23:58:48,56 root INFO [Epoch 17, Batch=199] Train: loss=0.2012, lr=0.002
+23:58:48,808 root INFO [Epoch 17, Batch=299] Train: loss=0.1168, lr=0.002
+23:58:49,348 root INFO [Epoch 17, Batch=399] Train: loss=0.0190, lr=0.002
+23:58:49,654 root INFO [Epoch 17, Batch=499] Train: loss=0.2431, lr=0.002
+23:58:49,919 root INFO [Epoch 17, Batch=599] Train: loss=0.1769, lr=0.002
+23:58:50,174 root INFO [Epoch 17, Batch=699] Train: loss=0.1005, lr=0.002
+23:58:50,404 root INFO [Epoch 17, Batch=799] Train: loss=0.0190, lr=0.002
+23:58:50,634 root INFO [Epoch 17, Batch=899] Train: loss=0.0624, lr=0.002
+23:58:51,413 root INFO [Epoch 17, Batch=99] Train(target): MCCloss=0.1437, lr=0.002
+23:58:51,709 root INFO [Epoch 17, Batch=199] Train(target): MCCloss=0.1556, lr=0.002
+23:58:51,911 root INFO Start to validate epoch 17
+23:58:52,568 root INFO Start to test epoch 17
+23:58:53,592 root INFO Epoch 17, lr=0.002 | Train: acc=0.8021 | Val: acc=0.5863 | Test: acc=0.6354 | Time: this epoch 8.25s, elapsed 371.63s
+23:58:53,593 root INFO Start to train epoch 18
+23:58:54,558 root INFO [Epoch 18, Batch=99] Train: loss=0.1120, lr=0.002
+23:58:55,115 root INFO [Epoch 18, Batch=199] Train: loss=0.2005, lr=0.002
+23:58:55,594 root INFO [Epoch 18, Batch=299] Train: loss=0.1114, lr=0.002
+23:58:55,973 root INFO [Epoch 18, Batch=399] Train: loss=0.0188, lr=0.002
+23:58:56,287 root INFO [Epoch 18, Batch=499] Train: loss=0.2445, lr=0.002
+23:58:56,558 root INFO [Epoch 18, Batch=599] Train: loss=0.1750, lr=0.002
+23:58:56,803 root INFO [Epoch 18, Batch=699] Train: loss=0.0997, lr=0.002
+23:58:57,59 root INFO [Epoch 18, Batch=799] Train: loss=0.0177, lr=0.002
+23:58:57,271 root INFO [Epoch 18, Batch=899] Train: loss=0.0607, lr=0.002
+23:58:57,997 root INFO [Epoch 18, Batch=99] Train(target): MCCloss=0.1429, lr=0.002
+23:58:58,270 root INFO [Epoch 18, Batch=199] Train(target): MCCloss=0.1543, lr=0.002
+23:58:58,459 root INFO Start to validate epoch 18
+23:58:59,129 root INFO Start to test epoch 18
+23:59:00,177 root INFO Epoch 18, lr=0.002 | Train: acc=0.8021 | Val: acc=0.5841 | Test: acc=0.6315 | Time: this epoch 6.58s, elapsed 378.22s
+23:59:00,178 root INFO Start to train epoch 19
+23:59:01,170 root INFO [Epoch 19, Batch=99] Train: loss=0.1151, lr=0.002
+23:59:01,726 root INFO [Epoch 19, Batch=199] Train: loss=0.2002, lr=0.002
+23:59:02,148 root INFO [Epoch 19, Batch=299] Train: loss=0.1069, lr=0.002
+23:59:02,508 root INFO [Epoch 19, Batch=399] Train: loss=0.0182, lr=0.002
+23:59:02,838 root INFO [Epoch 19, Batch=499] Train: loss=0.2446, lr=0.002
+23:59:03,125 root INFO [Epoch 19, Batch=599] Train: loss=0.1753, lr=0.002
+23:59:03,371 root INFO [Epoch 19, Batch=699] Train: loss=0.0999, lr=0.002
+23:59:03,608 root INFO [Epoch 19, Batch=799] Train: loss=0.0167, lr=0.002
+23:59:03,817 root INFO [Epoch 19, Batch=899] Train: loss=0.0586, lr=0.002
+23:59:04,512 root INFO [Epoch 19, Batch=99] Train(target): MCCloss=0.1425, lr=0.002
+23:59:04,790 root INFO [Epoch 19, Batch=199] Train(target): MCCloss=0.1531, lr=0.002
+23:59:04,971 root INFO Start to validate epoch 19
+23:59:05,633 root INFO Start to test epoch 19
+23:59:06,696 root INFO Epoch 19, lr=0.002 | Train: acc=0.8057 | Val: acc=0.5808 | Test: acc=0.6296 | Time: this epoch 6.52s, elapsed 384.74s
+23:59:06,697 root INFO Best test acc=0.6477864384651184
+23:59:06,697 root INFO Start to run five fold 3/5
+23:59:06,697 root INFO Model initialized
+23:59:06,751 root INFO Start to train epoch 0
+23:59:07,761 root INFO [Epoch 0, Batch=99] Train: loss=0.3283, lr=0.002
+23:59:08,333 root INFO [Epoch 0, Batch=199] Train: loss=0.1497, lr=0.002
+23:59:08,769 root INFO [Epoch 0, Batch=299] Train: loss=0.2011, lr=0.002
+23:59:09,161 root INFO [Epoch 0, Batch=399] Train: loss=0.2216, lr=0.002
+23:59:09,451 root INFO [Epoch 0, Batch=499] Train: loss=0.2681, lr=0.002
+23:59:09,709 root INFO [Epoch 0, Batch=599] Train: loss=0.3627, lr=0.002
+23:59:09,948 root INFO [Epoch 0, Batch=699] Train: loss=0.1077, lr=0.002
+23:59:10,173 root INFO [Epoch 0, Batch=799] Train: loss=0.2610, lr=0.002
+23:59:11,120 root INFO [Epoch 0, Batch=99] Train(target): MCCloss=0.1788, lr=0.002
+23:59:11,429 root INFO [Epoch 0, Batch=199] Train(target): MCCloss=0.1452, lr=0.002
+23:59:11,702 root INFO Start to validate epoch 0
+23:59:12,421 root INFO Start to test epoch 0
+23:59:15,512 root INFO Epoch 00, lr=0.002 | Train: acc=0.6001 | Val: acc=0.5304 | Test: acc=0.4806 | Time: this epoch 8.76s, elapsed 393.55s
+23:59:15,521 root INFO [info] Save model after epoch 0
+
+23:59:15,521 root INFO Start to train epoch 1
+23:59:18,99 root INFO [Epoch 1, Batch=99] Train: loss=0.1595, lr=0.002
+23:59:19,545 root INFO [Epoch 1, Batch=199] Train: loss=0.0760, lr=0.002
+23:59:20,611 root INFO [Epoch 1, Batch=299] Train: loss=0.1420, lr=0.002
+23:59:21,531 root INFO [Epoch 1, Batch=399] Train: loss=0.1918, lr=0.002
+23:59:22,327 root INFO [Epoch 1, Batch=499] Train: loss=0.2435, lr=0.002
+23:59:23,121 root INFO [Epoch 1, Batch=599] Train: loss=0.4469, lr=0.002
+23:59:23,822 root INFO [Epoch 1, Batch=699] Train: loss=0.1084, lr=0.002
+23:59:24,355 root INFO [Epoch 1, Batch=799] Train: loss=0.2993, lr=0.002
+23:59:25,418 root INFO [Epoch 1, Batch=99] Train(target): MCCloss=0.1771, lr=0.002
+23:59:25,698 root INFO [Epoch 1, Batch=199] Train(target): MCCloss=0.1455, lr=0.002
+23:59:25,976 root INFO Start to validate epoch 1
+23:59:27,588 root INFO Start to test epoch 1
+23:59:28,714 root INFO Epoch 01, lr=0.002 | Train: acc=0.6958 | Val: acc=0.5875 | Test: acc=0.5605 | Time: this epoch 13.19s, elapsed 406.76s
+23:59:28,724 root INFO [info] Save model after epoch 1
+
+23:59:28,724 root INFO Start to train epoch 2
+23:59:30,194 root INFO [Epoch 2, Batch=99] Train: loss=0.1219, lr=0.002
+23:59:31,15 root INFO [Epoch 2, Batch=199] Train: loss=0.0602, lr=0.002
+23:59:31,746 root INFO [Epoch 2, Batch=299] Train: loss=0.1109, lr=0.002
+23:59:32,327 root INFO [Epoch 2, Batch=399] Train: loss=0.1473, lr=0.002
+23:59:32,716 root INFO [Epoch 2, Batch=499] Train: loss=0.1815, lr=0.002
+23:59:33,31 root INFO [Epoch 2, Batch=599] Train: loss=0.4629, lr=0.002
+23:59:33,412 root INFO [Epoch 2, Batch=699] Train: loss=0.1026, lr=0.002
+23:59:33,633 root INFO [Epoch 2, Batch=799] Train: loss=0.3017, lr=0.002
+23:59:34,733 root INFO [Epoch 2, Batch=99] Train(target): MCCloss=0.1764, lr=0.002
+23:59:35,194 root INFO [Epoch 2, Batch=199] Train(target): MCCloss=0.1490, lr=0.002
+23:59:35,611 root INFO Start to validate epoch 2
+23:59:36,234 root INFO Start to test epoch 2
+23:59:37,449 root INFO Epoch 02, lr=0.002 | Train: acc=0.7235 | Val: acc=0.5852 | Test: acc=0.5718 | Time: this epoch 8.72s, elapsed 415.49s
+23:59:37,450 root INFO Start to train epoch 3
+23:59:38,525 root INFO [Epoch 3, Batch=99] Train: loss=0.0940, lr=0.002
+23:59:39,147 root INFO [Epoch 3, Batch=199] Train: loss=0.0520, lr=0.002
+23:59:39,663 root INFO [Epoch 3, Batch=299] Train: loss=0.0946, lr=0.002
+23:59:40,94 root INFO [Epoch 3, Batch=399] Train: loss=0.1347, lr=0.002
+23:59:40,421 root INFO [Epoch 3, Batch=499] Train: loss=0.1542, lr=0.002
+23:59:40,691 root INFO [Epoch 3, Batch=599] Train: loss=0.4589, lr=0.002
+23:59:40,930 root INFO [Epoch 3, Batch=699] Train: loss=0.1009, lr=0.002
+23:59:41,152 root INFO [Epoch 3, Batch=799] Train: loss=0.3028, lr=0.002
+23:59:42,31 root INFO [Epoch 3, Batch=99] Train(target): MCCloss=0.1753, lr=0.002
+23:59:42,343 root INFO [Epoch 3, Batch=199] Train(target): MCCloss=0.1504, lr=0.002
+23:59:42,605 root INFO Start to validate epoch 3
+23:59:43,228 root INFO Start to test epoch 3
+23:59:44,415 root INFO Epoch 03, lr=0.002 | Train: acc=0.7392 | Val: acc=0.5883 | Test: acc=0.5830 | Time: this epoch 6.97s, elapsed 422.46s
+23:59:44,426 root INFO [info] Save model after epoch 3
+
+23:59:44,427 root INFO Start to train epoch 4
+23:59:45,662 root INFO [Epoch 4, Batch=99] Train: loss=0.0713, lr=0.002
+23:59:46,827 root INFO [Epoch 4, Batch=199] Train: loss=0.0465, lr=0.002
+23:59:47,663 root INFO [Epoch 4, Batch=299] Train: loss=0.0858, lr=0.002
+23:59:48,92 root INFO [Epoch 4, Batch=399] Train: loss=0.1352, lr=0.002
+23:59:48,386 root INFO [Epoch 4, Batch=499] Train: loss=0.1394, lr=0.002
+23:59:48,705 root INFO [Epoch 4, Batch=599] Train: loss=0.4426, lr=0.002
+23:59:48,930 root INFO [Epoch 4, Batch=699] Train: loss=0.1002, lr=0.002
+23:59:49,150 root INFO [Epoch 4, Batch=799] Train: loss=0.3079, lr=0.002
+23:59:50,403 root INFO [Epoch 4, Batch=99] Train(target): MCCloss=0.1738, lr=0.002
+23:59:50,716 root INFO [Epoch 4, Batch=199] Train(target): MCCloss=0.1499, lr=0.002
+23:59:50,984 root INFO Start to validate epoch 4
+23:59:51,797 root INFO Start to test epoch 4
+23:59:53,83 root INFO Epoch 04, lr=0.002 | Train: acc=0.7583 | Val: acc=0.5909 | Test: acc=0.5926 | Time: this epoch 8.66s, elapsed 431.13s
+23:59:53,96 root INFO [info] Save model after epoch 4
+
+23:59:53,96 root INFO Start to train epoch 5
+23:59:53,996 root INFO [Epoch 5, Batch=99] Train: loss=0.0556, lr=0.002
+23:59:54,509 root INFO [Epoch 5, Batch=199] Train: loss=0.0425, lr=0.002
+23:59:55,705 root INFO [Epoch 5, Batch=299] Train: loss=0.0810, lr=0.002
+23:59:56,557 root INFO [Epoch 5, Batch=399] Train: loss=0.1404, lr=0.002
+23:59:57,526 root INFO [Epoch 5, Batch=499] Train: loss=0.1296, lr=0.002
+23:59:58,143 root INFO [Epoch 5, Batch=599] Train: loss=0.4186, lr=0.002
+23:59:58,716 root INFO [Epoch 5, Batch=699] Train: loss=0.0995, lr=0.002
+23:59:59,230 root INFO [Epoch 5, Batch=799] Train: loss=0.3135, lr=0.002
+00:00:00,748 root INFO [Epoch 5, Batch=99] Train(target): MCCloss=0.1725, lr=0.002
+00:00:01,307 root INFO [Epoch 5, Batch=199] Train(target): MCCloss=0.1490, lr=0.002
+00:00:01,675 root INFO Start to validate epoch 5
+00:00:02,861 root INFO Start to test epoch 5
+00:00:03,964 root INFO Epoch 05, lr=0.002 | Train: acc=0.7711 | Val: acc=0.5864 | Test: acc=0.5978 | Time: this epoch 10.87s, elapsed 442.01s
+00:00:03,965 root INFO Start to train epoch 6
+00:00:05,457 root INFO [Epoch 6, Batch=99] Train: loss=0.0459, lr=0.002
+00:00:06,396 root INFO [Epoch 6, Batch=199] Train: loss=0.0399, lr=0.002
+00:00:07,98 root INFO [Epoch 6, Batch=299] Train: loss=0.0788, lr=0.002
+00:00:07,462 root INFO [Epoch 6, Batch=399] Train: loss=0.1457, lr=0.002
+00:00:07,800 root INFO [Epoch 6, Batch=499] Train: loss=0.1231, lr=0.002
+00:00:08,49 root INFO [Epoch 6, Batch=599] Train: loss=0.3912, lr=0.002
+00:00:08,286 root INFO [Epoch 6, Batch=699] Train: loss=0.0971, lr=0.002
+00:00:08,490 root INFO [Epoch 6, Batch=799] Train: loss=0.3098, lr=0.002
+00:00:09,419 root INFO [Epoch 6, Batch=99] Train(target): MCCloss=0.1716, lr=0.002
+00:00:09,698 root INFO [Epoch 6, Batch=199] Train(target): MCCloss=0.1486, lr=0.002
+00:00:10,1 root INFO Start to validate epoch 6
+00:00:10,686 root INFO Start to test epoch 6
+00:00:11,933 root INFO Epoch 06, lr=0.002 | Train: acc=0.7842 | Val: acc=0.5921 | Test: acc=0.6004 | Time: this epoch 7.97s, elapsed 449.98s
+00:00:11,943 root INFO [info] Save model after epoch 6
+
+00:00:11,943 root INFO Start to train epoch 7
+00:00:13,78 root INFO [Epoch 7, Batch=99] Train: loss=0.0397, lr=0.002
+00:00:13,711 root INFO [Epoch 7, Batch=199] Train: loss=0.0375, lr=0.002
+00:00:14,179 root INFO [Epoch 7, Batch=299] Train: loss=0.0774, lr=0.002
+00:00:14,603 root INFO [Epoch 7, Batch=399] Train: loss=0.1528, lr=0.002
+00:00:15,218 root INFO [Epoch 7, Batch=499] Train: loss=0.1186, lr=0.002
+00:00:15,703 root INFO [Epoch 7, Batch=599] Train: loss=0.3642, lr=0.002
+00:00:16,40 root INFO [Epoch 7, Batch=699] Train: loss=0.0967, lr=0.002
+00:00:16,277 root INFO [Epoch 7, Batch=799] Train: loss=0.3089, lr=0.002
+00:00:17,46 root INFO [Epoch 7, Batch=99] Train(target): MCCloss=0.1708, lr=0.002
+00:00:17,536 root INFO [Epoch 7, Batch=199] Train(target): MCCloss=0.1479, lr=0.002
+00:00:17,849 root INFO Start to validate epoch 7
+00:00:18,895 root INFO Start to test epoch 7
+00:00:20,165 root INFO Epoch 07, lr=0.002 | Train: acc=0.7933 | Val: acc=0.5932 | Test: acc=0.6030 | Time: this epoch 8.22s, elapsed 458.21s
+00:00:20,174 root INFO [info] Save model after epoch 7
+
+00:00:20,175 root INFO Start to train epoch 8
+00:00:21,347 root INFO [Epoch 8, Batch=99] Train: loss=0.0350, lr=0.002
+00:00:22,103 root INFO [Epoch 8, Batch=199] Train: loss=0.0356, lr=0.002
+00:00:22,817 root INFO [Epoch 8, Batch=299] Train: loss=0.0759, lr=0.002
+00:00:23,464 root INFO [Epoch 8, Batch=399] Train: loss=0.1606, lr=0.002
+00:00:24,408 root INFO [Epoch 8, Batch=499] Train: loss=0.1160, lr=0.002
+00:00:24,820 root INFO [Epoch 8, Batch=599] Train: loss=0.3370, lr=0.002
+00:00:25,588 root INFO [Epoch 8, Batch=699] Train: loss=0.0961, lr=0.002
+00:00:26,45 root INFO [Epoch 8, Batch=799] Train: loss=0.3082, lr=0.002
+00:00:27,444 root INFO [Epoch 8, Batch=99] Train(target): MCCloss=0.1702, lr=0.002
+00:00:27,989 root INFO [Epoch 8, Batch=199] Train(target): MCCloss=0.1478, lr=0.002
+00:00:28,435 root INFO Start to validate epoch 8
+00:00:29,963 root INFO Start to test epoch 8
+00:00:31,103 root INFO Epoch 08, lr=0.002 | Train: acc=0.8005 | Val: acc=0.6035 | Test: acc=0.6021 | Time: this epoch 10.93s, elapsed 469.15s
+00:00:31,113 root INFO [info] Save model after epoch 8
+
+00:00:31,113 root INFO Start to train epoch 9
+00:00:32,508 root INFO [Epoch 9, Batch=99] Train: loss=0.0312, lr=0.002
+00:00:33,379 root INFO [Epoch 9, Batch=199] Train: loss=0.0339, lr=0.002
+00:00:34,445 root INFO [Epoch 9, Batch=299] Train: loss=0.0743, lr=0.002
+00:00:35,117 root INFO [Epoch 9, Batch=399] Train: loss=0.1692, lr=0.002
+00:00:35,563 root INFO [Epoch 9, Batch=499] Train: loss=0.1151, lr=0.002
+00:00:35,944 root INFO [Epoch 9, Batch=599] Train: loss=0.3105, lr=0.002
+00:00:36,229 root INFO [Epoch 9, Batch=699] Train: loss=0.0949, lr=0.002
+00:00:36,470 root INFO [Epoch 9, Batch=799] Train: loss=0.3076, lr=0.002
+00:00:37,829 root INFO [Epoch 9, Batch=99] Train(target): MCCloss=0.1696, lr=0.002
+00:00:38,356 root INFO [Epoch 9, Batch=199] Train(target): MCCloss=0.1484, lr=0.002
+00:00:38,626 root INFO Start to validate epoch 9
+00:00:39,360 root INFO Start to test epoch 9
+00:00:40,535 root INFO Epoch 09, lr=0.002 | Train: acc=0.8073 | Val: acc=0.6058 | Test: acc=0.6021 | Time: this epoch 9.42s, elapsed 478.58s
+00:00:40,545 root INFO [info] Save model after epoch 9
+
+00:00:40,545 root INFO Start to train epoch 10
+00:00:41,608 root INFO [Epoch 10, Batch=99] Train: loss=0.0280, lr=0.002
+00:00:42,208 root INFO [Epoch 10, Batch=199] Train: loss=0.0319, lr=0.002
+00:00:42,716 root INFO [Epoch 10, Batch=299] Train: loss=0.0719, lr=0.002
+00:00:43,138 root INFO [Epoch 10, Batch=399] Train: loss=0.1796, lr=0.002
+00:00:43,505 root INFO [Epoch 10, Batch=499] Train: loss=0.1151, lr=0.002
+00:00:43,765 root INFO [Epoch 10, Batch=599] Train: loss=0.2857, lr=0.002
+00:00:43,984 root INFO [Epoch 10, Batch=699] Train: loss=0.0937, lr=0.002
+00:00:44,203 root INFO [Epoch 10, Batch=799] Train: loss=0.3057, lr=0.002
+00:00:44,992 root INFO [Epoch 10, Batch=99] Train(target): MCCloss=0.1688, lr=0.002
+00:00:45,274 root INFO [Epoch 10, Batch=199] Train(target): MCCloss=0.1498, lr=0.002
+00:00:45,539 root INFO Start to validate epoch 10
+00:00:46,172 root INFO Start to test epoch 10
+00:00:47,306 root INFO Epoch 10, lr=0.002 | Train: acc=0.8130 | Val: acc=0.6138 | Test: acc=0.5978 | Time: this epoch 6.76s, elapsed 485.35s
+00:00:47,316 root INFO [info] Save model after epoch 10
+
+00:00:47,316 root INFO Start to train epoch 11
+00:00:48,433 root INFO [Epoch 11, Batch=99] Train: loss=0.0254, lr=0.002
+00:00:49,201 root INFO [Epoch 11, Batch=199] Train: loss=0.0302, lr=0.002
+00:00:49,829 root INFO [Epoch 11, Batch=299] Train: loss=0.0692, lr=0.002
+00:00:50,238 root INFO [Epoch 11, Batch=399] Train: loss=0.1909, lr=0.002
+00:00:50,760 root INFO [Epoch 11, Batch=499] Train: loss=0.1158, lr=0.002
+00:00:51,360 root INFO [Epoch 11, Batch=599] Train: loss=0.2623, lr=0.002
+00:00:51,726 root INFO [Epoch 11, Batch=699] Train: loss=0.0944, lr=0.002
+00:00:52,226 root INFO [Epoch 11, Batch=799] Train: loss=0.3029, lr=0.002
+00:00:53,309 root INFO [Epoch 11, Batch=99] Train(target): MCCloss=0.1675, lr=0.002
+00:00:53,782 root INFO [Epoch 11, Batch=199] Train(target): MCCloss=0.1514, lr=0.002
+00:00:54,167 root INFO Start to validate epoch 11
+00:00:54,788 root INFO Start to test epoch 11
+00:00:55,918 root INFO Epoch 11, lr=0.002 | Train: acc=0.8156 | Val: acc=0.6161 | Test: acc=0.5926 | Time: this epoch 8.60s, elapsed 493.96s
+00:00:55,943 root INFO [info] Save model after epoch 11
+
+00:00:55,944 root INFO Start to train epoch 12
+00:00:57,219 root INFO [Epoch 12, Batch=99] Train: loss=0.0232, lr=0.002
+00:00:58,282 root INFO [Epoch 12, Batch=199] Train: loss=0.0289, lr=0.002
+00:00:59,12 root INFO [Epoch 12, Batch=299] Train: loss=0.0665, lr=0.002
+00:00:59,574 root INFO [Epoch 12, Batch=399] Train: loss=0.2007, lr=0.002
+00:01:00,108 root INFO [Epoch 12, Batch=499] Train: loss=0.1170, lr=0.002
+00:01:00,622 root INFO [Epoch 12, Batch=599] Train: loss=0.2398, lr=0.002
+00:01:01,45 root INFO [Epoch 12, Batch=699] Train: loss=0.0971, lr=0.002
+00:01:01,460 root INFO [Epoch 12, Batch=799] Train: loss=0.3019, lr=0.002
+00:01:02,798 root INFO [Epoch 12, Batch=99] Train(target): MCCloss=0.1667, lr=0.002
+00:01:03,564 root INFO [Epoch 12, Batch=199] Train(target): MCCloss=0.1517, lr=0.002
+00:01:03,938 root INFO Start to validate epoch 12
+00:01:05,174 root INFO Start to test epoch 12
+00:01:06,283 root INFO Epoch 12, lr=0.002 | Train: acc=0.8187 | Val: acc=0.6218 | Test: acc=0.5926 | Time: this epoch 10.34s, elapsed 504.33s
+00:01:06,295 root INFO [info] Save model after epoch 12
+
+00:01:06,295 root INFO Start to train epoch 13
+00:01:07,397 root INFO [Epoch 13, Batch=99] Train: loss=0.0215, lr=0.002
+00:01:07,985 root INFO [Epoch 13, Batch=199] Train: loss=0.0272, lr=0.002
+00:01:08,452 root INFO [Epoch 13, Batch=299] Train: loss=0.0637, lr=0.002
+00:01:08,830 root INFO [Epoch 13, Batch=399] Train: loss=0.2071, lr=0.002
+00:01:09,149 root INFO [Epoch 13, Batch=499] Train: loss=0.1183, lr=0.002
+00:01:09,427 root INFO [Epoch 13, Batch=599] Train: loss=0.2190, lr=0.002
+00:01:09,690 root INFO [Epoch 13, Batch=699] Train: loss=0.0984, lr=0.002
+00:01:09,913 root INFO [Epoch 13, Batch=799] Train: loss=0.3017, lr=0.002
+00:01:10,747 root INFO [Epoch 13, Batch=99] Train(target): MCCloss=0.1662, lr=0.002
+00:01:11,45 root INFO [Epoch 13, Batch=199] Train(target): MCCloss=0.1518, lr=0.002
+00:01:11,310 root INFO Start to validate epoch 13
+00:01:11,983 root INFO Start to test epoch 13
+00:01:13,138 root INFO Epoch 13, lr=0.002 | Train: acc=0.8235 | Val: acc=0.6111 | Test: acc=0.5935 | Time: this epoch 6.84s, elapsed 511.18s
+00:01:13,139 root INFO Start to train epoch 14
+00:01:14,142 root INFO [Epoch 14, Batch=99] Train: loss=0.0201, lr=0.002
+00:01:14,654 root INFO [Epoch 14, Batch=199] Train: loss=0.0252, lr=0.002
+00:01:15,65 root INFO [Epoch 14, Batch=299] Train: loss=0.0606, lr=0.002
+00:01:15,443 root INFO [Epoch 14, Batch=399] Train: loss=0.2137, lr=0.002
+00:01:15,719 root INFO [Epoch 14, Batch=499] Train: loss=0.1191, lr=0.002
+00:01:15,972 root INFO [Epoch 14, Batch=599] Train: loss=0.2003, lr=0.002
+00:01:16,194 root INFO [Epoch 14, Batch=699] Train: loss=0.1000, lr=0.002
+00:01:16,404 root INFO [Epoch 14, Batch=799] Train: loss=0.3001, lr=0.002
+00:01:17,236 root INFO [Epoch 14, Batch=99] Train(target): MCCloss=0.1661, lr=0.002
+00:01:17,533 root INFO [Epoch 14, Batch=199] Train(target): MCCloss=0.1518, lr=0.002
+00:01:17,797 root INFO Start to validate epoch 14
+00:01:18,440 root INFO Start to test epoch 14
+00:01:19,518 root INFO Epoch 14, lr=0.002 | Train: acc=0.8258 | Val: acc=0.6134 | Test: acc=0.5883 | Time: this epoch 6.38s, elapsed 517.56s
+00:01:19,519 root INFO Start to train epoch 15
+00:01:20,549 root INFO [Epoch 15, Batch=99] Train: loss=0.0193, lr=0.002
+00:01:21,170 root INFO [Epoch 15, Batch=199] Train: loss=0.0236, lr=0.002
+00:01:21,672 root INFO [Epoch 15, Batch=299] Train: loss=0.0578, lr=0.002
+00:01:22,115 root INFO [Epoch 15, Batch=399] Train: loss=0.2192, lr=0.002
+00:01:22,478 root INFO [Epoch 15, Batch=499] Train: loss=0.1199, lr=0.002
+00:01:22,766 root INFO [Epoch 15, Batch=599] Train: loss=0.1819, lr=0.002
+00:01:22,993 root INFO [Epoch 15, Batch=699] Train: loss=0.1045, lr=0.002
+00:01:23,225 root INFO [Epoch 15, Batch=799] Train: loss=0.2997, lr=0.002
+00:01:24,109 root INFO [Epoch 15, Batch=99] Train(target): MCCloss=0.1668, lr=0.002
+00:01:24,450 root INFO [Epoch 15, Batch=199] Train(target): MCCloss=0.1511, lr=0.002
+00:01:24,742 root INFO Start to validate epoch 15
+00:01:25,410 root INFO Start to test epoch 15
+00:01:27,326 root INFO Epoch 15, lr=0.002 | Train: acc=0.8261 | Val: acc=0.6088 | Test: acc=0.5926 | Time: this epoch 7.81s, elapsed 525.37s
+00:01:27,327 root INFO Start to train epoch 16
+00:01:28,562 root INFO [Epoch 16, Batch=99] Train: loss=0.0191, lr=0.002
+00:01:29,187 root INFO [Epoch 16, Batch=199] Train: loss=0.0217, lr=0.002
+00:01:29,715 root INFO [Epoch 16, Batch=299] Train: loss=0.0561, lr=0.002
+00:01:30,116 root INFO [Epoch 16, Batch=399] Train: loss=0.2228, lr=0.002
+00:01:30,417 root INFO [Epoch 16, Batch=499] Train: loss=0.1217, lr=0.002
+00:01:30,657 root INFO [Epoch 16, Batch=599] Train: loss=0.1642, lr=0.002
+00:01:30,913 root INFO [Epoch 16, Batch=699] Train: loss=0.1120, lr=0.002
+00:01:31,135 root INFO [Epoch 16, Batch=799] Train: loss=0.2976, lr=0.002
+00:01:31,988 root INFO [Epoch 16, Batch=99] Train(target): MCCloss=0.1683, lr=0.002
+00:01:32,523 root INFO [Epoch 16, Batch=199] Train(target): MCCloss=0.1498, lr=0.002
+00:01:33,27 root INFO Start to validate epoch 16
+00:01:34,686 root INFO Start to test epoch 16
+00:01:36,292 root INFO Epoch 16, lr=0.002 | Train: acc=0.8304 | Val: acc=0.6111 | Test: acc=0.5938 | Time: this epoch 8.97s, elapsed 534.34s
+00:01:36,312 root INFO Start to train epoch 17
+00:01:37,688 root INFO [Epoch 17, Batch=99] Train: loss=0.0191, lr=0.002
+00:01:38,410 root INFO [Epoch 17, Batch=199] Train: loss=0.0192, lr=0.002
+00:01:39,136 root INFO [Epoch 17, Batch=299] Train: loss=0.0550, lr=0.002
+00:01:40,2 root INFO [Epoch 17, Batch=399] Train: loss=0.2240, lr=0.002
+00:01:40,756 root INFO [Epoch 17, Batch=499] Train: loss=0.1239, lr=0.002
+00:01:41,379 root INFO [Epoch 17, Batch=599] Train: loss=0.1490, lr=0.002
+00:01:41,850 root INFO [Epoch 17, Batch=699] Train: loss=0.1164, lr=0.002
+00:01:42,217 root INFO [Epoch 17, Batch=799] Train: loss=0.2949, lr=0.002
+00:01:43,201 root INFO [Epoch 17, Batch=99] Train(target): MCCloss=0.1693, lr=0.002
+00:01:43,517 root INFO [Epoch 17, Batch=199] Train(target): MCCloss=0.1487, lr=0.002
+00:01:43,813 root INFO Start to validate epoch 17
+00:01:44,522 root INFO Start to test epoch 17
+00:01:45,635 root INFO Epoch 17, lr=0.002 | Train: acc=0.8358 | Val: acc=0.6145 | Test: acc=0.5981 | Time: this epoch 9.32s, elapsed 543.68s
+00:01:45,636 root INFO Start to train epoch 18
+00:01:46,724 root INFO [Epoch 18, Batch=99] Train: loss=0.0183, lr=0.002
+00:01:47,344 root INFO [Epoch 18, Batch=199] Train: loss=0.0170, lr=0.002
+00:01:47,824 root INFO [Epoch 18, Batch=299] Train: loss=0.0532, lr=0.002
+00:01:48,234 root INFO [Epoch 18, Batch=399] Train: loss=0.2235, lr=0.002
+00:01:48,572 root INFO [Epoch 18, Batch=499] Train: loss=0.1255, lr=0.002
+00:01:48,889 root INFO [Epoch 18, Batch=599] Train: loss=0.1349, lr=0.002
+00:01:49,119 root INFO [Epoch 18, Batch=699] Train: loss=0.1167, lr=0.002
+00:01:49,340 root INFO [Epoch 18, Batch=799] Train: loss=0.2979, lr=0.002
+00:01:50,153 root INFO [Epoch 18, Batch=99] Train(target): MCCloss=0.1694, lr=0.002
+00:01:50,446 root INFO [Epoch 18, Batch=199] Train(target): MCCloss=0.1478, lr=0.002
+00:01:50,708 root INFO Start to validate epoch 18
+00:01:51,393 root INFO Start to test epoch 18
+00:01:52,630 root INFO Epoch 18, lr=0.002 | Train: acc=0.8378 | Val: acc=0.6145 | Test: acc=0.6016 | Time: this epoch 6.99s, elapsed 550.67s
+00:01:52,631 root INFO Start to train epoch 19
+00:01:53,699 root INFO [Epoch 19, Batch=99] Train: loss=0.0174, lr=0.002
+00:01:54,325 root INFO [Epoch 19, Batch=199] Train: loss=0.0152, lr=0.002
+00:01:55,1 root INFO [Epoch 19, Batch=299] Train: loss=0.0507, lr=0.002
+00:01:55,525 root INFO [Epoch 19, Batch=399] Train: loss=0.2224, lr=0.002
+00:01:56,288 root INFO [Epoch 19, Batch=499] Train: loss=0.1270, lr=0.002
+00:01:56,886 root INFO [Epoch 19, Batch=599] Train: loss=0.1225, lr=0.002
+00:01:57,550 root INFO [Epoch 19, Batch=699] Train: loss=0.1141, lr=0.002
+00:01:58,176 root INFO [Epoch 19, Batch=799] Train: loss=0.3062, lr=0.002
+00:01:59,738 root INFO [Epoch 19, Batch=99] Train(target): MCCloss=0.1687, lr=0.002
+00:02:00,380 root INFO [Epoch 19, Batch=199] Train(target): MCCloss=0.1471, lr=0.002
+00:02:00,783 root INFO Start to validate epoch 19
+00:02:02,19 root INFO Start to test epoch 19
+00:02:03,175 root INFO Epoch 19, lr=0.002 | Train: acc=0.8398 | Val: acc=0.6123 | Test: acc=0.5998 | Time: this epoch 10.54s, elapsed 561.22s
+00:02:03,176 root INFO Best test acc=0.6030092835426331
+00:02:03,176 root INFO Start to run five fold 4/5
+00:02:03,176 root INFO Model initialized
+00:02:03,188 root INFO Start to train epoch 0
+00:02:04,424 root INFO [Epoch 0, Batch=99] Train: loss=0.2405, lr=0.002
+00:02:05,913 root INFO [Epoch 0, Batch=199] Train: loss=0.1974, lr=0.002
+00:02:07,140 root INFO [Epoch 0, Batch=299] Train: loss=0.4439, lr=0.002
+00:02:08,79 root INFO [Epoch 0, Batch=399] Train: loss=0.3211, lr=0.002
+00:02:08,987 root INFO [Epoch 0, Batch=499] Train: loss=0.1272, lr=0.002
+00:02:09,562 root INFO [Epoch 0, Batch=599] Train: loss=0.3378, lr=0.002
+00:02:10,102 root INFO [Epoch 0, Batch=699] Train: loss=0.1764, lr=0.002
+00:02:10,624 root INFO [Epoch 0, Batch=799] Train: loss=0.2681, lr=0.002
+00:02:11,127 root INFO [Epoch 0, Batch=899] Train: loss=0.1671, lr=0.002
+00:02:12,634 root INFO [Epoch 0, Batch=99] Train(target): MCCloss=0.1676, lr=0.002
+00:02:13,235 root INFO [Epoch 0, Batch=199] Train(target): MCCloss=0.1619, lr=0.002
+00:02:13,593 root INFO Start to validate epoch 0
+00:02:14,641 root INFO Start to test epoch 0
+00:02:15,660 root INFO Epoch 00, lr=0.002 | Train: acc=0.5832 | Val: acc=0.5859 | Test: acc=0.5572 | Time: this epoch 12.47s, elapsed 573.70s
+00:02:15,746 root INFO [info] Save model after epoch 0
+
+00:02:15,746 root INFO Start to train epoch 1
+00:02:17,169 root INFO [Epoch 1, Batch=99] Train: loss=0.0815, lr=0.002
+00:02:17,749 root INFO [Epoch 1, Batch=199] Train: loss=0.1145, lr=0.002
+00:02:18,157 root INFO [Epoch 1, Batch=299] Train: loss=0.4645, lr=0.002
+00:02:18,534 root INFO [Epoch 1, Batch=399] Train: loss=0.3607, lr=0.002
+00:02:18,856 root INFO [Epoch 1, Batch=499] Train: loss=0.1644, lr=0.002
+00:02:19,107 root INFO [Epoch 1, Batch=599] Train: loss=0.2369, lr=0.002
+00:02:19,357 root INFO [Epoch 1, Batch=699] Train: loss=0.1691, lr=0.002
+00:02:19,594 root INFO [Epoch 1, Batch=799] Train: loss=0.2703, lr=0.002
+00:02:19,811 root INFO [Epoch 1, Batch=899] Train: loss=0.1606, lr=0.002
+00:02:20,492 root INFO [Epoch 1, Batch=99] Train(target): MCCloss=0.1642, lr=0.002
+00:02:20,764 root INFO [Epoch 1, Batch=199] Train(target): MCCloss=0.1611, lr=0.002
+00:02:20,947 root INFO Start to validate epoch 1
+00:02:21,584 root INFO Start to test epoch 1
+00:02:22,654 root INFO Epoch 01, lr=0.002 | Train: acc=0.6690 | Val: acc=0.5304 | Test: acc=0.5956 | Time: this epoch 6.91s, elapsed 580.70s
+00:02:22,654 root INFO Start to train epoch 2
+00:02:24,166 root INFO [Epoch 2, Batch=99] Train: loss=0.0552, lr=0.002
+00:02:25,175 root INFO [Epoch 2, Batch=199] Train: loss=0.0773, lr=0.002
+00:02:26,25 root INFO [Epoch 2, Batch=299] Train: loss=0.4740, lr=0.002
+00:02:26,686 root INFO [Epoch 2, Batch=399] Train: loss=0.3594, lr=0.002
+00:02:27,191 root INFO [Epoch 2, Batch=499] Train: loss=0.1681, lr=0.002
+00:02:27,589 root INFO [Epoch 2, Batch=599] Train: loss=0.1987, lr=0.002
+00:02:27,976 root INFO [Epoch 2, Batch=699] Train: loss=0.1642, lr=0.002
+00:02:28,335 root INFO [Epoch 2, Batch=799] Train: loss=0.2619, lr=0.002
+00:02:28,737 root INFO [Epoch 2, Batch=899] Train: loss=0.1794, lr=0.002
+00:02:29,893 root INFO [Epoch 2, Batch=99] Train(target): MCCloss=0.1582, lr=0.002
+00:02:30,360 root INFO [Epoch 2, Batch=199] Train(target): MCCloss=0.1531, lr=0.002
+00:02:30,627 root INFO Start to validate epoch 2
+00:02:31,762 root INFO Start to test epoch 2
+00:02:32,776 root INFO Epoch 02, lr=0.002 | Train: acc=0.6981 | Val: acc=0.6081 | Test: acc=0.6114 | Time: this epoch 10.12s, elapsed 590.82s
+00:02:32,790 root INFO [info] Save model after epoch 2
+
+00:02:32,790 root INFO Start to train epoch 3
+00:02:34,136 root INFO [Epoch 3, Batch=99] Train: loss=0.0447, lr=0.002
+00:02:35,33 root INFO [Epoch 3, Batch=199] Train: loss=0.0648, lr=0.002
+00:02:37,237 root INFO [Epoch 3, Batch=299] Train: loss=0.4660, lr=0.002
+00:02:37,876 root INFO [Epoch 3, Batch=399] Train: loss=0.3520, lr=0.002
+00:02:38,454 root INFO [Epoch 3, Batch=499] Train: loss=0.1665, lr=0.002
+00:02:39,782 root INFO [Epoch 3, Batch=599] Train: loss=0.1800, lr=0.002
+00:02:40,180 root INFO [Epoch 3, Batch=699] Train: loss=0.1614, lr=0.002
+00:02:40,482 root INFO [Epoch 3, Batch=799] Train: loss=0.2268, lr=0.002
+00:02:40,972 root INFO [Epoch 3, Batch=899] Train: loss=0.1689, lr=0.002
+00:02:41,678 root INFO [Epoch 3, Batch=99] Train(target): MCCloss=0.1532, lr=0.002
+00:02:42,124 root INFO [Epoch 3, Batch=199] Train(target): MCCloss=0.1488, lr=0.002
+00:02:42,522 root INFO Start to validate epoch 3
+00:02:44,45 root INFO Start to test epoch 3
+00:02:45,60 root INFO Epoch 03, lr=0.002 | Train: acc=0.7184 | Val: acc=0.6304 | Test: acc=0.6211 | Time: this epoch 12.27s, elapsed 603.10s
+00:02:45,70 root INFO [info] Save model after epoch 3
+
+00:02:45,70 root INFO Start to train epoch 4
+00:02:46,312 root INFO [Epoch 4, Batch=99] Train: loss=0.0414, lr=0.002
+00:02:47,230 root INFO [Epoch 4, Batch=199] Train: loss=0.0602, lr=0.002
+00:02:48,116 root INFO [Epoch 4, Batch=299] Train: loss=0.4589, lr=0.002
+00:02:48,986 root INFO [Epoch 4, Batch=399] Train: loss=0.3467, lr=0.002
+00:02:49,505 root INFO [Epoch 4, Batch=499] Train: loss=0.1676, lr=0.002
+00:02:49,974 root INFO [Epoch 4, Batch=599] Train: loss=0.1722, lr=0.002
+00:02:52,490 root INFO [Epoch 4, Batch=699] Train: loss=0.1582, lr=0.002
+00:02:54,654 root INFO [Epoch 4, Batch=799] Train: loss=0.1983, lr=0.002
+00:02:56,416 root INFO [Epoch 4, Batch=899] Train: loss=0.1497, lr=0.002
+00:02:59,866 root INFO [Epoch 4, Batch=99] Train(target): MCCloss=0.1487, lr=0.002
+00:03:01,565 root INFO [Epoch 4, Batch=199] Train(target): MCCloss=0.1470, lr=0.002
+00:03:02,522 root INFO Start to validate epoch 4
+00:03:06,218 root INFO Start to test epoch 4
+00:03:07,341 root INFO Epoch 04, lr=0.002 | Train: acc=0.7292 | Val: acc=0.6281 | Test: acc=0.6182 | Time: this epoch 22.27s, elapsed 625.38s
+00:03:07,635 root INFO Start to train epoch 5
+00:03:11,232 root INFO [Epoch 5, Batch=99] Train: loss=0.0411, lr=0.002
+00:03:13,938 root INFO [Epoch 5, Batch=199] Train: loss=0.0564, lr=0.002
+00:03:16,625 root INFO [Epoch 5, Batch=299] Train: loss=0.4532, lr=0.002
+00:03:18,505 root INFO [Epoch 5, Batch=399] Train: loss=0.3423, lr=0.002
+00:03:21,554 root INFO [Epoch 5, Batch=499] Train: loss=0.1703, lr=0.002
+00:03:23,412 root INFO [Epoch 5, Batch=599] Train: loss=0.1707, lr=0.002
+00:03:24,643 root INFO [Epoch 5, Batch=699] Train: loss=0.1542, lr=0.002
+00:03:24,851 root INFO [Epoch 5, Batch=799] Train: loss=0.1807, lr=0.002
+00:03:25,67 root INFO [Epoch 5, Batch=899] Train: loss=0.1331, lr=0.002
+00:03:25,723 root INFO [Epoch 5, Batch=99] Train(target): MCCloss=0.1453, lr=0.002
+00:03:26,4 root INFO [Epoch 5, Batch=199] Train(target): MCCloss=0.1462, lr=0.002
+00:03:26,185 root INFO Start to validate epoch 5
+00:03:26,809 root INFO Start to test epoch 5
+00:03:27,858 root INFO Epoch 05, lr=0.002 | Train: acc=0.7358 | Val: acc=0.6304 | Test: acc=0.6192 | Time: this epoch 20.22s, elapsed 645.90s
+00:03:27,859 root INFO Start to train epoch 6
+00:03:28,882 root INFO [Epoch 6, Batch=99] Train: loss=0.0402, lr=0.002
+00:03:29,520 root INFO [Epoch 6, Batch=199] Train: loss=0.0531, lr=0.002
+00:03:30,65 root INFO [Epoch 6, Batch=299] Train: loss=0.4469, lr=0.002
+00:03:30,468 root INFO [Epoch 6, Batch=399] Train: loss=0.3350, lr=0.002
+00:03:30,781 root INFO [Epoch 6, Batch=499] Train: loss=0.1703, lr=0.002
+00:03:31,30 root INFO [Epoch 6, Batch=599] Train: loss=0.1699, lr=0.002
+00:03:31,268 root INFO [Epoch 6, Batch=699] Train: loss=0.1469, lr=0.002
+00:03:31,493 root INFO [Epoch 6, Batch=799] Train: loss=0.1684, lr=0.002
+00:03:31,701 root INFO [Epoch 6, Batch=899] Train: loss=0.1206, lr=0.002
+00:03:32,343 root INFO [Epoch 6, Batch=99] Train(target): MCCloss=0.1427, lr=0.002
+00:03:32,613 root INFO [Epoch 6, Batch=199] Train(target): MCCloss=0.1456, lr=0.002
+00:03:32,785 root INFO Start to validate epoch 6
+00:03:33,442 root INFO Start to test epoch 6
+00:03:34,467 root INFO Epoch 06, lr=0.002 | Train: acc=0.7425 | Val: acc=0.6259 | Test: acc=0.6182 | Time: this epoch 6.61s, elapsed 652.51s
+00:03:34,468 root INFO Start to train epoch 7
+00:03:35,514 root INFO [Epoch 7, Batch=99] Train: loss=0.0384, lr=0.002
+00:03:36,90 root INFO [Epoch 7, Batch=199] Train: loss=0.0501, lr=0.002
+00:03:36,615 root INFO [Epoch 7, Batch=299] Train: loss=0.4410, lr=0.002
+00:03:37,46 root INFO [Epoch 7, Batch=399] Train: loss=0.3247, lr=0.002
+00:03:37,332 root INFO [Epoch 7, Batch=499] Train: loss=0.1686, lr=0.002
+00:03:37,647 root INFO [Epoch 7, Batch=599] Train: loss=0.1686, lr=0.002
+00:03:37,937 root INFO [Epoch 7, Batch=699] Train: loss=0.1393, lr=0.002
+00:03:38,145 root INFO [Epoch 7, Batch=799] Train: loss=0.1594, lr=0.002
+00:03:38,376 root INFO [Epoch 7, Batch=899] Train: loss=0.1108, lr=0.002
+00:03:39,27 root INFO [Epoch 7, Batch=99] Train(target): MCCloss=0.1405, lr=0.002
+00:03:39,287 root INFO [Epoch 7, Batch=199] Train(target): MCCloss=0.1448, lr=0.002
+00:03:39,467 root INFO Start to validate epoch 7
+00:03:40,162 root INFO Start to test epoch 7
+00:03:41,117 root INFO Epoch 07, lr=0.002 | Train: acc=0.7489 | Val: acc=0.6126 | Test: acc=0.6179 | Time: this epoch 6.65s, elapsed 659.16s
+00:03:41,118 root INFO Start to train epoch 8
+00:03:42,164 root INFO [Epoch 8, Batch=99] Train: loss=0.0363, lr=0.002
+00:03:42,788 root INFO [Epoch 8, Batch=199] Train: loss=0.0473, lr=0.002
+00:03:43,301 root INFO [Epoch 8, Batch=299] Train: loss=0.4359, lr=0.002
+00:03:43,713 root INFO [Epoch 8, Batch=399] Train: loss=0.3139, lr=0.002
+00:03:44,76 root INFO [Epoch 8, Batch=499] Train: loss=0.1672, lr=0.002
+00:03:44,388 root INFO [Epoch 8, Batch=599] Train: loss=0.1668, lr=0.002
+00:03:44,647 root INFO [Epoch 8, Batch=699] Train: loss=0.1320, lr=0.002
+00:03:44,860 root INFO [Epoch 8, Batch=799] Train: loss=0.1506, lr=0.002
+00:03:45,81 root INFO [Epoch 8, Batch=899] Train: loss=0.1030, lr=0.002
+00:03:45,720 root INFO [Epoch 8, Batch=99] Train(target): MCCloss=0.1387, lr=0.002
+00:03:45,983 root INFO [Epoch 8, Batch=199] Train(target): MCCloss=0.1437, lr=0.002
+00:03:46,202 root INFO Start to validate epoch 8
+00:03:46,825 root INFO Start to test epoch 8
+00:03:47,829 root INFO Epoch 08, lr=0.002 | Train: acc=0.7550 | Val: acc=0.6093 | Test: acc=0.6208 | Time: this epoch 6.71s, elapsed 665.87s
+00:03:47,830 root INFO Start to train epoch 9
+00:03:48,933 root INFO [Epoch 9, Batch=99] Train: loss=0.0341, lr=0.002
+00:03:49,570 root INFO [Epoch 9, Batch=199] Train: loss=0.0448, lr=0.002
+00:03:50,85 root INFO [Epoch 9, Batch=299] Train: loss=0.4321, lr=0.002
+00:03:50,499 root INFO [Epoch 9, Batch=399] Train: loss=0.3010, lr=0.002
+00:03:50,802 root INFO [Epoch 9, Batch=499] Train: loss=0.1674, lr=0.002
+00:03:51,80 root INFO [Epoch 9, Batch=599] Train: loss=0.1662, lr=0.002
+00:03:51,331 root INFO [Epoch 9, Batch=699] Train: loss=0.1253, lr=0.002
+00:03:51,565 root INFO [Epoch 9, Batch=799] Train: loss=0.1426, lr=0.002
+00:03:51,771 root INFO [Epoch 9, Batch=899] Train: loss=0.0964, lr=0.002
+00:03:52,461 root INFO [Epoch 9, Batch=99] Train(target): MCCloss=0.1371, lr=0.002
+00:03:52,756 root INFO [Epoch 9, Batch=199] Train(target): MCCloss=0.1422, lr=0.002
+00:03:52,963 root INFO Start to validate epoch 9
+00:03:53,650 root INFO Start to test epoch 9
+00:03:54,669 root INFO Epoch 09, lr=0.002 | Train: acc=0.7600 | Val: acc=0.6026 | Test: acc=0.6198 | Time: this epoch 6.84s, elapsed 672.71s
+00:03:54,670 root INFO Start to train epoch 10
+00:03:55,652 root INFO [Epoch 10, Batch=99] Train: loss=0.0319, lr=0.002
+00:03:56,229 root INFO [Epoch 10, Batch=199] Train: loss=0.0428, lr=0.002
+00:03:56,687 root INFO [Epoch 10, Batch=299] Train: loss=0.4284, lr=0.002
+00:03:57,83 root INFO [Epoch 10, Batch=399] Train: loss=0.2860, lr=0.002
+00:03:57,411 root INFO [Epoch 10, Batch=499] Train: loss=0.1701, lr=0.002
+00:03:57,679 root INFO [Epoch 10, Batch=599] Train: loss=0.1665, lr=0.002
+00:03:57,927 root INFO [Epoch 10, Batch=699] Train: loss=0.1198, lr=0.002
+00:03:58,164 root INFO [Epoch 10, Batch=799] Train: loss=0.1353, lr=0.002
+00:03:58,375 root INFO [Epoch 10, Batch=899] Train: loss=0.0921, lr=0.002
+00:03:59,30 root INFO [Epoch 10, Batch=99] Train(target): MCCloss=0.1354, lr=0.002
+00:03:59,301 root INFO [Epoch 10, Batch=199] Train(target): MCCloss=0.1403, lr=0.002
+00:03:59,483 root INFO Start to validate epoch 10
+00:04:00,145 root INFO Start to test epoch 10
+00:04:01,158 root INFO Epoch 10, lr=0.002 | Train: acc=0.7655 | Val: acc=0.5981 | Test: acc=0.6227 | Time: this epoch 6.49s, elapsed 679.20s
+00:04:01,159 root INFO Start to train epoch 11
+00:04:02,149 root INFO [Epoch 11, Batch=99] Train: loss=0.0297, lr=0.002
+00:04:02,719 root INFO [Epoch 11, Batch=199] Train: loss=0.0409, lr=0.002
+00:04:03,188 root INFO [Epoch 11, Batch=299] Train: loss=0.4260, lr=0.002
+00:04:03,549 root INFO [Epoch 11, Batch=399] Train: loss=0.2724, lr=0.002
+00:04:03,859 root INFO [Epoch 11, Batch=499] Train: loss=0.1735, lr=0.002
+00:04:04,193 root INFO [Epoch 11, Batch=599] Train: loss=0.1667, lr=0.002
+00:04:04,434 root INFO [Epoch 11, Batch=699] Train: loss=0.1121, lr=0.002
+00:04:04,664 root INFO [Epoch 11, Batch=799] Train: loss=0.1286, lr=0.002
+00:04:04,866 root INFO [Epoch 11, Batch=899] Train: loss=0.0900, lr=0.002
+00:04:05,535 root INFO [Epoch 11, Batch=99] Train(target): MCCloss=0.1338, lr=0.002
+00:04:05,812 root INFO [Epoch 11, Batch=199] Train(target): MCCloss=0.1383, lr=0.002
+00:04:06,1 root INFO Start to validate epoch 11
+00:04:06,635 root INFO Start to test epoch 11
+00:04:07,648 root INFO Epoch 11, lr=0.002 | Train: acc=0.7705 | Val: acc=0.6115 | Test: acc=0.6305 | Time: this epoch 6.49s, elapsed 685.69s
+00:04:07,649 root INFO Start to train epoch 12
+00:04:08,640 root INFO [Epoch 12, Batch=99] Train: loss=0.0277, lr=0.002
+00:04:09,205 root INFO [Epoch 12, Batch=199] Train: loss=0.0391, lr=0.002
+00:04:09,651 root INFO [Epoch 12, Batch=299] Train: loss=0.4256, lr=0.002
+00:04:10,50 root INFO [Epoch 12, Batch=399] Train: loss=0.2606, lr=0.002
+00:04:10,410 root INFO [Epoch 12, Batch=499] Train: loss=0.1766, lr=0.002
+00:04:10,690 root INFO [Epoch 12, Batch=599] Train: loss=0.1668, lr=0.002
+00:04:10,969 root INFO [Epoch 12, Batch=699] Train: loss=0.1032, lr=0.002
+00:04:11,211 root INFO [Epoch 12, Batch=799] Train: loss=0.1231, lr=0.002
+00:04:11,421 root INFO [Epoch 12, Batch=899] Train: loss=0.0893, lr=0.002
+00:04:12,87 root INFO [Epoch 12, Batch=99] Train(target): MCCloss=0.1320, lr=0.002
+00:04:12,355 root INFO [Epoch 12, Batch=199] Train(target): MCCloss=0.1362, lr=0.002
+00:04:12,529 root INFO Start to validate epoch 12
+00:04:13,186 root INFO Start to test epoch 12
+00:04:14,159 root INFO Epoch 12, lr=0.002 | Train: acc=0.7755 | Val: acc=0.6193 | Test: acc=0.6344 | Time: this epoch 6.51s, elapsed 692.20s
+00:04:14,160 root INFO Start to train epoch 13
+00:04:15,165 root INFO [Epoch 13, Batch=99] Train: loss=0.0259, lr=0.002
+00:04:16,478 root INFO [Epoch 13, Batch=199] Train: loss=0.0373, lr=0.002
+00:04:17,336 root INFO [Epoch 13, Batch=299] Train: loss=0.4249, lr=0.002
+00:04:18,178 root INFO [Epoch 13, Batch=399] Train: loss=0.2479, lr=0.002
+00:04:18,779 root INFO [Epoch 13, Batch=499] Train: loss=0.1796, lr=0.002
+00:04:19,311 root INFO [Epoch 13, Batch=599] Train: loss=0.1676, lr=0.002
+00:04:19,903 root INFO [Epoch 13, Batch=699] Train: loss=0.0964, lr=0.002
+00:04:20,534 root INFO [Epoch 13, Batch=799] Train: loss=0.1187, lr=0.002
+00:04:20,964 root INFO [Epoch 13, Batch=899] Train: loss=0.0888, lr=0.002
+00:04:22,253 root INFO [Epoch 13, Batch=99] Train(target): MCCloss=0.1303, lr=0.002
+00:04:22,657 root INFO [Epoch 13, Batch=199] Train(target): MCCloss=0.1345, lr=0.002
+00:04:22,919 root INFO Start to validate epoch 13
+00:04:24,90 root INFO Start to test epoch 13
+00:04:25,27 root INFO Epoch 13, lr=0.002 | Train: acc=0.7777 | Val: acc=0.6137 | Test: acc=0.6382 | Time: this epoch 10.87s, elapsed 703.07s
+00:04:25,28 root INFO Start to train epoch 14
+00:04:26,308 root INFO [Epoch 14, Batch=99] Train: loss=0.0248, lr=0.002
+00:04:27,127 root INFO [Epoch 14, Batch=199] Train: loss=0.0354, lr=0.002
+00:04:27,890 root INFO [Epoch 14, Batch=299] Train: loss=0.4237, lr=0.002
+00:04:28,872 root INFO [Epoch 14, Batch=399] Train: loss=0.2368, lr=0.002
+00:04:29,630 root INFO [Epoch 14, Batch=499] Train: loss=0.1811, lr=0.002
+00:04:30,220 root INFO [Epoch 14, Batch=599] Train: loss=0.1678, lr=0.002
+00:04:30,881 root INFO [Epoch 14, Batch=699] Train: loss=0.0908, lr=0.002
+00:04:31,714 root INFO [Epoch 14, Batch=799] Train: loss=0.1150, lr=0.002
+00:04:32,522 root INFO [Epoch 14, Batch=899] Train: loss=0.0883, lr=0.002
+00:04:33,858 root INFO [Epoch 14, Batch=99] Train(target): MCCloss=0.1287, lr=0.002
+00:04:34,487 root INFO [Epoch 14, Batch=199] Train(target): MCCloss=0.1329, lr=0.002
+00:04:34,807 root INFO Start to validate epoch 14
+00:04:36,413 root INFO Start to test epoch 14
+00:04:37,425 root INFO Epoch 14, lr=0.002 | Train: acc=0.7836 | Val: acc=0.6137 | Test: acc=0.6353 | Time: this epoch 12.40s, elapsed 715.47s
+00:04:37,426 root INFO Start to train epoch 15
+00:04:38,896 root INFO [Epoch 15, Batch=99] Train: loss=0.0240, lr=0.002
+00:04:39,969 root INFO [Epoch 15, Batch=199] Train: loss=0.0336, lr=0.002
+00:04:40,795 root INFO [Epoch 15, Batch=299] Train: loss=0.4231, lr=0.002
+00:04:41,212 root INFO [Epoch 15, Batch=399] Train: loss=0.2261, lr=0.002
+00:04:41,513 root INFO [Epoch 15, Batch=499] Train: loss=0.1813, lr=0.002
+00:04:41,781 root INFO [Epoch 15, Batch=599] Train: loss=0.1673, lr=0.002
+00:04:42,26 root INFO [Epoch 15, Batch=699] Train: loss=0.0855, lr=0.002
+00:04:42,307 root INFO [Epoch 15, Batch=799] Train: loss=0.1118, lr=0.002
+00:04:42,516 root INFO [Epoch 15, Batch=899] Train: loss=0.0885, lr=0.002
+00:04:43,198 root INFO [Epoch 15, Batch=99] Train(target): MCCloss=0.1272, lr=0.002
+00:04:43,471 root INFO [Epoch 15, Batch=199] Train(target): MCCloss=0.1317, lr=0.002
+00:04:43,653 root INFO Start to validate epoch 15
+00:04:44,315 root INFO Start to test epoch 15
+00:04:45,816 root INFO Epoch 15, lr=0.002 | Train: acc=0.7886 | Val: acc=0.6115 | Test: acc=0.6353 | Time: this epoch 8.39s, elapsed 723.86s
+00:04:45,817 root INFO Start to train epoch 16
+00:04:54,238 root INFO [Epoch 16, Batch=99] Train: loss=0.0234, lr=0.002
+00:04:56,254 root INFO [Epoch 16, Batch=199] Train: loss=0.0321, lr=0.002
+00:04:57,564 root INFO [Epoch 16, Batch=299] Train: loss=0.4228, lr=0.002
+00:04:58,826 root INFO [Epoch 16, Batch=399] Train: loss=0.2178, lr=0.002
+00:05:00,277 root INFO [Epoch 16, Batch=499] Train: loss=0.1806, lr=0.002
+00:05:01,248 root INFO [Epoch 16, Batch=599] Train: loss=0.1659, lr=0.002
+00:05:02,77 root INFO [Epoch 16, Batch=699] Train: loss=0.0802, lr=0.002
+00:05:03,251 root INFO [Epoch 16, Batch=799] Train: loss=0.1090, lr=0.002
+00:05:04,372 root INFO [Epoch 16, Batch=899] Train: loss=0.0893, lr=0.002
+00:05:07,518 root INFO [Epoch 16, Batch=99] Train(target): MCCloss=0.1258, lr=0.002
+00:05:08,884 root INFO [Epoch 16, Batch=199] Train(target): MCCloss=0.1308, lr=0.002
+00:05:09,360 root INFO Start to validate epoch 16
+00:05:10,959 root INFO Start to test epoch 16
+00:05:12,303 root INFO Epoch 16, lr=0.002 | Train: acc=0.7927 | Val: acc=0.6181 | Test: acc=0.6421 | Time: this epoch 26.49s, elapsed 750.35s
+00:05:12,329 root INFO Start to train epoch 17
+00:05:13,409 root INFO [Epoch 17, Batch=99] Train: loss=0.0224, lr=0.002
+00:05:14,436 root INFO [Epoch 17, Batch=199] Train: loss=0.0310, lr=0.002
+00:05:15,391 root INFO [Epoch 17, Batch=299] Train: loss=0.4213, lr=0.002
+00:05:16,69 root INFO [Epoch 17, Batch=399] Train: loss=0.2111, lr=0.002
+00:05:16,390 root INFO [Epoch 17, Batch=499] Train: loss=0.1794, lr=0.002
+00:05:16,641 root INFO [Epoch 17, Batch=599] Train: loss=0.1631, lr=0.002
+00:05:16,884 root INFO [Epoch 17, Batch=699] Train: loss=0.0765, lr=0.002
+00:05:17,117 root INFO [Epoch 17, Batch=799] Train: loss=0.1076, lr=0.002
+00:05:17,326 root INFO [Epoch 17, Batch=899] Train: loss=0.0915, lr=0.002
+00:05:18,38 root INFO [Epoch 17, Batch=99] Train(target): MCCloss=0.1244, lr=0.002
+00:05:18,298 root INFO [Epoch 17, Batch=199] Train(target): MCCloss=0.1301, lr=0.002
+00:05:18,486 root INFO Start to validate epoch 17
+00:05:19,395 root INFO Start to test epoch 17
+00:05:20,420 root INFO Epoch 17, lr=0.002 | Train: acc=0.7961 | Val: acc=0.6170 | Test: acc=0.6463 | Time: this epoch 8.09s, elapsed 758.46s
+00:05:20,421 root INFO Start to train epoch 18
+00:05:21,518 root INFO [Epoch 18, Batch=99] Train: loss=0.0215, lr=0.002
+00:05:22,136 root INFO [Epoch 18, Batch=199] Train: loss=0.0301, lr=0.002
+00:05:22,671 root INFO [Epoch 18, Batch=299] Train: loss=0.4185, lr=0.002
+00:05:23,93 root INFO [Epoch 18, Batch=399] Train: loss=0.2046, lr=0.002
+00:05:23,383 root INFO [Epoch 18, Batch=499] Train: loss=0.1785, lr=0.002
+00:05:23,624 root INFO [Epoch 18, Batch=599] Train: loss=0.1604, lr=0.002
+00:05:23,850 root INFO [Epoch 18, Batch=699] Train: loss=0.0741, lr=0.002
+00:05:24,203 root INFO [Epoch 18, Batch=799] Train: loss=0.1076, lr=0.002
+00:05:24,402 root INFO [Epoch 18, Batch=899] Train: loss=0.0948, lr=0.002
+00:05:25,72 root INFO [Epoch 18, Batch=99] Train(target): MCCloss=0.1230, lr=0.002
+00:05:25,344 root INFO [Epoch 18, Batch=199] Train(target): MCCloss=0.1294, lr=0.002
+00:05:25,533 root INFO Start to validate epoch 18
+00:05:26,189 root INFO Start to test epoch 18
+00:05:27,202 root INFO Epoch 18, lr=0.002 | Train: acc=0.7972 | Val: acc=0.6181 | Test: acc=0.6453 | Time: this epoch 6.78s, elapsed 765.24s
+00:05:27,203 root INFO Start to train epoch 19
+00:05:28,62 root INFO [Epoch 19, Batch=99] Train: loss=0.0208, lr=0.002
+00:05:28,540 root INFO [Epoch 19, Batch=199] Train: loss=0.0295, lr=0.002
+00:05:29,82 root INFO [Epoch 19, Batch=299] Train: loss=0.4159, lr=0.002
+00:05:29,441 root INFO [Epoch 19, Batch=399] Train: loss=0.1980, lr=0.002
+00:05:29,719 root INFO [Epoch 19, Batch=499] Train: loss=0.1779, lr=0.002
+00:05:29,968 root INFO [Epoch 19, Batch=599] Train: loss=0.1577, lr=0.002
+00:05:30,196 root INFO [Epoch 19, Batch=699] Train: loss=0.0730, lr=0.002
+00:05:30,398 root INFO [Epoch 19, Batch=799] Train: loss=0.1087, lr=0.002
+00:05:30,599 root INFO [Epoch 19, Batch=899] Train: loss=0.0992, lr=0.002
+00:05:31,339 root INFO [Epoch 19, Batch=99] Train(target): MCCloss=0.1216, lr=0.002
+00:05:31,665 root INFO [Epoch 19, Batch=199] Train(target): MCCloss=0.1286, lr=0.002
+00:05:31,847 root INFO Start to validate epoch 19
+00:05:32,556 root INFO Start to test epoch 19
+00:05:33,490 root INFO Epoch 19, lr=0.002 | Train: acc=0.7986 | Val: acc=0.6104 | Test: acc=0.6483 | Time: this epoch 6.29s, elapsed 771.53s
+00:05:33,491 root INFO Best test acc=0.6482558250427246
+00:05:33,491 root INFO Start to run five fold 5/5
+00:05:33,492 root INFO Model initialized
+00:05:33,507 root INFO Start to train epoch 0
+00:05:34,461 root INFO [Epoch 0, Batch=99] Train: loss=0.4962, lr=0.002
+00:05:34,990 root INFO [Epoch 0, Batch=199] Train: loss=0.2053, lr=0.002
+00:05:35,392 root INFO [Epoch 0, Batch=299] Train: loss=0.3488, lr=0.002
+00:05:35,707 root INFO [Epoch 0, Batch=399] Train: loss=0.2819, lr=0.002
+00:05:36,131 root INFO [Epoch 0, Batch=499] Train: loss=0.0975, lr=0.002
+00:05:36,380 root INFO [Epoch 0, Batch=599] Train: loss=0.1340, lr=0.002
+00:05:36,599 root INFO [Epoch 0, Batch=699] Train: loss=0.2187, lr=0.002
+00:05:36,816 root INFO [Epoch 0, Batch=799] Train: loss=0.1326, lr=0.002
+00:05:37,777 root INFO [Epoch 0, Batch=99] Train(target): MCCloss=0.1665, lr=0.002
+00:05:38,65 root INFO [Epoch 0, Batch=199] Train(target): MCCloss=0.1459, lr=0.002
+00:05:38,302 root INFO [Epoch 0, Batch=299] Train(target): MCCloss=0.1546, lr=0.002
+00:05:38,386 root INFO Start to validate epoch 0
+00:05:39,87 root INFO Start to test epoch 0
+00:05:40,289 root INFO Epoch 00, lr=0.002 | Train: acc=0.5763 | Val: acc=0.5233 | Test: acc=0.5490 | Time: this epoch 6.78s, elapsed 778.33s
+00:05:40,503 root INFO [info] Save model after epoch 0
+
+00:05:40,503 root INFO Start to train epoch 1
+00:05:41,489 root INFO [Epoch 1, Batch=99] Train: loss=0.3286, lr=0.002
+00:05:42,118 root INFO [Epoch 1, Batch=199] Train: loss=0.1714, lr=0.002
+00:05:42,591 root INFO [Epoch 1, Batch=299] Train: loss=0.2301, lr=0.002
+00:05:42,943 root INFO [Epoch 1, Batch=399] Train: loss=0.3205, lr=0.002
+00:05:43,218 root INFO [Epoch 1, Batch=499] Train: loss=0.0653, lr=0.002
+00:05:43,459 root INFO [Epoch 1, Batch=599] Train: loss=0.1134, lr=0.002
+00:05:43,706 root INFO [Epoch 1, Batch=699] Train: loss=0.2289, lr=0.002
+00:05:43,922 root INFO [Epoch 1, Batch=799] Train: loss=0.1077, lr=0.002
+00:05:44,791 root INFO [Epoch 1, Batch=99] Train(target): MCCloss=0.1602, lr=0.002
+00:05:45,81 root INFO [Epoch 1, Batch=199] Train(target): MCCloss=0.1390, lr=0.002
+00:05:45,339 root INFO [Epoch 1, Batch=299] Train(target): MCCloss=0.1531, lr=0.002
+00:05:45,409 root INFO Start to validate epoch 1
+00:05:46,161 root INFO Start to test epoch 1
+00:05:47,371 root INFO Epoch 01, lr=0.002 | Train: acc=0.6758 | Val: acc=0.5640 | Test: acc=0.5707 | Time: this epoch 6.87s, elapsed 785.41s
+00:05:47,382 root INFO [info] Save model after epoch 1
+
+00:05:47,382 root INFO Start to train epoch 2
+00:05:48,412 root INFO [Epoch 2, Batch=99] Train: loss=0.3443, lr=0.002
+00:05:49,7 root INFO [Epoch 2, Batch=199] Train: loss=0.1854, lr=0.002
+00:05:49,529 root INFO [Epoch 2, Batch=299] Train: loss=0.2085, lr=0.002
+00:05:49,940 root INFO [Epoch 2, Batch=399] Train: loss=0.3542, lr=0.002
+00:05:50,222 root INFO [Epoch 2, Batch=499] Train: loss=0.0474, lr=0.002
+00:05:50,494 root INFO [Epoch 2, Batch=599] Train: loss=0.1153, lr=0.002
+00:05:50,951 root INFO [Epoch 2, Batch=699] Train: loss=0.2418, lr=0.002
+00:05:51,468 root INFO [Epoch 2, Batch=799] Train: loss=0.0941, lr=0.002
+00:05:52,429 root INFO [Epoch 2, Batch=99] Train(target): MCCloss=0.1580, lr=0.002
+00:05:52,748 root INFO [Epoch 2, Batch=199] Train(target): MCCloss=0.1367, lr=0.002
+00:05:52,991 root INFO [Epoch 2, Batch=299] Train(target): MCCloss=0.1524, lr=0.002
+00:05:53,77 root INFO Start to validate epoch 2
+00:05:54,229 root INFO Start to test epoch 2
+00:05:55,484 root INFO Epoch 02, lr=0.002 | Train: acc=0.6997 | Val: acc=0.5837 | Test: acc=0.5884 | Time: this epoch 8.10s, elapsed 793.53s
+00:05:55,493 root INFO [info] Save model after epoch 2
+
+00:05:55,493 root INFO Start to train epoch 3
+00:05:56,707 root INFO [Epoch 3, Batch=99] Train: loss=0.3076, lr=0.002
+00:05:57,786 root INFO [Epoch 3, Batch=199] Train: loss=0.2149, lr=0.002
+00:05:58,985 root INFO [Epoch 3, Batch=299] Train: loss=0.1949, lr=0.002
+00:05:59,505 root INFO [Epoch 3, Batch=399] Train: loss=0.3650, lr=0.002
+00:06:00,42 root INFO [Epoch 3, Batch=499] Train: loss=0.0392, lr=0.002
+00:06:00,541 root INFO [Epoch 3, Batch=599] Train: loss=0.1201, lr=0.002
+00:06:01,20 root INFO [Epoch 3, Batch=699] Train: loss=0.2519, lr=0.002
+00:06:01,531 root INFO [Epoch 3, Batch=799] Train: loss=0.0867, lr=0.002
+00:06:03,384 root INFO [Epoch 3, Batch=99] Train(target): MCCloss=0.1561, lr=0.002
+00:06:04,24 root INFO [Epoch 3, Batch=199] Train(target): MCCloss=0.1338, lr=0.002
+00:06:04,543 root INFO [Epoch 3, Batch=299] Train(target): MCCloss=0.1522, lr=0.002
+00:06:04,729 root INFO Start to validate epoch 3
+00:06:06,287 root INFO Start to test epoch 3
+00:06:07,570 root INFO Epoch 03, lr=0.002 | Train: acc=0.7127 | Val: acc=0.6081 | Test: acc=0.5957 | Time: this epoch 12.08s, elapsed 805.61s
+00:06:07,582 root INFO [info] Save model after epoch 3
+
+00:06:07,582 root INFO Start to train epoch 4
+00:06:09,64 root INFO [Epoch 4, Batch=99] Train: loss=0.2757, lr=0.002
+00:06:10,481 root INFO [Epoch 4, Batch=199] Train: loss=0.2377, lr=0.002
+00:06:11,172 root INFO [Epoch 4, Batch=299] Train: loss=0.1812, lr=0.002
+00:06:11,664 root INFO [Epoch 4, Batch=399] Train: loss=0.3717, lr=0.002
+00:06:12,182 root INFO [Epoch 4, Batch=499] Train: loss=0.0345, lr=0.002
+00:06:12,567 root INFO [Epoch 4, Batch=599] Train: loss=0.1218, lr=0.002
+00:06:13,92 root INFO [Epoch 4, Batch=699] Train: loss=0.2557, lr=0.002
+00:06:13,513 root INFO [Epoch 4, Batch=799] Train: loss=0.0823, lr=0.002
+00:06:14,898 root INFO [Epoch 4, Batch=99] Train(target): MCCloss=0.1542, lr=0.002
+00:06:15,720 root INFO [Epoch 4, Batch=199] Train(target): MCCloss=0.1317, lr=0.002
+00:06:16,327 root INFO [Epoch 4, Batch=299] Train(target): MCCloss=0.1539, lr=0.002
+00:06:16,414 root INFO Start to validate epoch 4
+00:06:17,445 root INFO Start to test epoch 4
+00:06:18,702 root INFO Epoch 04, lr=0.002 | Train: acc=0.7250 | Val: acc=0.6012 | Test: acc=0.6013 | Time: this epoch 11.12s, elapsed 816.74s
+00:06:19,55 root INFO Start to train epoch 5
+00:06:20,144 root INFO [Epoch 5, Batch=99] Train: loss=0.2469, lr=0.002
+00:06:20,819 root INFO [Epoch 5, Batch=199] Train: loss=0.2531, lr=0.002
+00:06:21,299 root INFO [Epoch 5, Batch=299] Train: loss=0.1679, lr=0.002
+00:06:21,697 root INFO [Epoch 5, Batch=399] Train: loss=0.3758, lr=0.002
+00:06:22,34 root INFO [Epoch 5, Batch=499] Train: loss=0.0307, lr=0.002
+00:06:22,311 root INFO [Epoch 5, Batch=599] Train: loss=0.1212, lr=0.002
+00:06:22,530 root INFO [Epoch 5, Batch=699] Train: loss=0.2562, lr=0.002
+00:06:22,747 root INFO [Epoch 5, Batch=799] Train: loss=0.0792, lr=0.002
+00:06:23,684 root INFO [Epoch 5, Batch=99] Train(target): MCCloss=0.1523, lr=0.002
+00:06:23,959 root INFO [Epoch 5, Batch=199] Train(target): MCCloss=0.1300, lr=0.002
+00:06:24,202 root INFO [Epoch 5, Batch=299] Train(target): MCCloss=0.1567, lr=0.002
+00:06:24,270 root INFO Start to validate epoch 5
+00:06:25,19 root INFO Start to test epoch 5
+00:06:26,280 root INFO Epoch 05, lr=0.002 | Train: acc=0.7308 | Val: acc=0.6093 | Test: acc=0.6133 | Time: this epoch 7.23s, elapsed 824.32s
+00:06:26,290 root INFO [info] Save model after epoch 5
+
+00:06:26,290 root INFO Start to train epoch 6
+00:06:27,350 root INFO [Epoch 6, Batch=99] Train: loss=0.2217, lr=0.002
+00:06:28,75 root INFO [Epoch 6, Batch=199] Train: loss=0.2641, lr=0.002
+00:06:28,602 root INFO [Epoch 6, Batch=299] Train: loss=0.1554, lr=0.002
+00:06:29,70 root INFO [Epoch 6, Batch=399] Train: loss=0.3745, lr=0.002
+00:06:29,375 root INFO [Epoch 6, Batch=499] Train: loss=0.0270, lr=0.002
+00:06:29,653 root INFO [Epoch 6, Batch=599] Train: loss=0.1183, lr=0.002
+00:06:29,875 root INFO [Epoch 6, Batch=699] Train: loss=0.2563, lr=0.002
+00:06:30,83 root INFO [Epoch 6, Batch=799] Train: loss=0.0767, lr=0.002
+00:06:31,72 root INFO [Epoch 6, Batch=99] Train(target): MCCloss=0.1504, lr=0.002
+00:06:31,353 root INFO [Epoch 6, Batch=199] Train(target): MCCloss=0.1285, lr=0.002
+00:06:31,594 root INFO [Epoch 6, Batch=299] Train(target): MCCloss=0.1593, lr=0.002
+00:06:31,706 root INFO Start to validate epoch 6
+00:06:32,439 root INFO Start to test epoch 6
+00:06:33,681 root INFO Epoch 06, lr=0.002 | Train: acc=0.7378 | Val: acc=0.6151 | Test: acc=0.6174 | Time: this epoch 7.39s, elapsed 831.72s
+00:06:33,690 root INFO [info] Save model after epoch 6
+
+00:06:33,690 root INFO Start to train epoch 7
+00:06:34,973 root INFO [Epoch 7, Batch=99] Train: loss=0.2047, lr=0.002
+00:06:36,25 root INFO [Epoch 7, Batch=199] Train: loss=0.2726, lr=0.002
+00:06:36,669 root INFO [Epoch 7, Batch=299] Train: loss=0.1445, lr=0.002
+00:06:37,305 root INFO [Epoch 7, Batch=399] Train: loss=0.3695, lr=0.002
+00:06:37,848 root INFO [Epoch 7, Batch=499] Train: loss=0.0236, lr=0.002
+00:06:38,276 root INFO [Epoch 7, Batch=599] Train: loss=0.1135, lr=0.002
+00:06:38,750 root INFO [Epoch 7, Batch=699] Train: loss=0.2573, lr=0.002
+00:06:39,48 root INFO [Epoch 7, Batch=799] Train: loss=0.0743, lr=0.002
+00:06:40,697 root INFO [Epoch 7, Batch=99] Train(target): MCCloss=0.1485, lr=0.002
+00:06:41,227 root INFO [Epoch 7, Batch=199] Train(target): MCCloss=0.1269, lr=0.002
+00:06:41,664 root INFO [Epoch 7, Batch=299] Train(target): MCCloss=0.1603, lr=0.002
+00:06:41,764 root INFO Start to validate epoch 7
+00:06:42,888 root INFO Start to test epoch 7
+00:06:44,46 root INFO Epoch 07, lr=0.002 | Train: acc=0.7439 | Val: acc=0.6105 | Test: acc=0.6182 | Time: this epoch 10.36s, elapsed 842.09s
+00:06:44,47 root INFO Start to train epoch 8
+00:06:45,100 root INFO [Epoch 8, Batch=99] Train: loss=0.1974, lr=0.002
+00:06:45,779 root INFO [Epoch 8, Batch=199] Train: loss=0.2788, lr=0.002
+00:06:46,245 root INFO [Epoch 8, Batch=299] Train: loss=0.1386, lr=0.002
+00:06:46,650 root INFO [Epoch 8, Batch=399] Train: loss=0.3633, lr=0.002
+00:06:46,946 root INFO [Epoch 8, Batch=499] Train: loss=0.0208, lr=0.002
+00:06:47,221 root INFO [Epoch 8, Batch=599] Train: loss=0.1091, lr=0.002
+00:06:47,436 root INFO [Epoch 8, Batch=699] Train: loss=0.2579, lr=0.002
+00:06:47,651 root INFO [Epoch 8, Batch=799] Train: loss=0.0708, lr=0.002
+00:06:48,544 root INFO [Epoch 8, Batch=99] Train(target): MCCloss=0.1464, lr=0.002
+00:06:48,841 root INFO [Epoch 8, Batch=199] Train(target): MCCloss=0.1254, lr=0.002
+00:06:49,85 root INFO [Epoch 8, Batch=299] Train(target): MCCloss=0.1596, lr=0.002
+00:06:49,153 root INFO Start to validate epoch 8
+00:06:50,13 root INFO Start to test epoch 8
+00:06:51,195 root INFO Epoch 08, lr=0.002 | Train: acc=0.7500 | Val: acc=0.6058 | Test: acc=0.6174 | Time: this epoch 7.15s, elapsed 849.24s
+00:06:51,196 root INFO Start to train epoch 9
+00:06:52,166 root INFO [Epoch 9, Batch=99] Train: loss=0.2000, lr=0.002
+00:06:52,729 root INFO [Epoch 9, Batch=199] Train: loss=0.2829, lr=0.002
+00:06:53,185 root INFO [Epoch 9, Batch=299] Train: loss=0.1349, lr=0.002
+00:06:53,535 root INFO [Epoch 9, Batch=399] Train: loss=0.3570, lr=0.002
+00:06:53,807 root INFO [Epoch 9, Batch=499] Train: loss=0.0185, lr=0.002
+00:06:54,62 root INFO [Epoch 9, Batch=599] Train: loss=0.1051, lr=0.002
+00:06:54,299 root INFO [Epoch 9, Batch=699] Train: loss=0.2587, lr=0.002
+00:06:54,519 root INFO [Epoch 9, Batch=799] Train: loss=0.0668, lr=0.002
+00:06:55,399 root INFO [Epoch 9, Batch=99] Train(target): MCCloss=0.1445, lr=0.002
+00:06:55,682 root INFO [Epoch 9, Batch=199] Train(target): MCCloss=0.1240, lr=0.002
+00:06:55,922 root INFO [Epoch 9, Batch=299] Train(target): MCCloss=0.1583, lr=0.002
+00:06:56,6 root INFO Start to validate epoch 9
+00:06:56,769 root INFO Start to test epoch 9
+00:06:57,857 root INFO Epoch 09, lr=0.002 | Train: acc=0.7558 | Val: acc=0.6081 | Test: acc=0.6158 | Time: this epoch 6.66s, elapsed 855.90s
+00:06:57,857 root INFO Start to train epoch 10
+00:06:58,707 root INFO [Epoch 10, Batch=99] Train: loss=0.2055, lr=0.002
+00:06:59,168 root INFO [Epoch 10, Batch=199] Train: loss=0.2863, lr=0.002
+00:06:59,538 root INFO [Epoch 10, Batch=299] Train: loss=0.1294, lr=0.002
+00:06:59,869 root INFO [Epoch 10, Batch=399] Train: loss=0.3495, lr=0.002
+00:07:00,151 root INFO [Epoch 10, Batch=499] Train: loss=0.0167, lr=0.002
+00:07:00,433 root INFO [Epoch 10, Batch=599] Train: loss=0.1000, lr=0.002
+00:07:00,671 root INFO [Epoch 10, Batch=699] Train: loss=0.2593, lr=0.002
+00:07:00,902 root INFO [Epoch 10, Batch=799] Train: loss=0.0633, lr=0.002
+00:07:01,849 root INFO [Epoch 10, Batch=99] Train(target): MCCloss=0.1429, lr=0.002
+00:07:02,151 root INFO [Epoch 10, Batch=199] Train(target): MCCloss=0.1224, lr=0.002
+00:07:02,401 root INFO [Epoch 10, Batch=299] Train(target): MCCloss=0.1569, lr=0.002
+00:07:02,482 root INFO Start to validate epoch 10
+00:07:03,331 root INFO Start to test epoch 10
+00:07:04,582 root INFO Epoch 10, lr=0.002 | Train: acc=0.7643 | Val: acc=0.6058 | Test: acc=0.6150 | Time: this epoch 6.72s, elapsed 862.62s
+00:07:04,583 root INFO Start to train epoch 11
+00:07:05,513 root INFO [Epoch 11, Batch=99] Train: loss=0.2106, lr=0.002
+00:07:06,95 root INFO [Epoch 11, Batch=199] Train: loss=0.2887, lr=0.002
+00:07:06,532 root INFO [Epoch 11, Batch=299] Train: loss=0.1227, lr=0.002
+00:07:06,885 root INFO [Epoch 11, Batch=399] Train: loss=0.3414, lr=0.002
+00:07:07,225 root INFO [Epoch 11, Batch=499] Train: loss=0.0153, lr=0.002
+00:07:07,440 root INFO [Epoch 11, Batch=599] Train: loss=0.0946, lr=0.002
+00:07:07,663 root INFO [Epoch 11, Batch=699] Train: loss=0.2586, lr=0.002
+00:07:07,870 root INFO [Epoch 11, Batch=799] Train: loss=0.0599, lr=0.002
+00:07:08,761 root INFO [Epoch 11, Batch=99] Train(target): MCCloss=0.1416, lr=0.002
+00:07:09,56 root INFO [Epoch 11, Batch=199] Train(target): MCCloss=0.1209, lr=0.002
+00:07:09,305 root INFO [Epoch 11, Batch=299] Train(target): MCCloss=0.1560, lr=0.002
+00:07:09,423 root INFO Start to validate epoch 11
+00:07:11,448 root INFO Start to test epoch 11
+00:07:13,949 root INFO Epoch 11, lr=0.002 | Train: acc=0.7678 | Val: acc=0.6093 | Test: acc=0.6150 | Time: this epoch 9.37s, elapsed 871.99s
+00:07:13,950 root INFO Start to train epoch 12
+00:07:15,561 root INFO [Epoch 12, Batch=99] Train: loss=0.2117, lr=0.002
+00:07:16,613 root INFO [Epoch 12, Batch=199] Train: loss=0.2908, lr=0.002
+00:07:17,507 root INFO [Epoch 12, Batch=299] Train: loss=0.1158, lr=0.002
+00:07:18,92 root INFO [Epoch 12, Batch=399] Train: loss=0.3347, lr=0.002
+00:07:18,585 root INFO [Epoch 12, Batch=499] Train: loss=0.0143, lr=0.002
+00:07:19,41 root INFO [Epoch 12, Batch=599] Train: loss=0.0892, lr=0.002
+00:07:19,522 root INFO [Epoch 12, Batch=699] Train: loss=0.2570, lr=0.002
+00:07:19,848 root INFO [Epoch 12, Batch=799] Train: loss=0.0568, lr=0.002
+00:07:20,751 root INFO [Epoch 12, Batch=99] Train(target): MCCloss=0.1403, lr=0.002
+00:07:21,199 root INFO [Epoch 12, Batch=199] Train(target): MCCloss=0.1193, lr=0.002
+00:07:21,449 root INFO [Epoch 12, Batch=299] Train(target): MCCloss=0.1553, lr=0.002
+00:07:21,531 root INFO Start to validate epoch 12
+00:07:22,453 root INFO Start to test epoch 12
+00:07:23,719 root INFO Epoch 12, lr=0.002 | Train: acc=0.7742 | Val: acc=0.6128 | Test: acc=0.6117 | Time: this epoch 9.77s, elapsed 881.76s
+00:07:23,720 root INFO Start to train epoch 13
+00:07:24,713 root INFO [Epoch 13, Batch=99] Train: loss=0.2109, lr=0.002
+00:07:25,280 root INFO [Epoch 13, Batch=199] Train: loss=0.2945, lr=0.002
+00:07:25,716 root INFO [Epoch 13, Batch=299] Train: loss=0.1091, lr=0.002
+00:07:26,155 root INFO [Epoch 13, Batch=399] Train: loss=0.3288, lr=0.002
+00:07:26,415 root INFO [Epoch 13, Batch=499] Train: loss=0.0135, lr=0.002
+00:07:26,649 root INFO [Epoch 13, Batch=599] Train: loss=0.0844, lr=0.002
+00:07:26,865 root INFO [Epoch 13, Batch=699] Train: loss=0.2542, lr=0.002
+00:07:27,68 root INFO [Epoch 13, Batch=799] Train: loss=0.0540, lr=0.002
+00:07:27,959 root INFO [Epoch 13, Batch=99] Train(target): MCCloss=0.1388, lr=0.002
+00:07:28,250 root INFO [Epoch 13, Batch=199] Train(target): MCCloss=0.1177, lr=0.002
+00:07:28,493 root INFO [Epoch 13, Batch=299] Train(target): MCCloss=0.1541, lr=0.002
+00:07:28,560 root INFO Start to validate epoch 13
+00:07:29,283 root INFO Start to test epoch 13
+00:07:30,570 root INFO Epoch 13, lr=0.002 | Train: acc=0.7771 | Val: acc=0.6128 | Test: acc=0.6029 | Time: this epoch 6.85s, elapsed 888.61s
+00:07:30,571 root INFO Start to train epoch 14
+00:07:31,561 root INFO [Epoch 14, Batch=99] Train: loss=0.2129, lr=0.002
+00:07:32,195 root INFO [Epoch 14, Batch=199] Train: loss=0.2974, lr=0.002
+00:07:32,658 root INFO [Epoch 14, Batch=299] Train: loss=0.1020, lr=0.002
+00:07:33,47 root INFO [Epoch 14, Batch=399] Train: loss=0.3229, lr=0.002
+00:07:33,367 root INFO [Epoch 14, Batch=499] Train: loss=0.0130, lr=0.002
+00:07:34,510 root INFO [Epoch 14, Batch=599] Train: loss=0.0808, lr=0.002
+00:07:35,78 root INFO [Epoch 14, Batch=699] Train: loss=0.2503, lr=0.002
+00:07:35,523 root INFO [Epoch 14, Batch=799] Train: loss=0.0514, lr=0.002
+00:07:37,511 root INFO [Epoch 14, Batch=99] Train(target): MCCloss=0.1375, lr=0.002
+00:07:37,948 root INFO [Epoch 14, Batch=199] Train(target): MCCloss=0.1159, lr=0.002
+00:07:38,310 root INFO [Epoch 14, Batch=299] Train(target): MCCloss=0.1530, lr=0.002
+00:07:38,380 root INFO Start to validate epoch 14
+00:07:39,730 root INFO Start to test epoch 14
+00:07:41,103 root INFO Epoch 14, lr=0.002 | Train: acc=0.7800 | Val: acc=0.6163 | Test: acc=0.6013 | Time: this epoch 10.53s, elapsed 899.15s
+00:07:41,113 root INFO [info] Save model after epoch 14
+
+00:07:41,114 root INFO Start to train epoch 15
+00:07:42,843 root INFO [Epoch 15, Batch=99] Train: loss=0.2116, lr=0.002
+00:07:44,328 root INFO [Epoch 15, Batch=199] Train: loss=0.2987, lr=0.002
+00:07:45,698 root INFO [Epoch 15, Batch=299] Train: loss=0.0939, lr=0.002
+00:07:46,666 root INFO [Epoch 15, Batch=399] Train: loss=0.3165, lr=0.002
+00:07:47,541 root INFO [Epoch 15, Batch=499] Train: loss=0.0126, lr=0.002
+00:07:48,72 root INFO [Epoch 15, Batch=599] Train: loss=0.0775, lr=0.002
+00:07:48,441 root INFO [Epoch 15, Batch=699] Train: loss=0.2456, lr=0.002
+00:07:48,792 root INFO [Epoch 15, Batch=799] Train: loss=0.0491, lr=0.002
+00:07:50,206 root INFO [Epoch 15, Batch=99] Train(target): MCCloss=0.1363, lr=0.002
+00:07:50,734 root INFO [Epoch 15, Batch=199] Train(target): MCCloss=0.1141, lr=0.002
+00:07:51,180 root INFO [Epoch 15, Batch=299] Train(target): MCCloss=0.1521, lr=0.002
+00:07:51,250 root INFO Start to validate epoch 15
+00:07:52,254 root INFO Start to test epoch 15
+00:07:53,605 root INFO Epoch 15, lr=0.002 | Train: acc=0.7852 | Val: acc=0.6186 | Test: acc=0.6045 | Time: this epoch 12.49s, elapsed 911.65s
+00:07:53,614 root INFO [info] Save model after epoch 15
+
+00:07:53,615 root INFO Start to train epoch 16
+00:07:57,366 root INFO [Epoch 16, Batch=99] Train: loss=0.2080, lr=0.002
+00:07:58,532 root INFO [Epoch 16, Batch=199] Train: loss=0.2984, lr=0.002
+00:07:59,429 root INFO [Epoch 16, Batch=299] Train: loss=0.0859, lr=0.002
+00:08:00,320 root INFO [Epoch 16, Batch=399] Train: loss=0.3113, lr=0.002
+00:08:01,159 root INFO [Epoch 16, Batch=499] Train: loss=0.0122, lr=0.002
+00:08:01,885 root INFO [Epoch 16, Batch=599] Train: loss=0.0741, lr=0.002
+00:08:02,328 root INFO [Epoch 16, Batch=699] Train: loss=0.2409, lr=0.002
+00:08:02,739 root INFO [Epoch 16, Batch=799] Train: loss=0.0471, lr=0.002
+00:08:04,622 root INFO [Epoch 16, Batch=99] Train(target): MCCloss=0.1351, lr=0.002
+00:08:05,232 root INFO [Epoch 16, Batch=199] Train(target): MCCloss=0.1122, lr=0.002
+00:08:05,799 root INFO [Epoch 16, Batch=299] Train(target): MCCloss=0.1513, lr=0.002
+00:08:05,880 root INFO Start to validate epoch 16
+00:08:07,209 root INFO Start to test epoch 16
+00:08:08,442 root INFO Epoch 16, lr=0.002 | Train: acc=0.7890 | Val: acc=0.6174 | Test: acc=0.6005 | Time: this epoch 14.83s, elapsed 926.49s
+00:08:08,444 root INFO Start to train epoch 17
+00:08:09,457 root INFO [Epoch 17, Batch=99] Train: loss=0.2034, lr=0.002
+00:08:10,23 root INFO [Epoch 17, Batch=199] Train: loss=0.2967, lr=0.002
+00:08:10,572 root INFO [Epoch 17, Batch=299] Train: loss=0.0788, lr=0.002
+00:08:10,953 root INFO [Epoch 17, Batch=399] Train: loss=0.3079, lr=0.002
+00:08:11,238 root INFO [Epoch 17, Batch=499] Train: loss=0.0118, lr=0.002
+00:08:11,466 root INFO [Epoch 17, Batch=599] Train: loss=0.0714, lr=0.002
+00:08:11,699 root INFO [Epoch 17, Batch=699] Train: loss=0.2367, lr=0.002
+00:08:11,944 root INFO [Epoch 17, Batch=799] Train: loss=0.0452, lr=0.002
+00:08:12,990 root INFO [Epoch 17, Batch=99] Train(target): MCCloss=0.1339, lr=0.002
+00:08:13,296 root INFO [Epoch 17, Batch=199] Train(target): MCCloss=0.1109, lr=0.002
+00:08:13,550 root INFO [Epoch 17, Batch=299] Train(target): MCCloss=0.1506, lr=0.002
+00:08:13,621 root INFO Start to validate epoch 17
+00:08:14,298 root INFO Start to test epoch 17
+00:08:15,694 root INFO Epoch 17, lr=0.002 | Train: acc=0.7902 | Val: acc=0.6140 | Test: acc=0.6053 | Time: this epoch 7.25s, elapsed 933.74s
+00:08:15,695 root INFO Start to train epoch 18
+00:08:16,724 root INFO [Epoch 18, Batch=99] Train: loss=0.1986, lr=0.002
+00:08:17,306 root INFO [Epoch 18, Batch=199] Train: loss=0.2939, lr=0.002
+00:08:17,792 root INFO [Epoch 18, Batch=299] Train: loss=0.0743, lr=0.002
+00:08:18,187 root INFO [Epoch 18, Batch=399] Train: loss=0.3044, lr=0.002
+00:08:18,487 root INFO [Epoch 18, Batch=499] Train: loss=0.0115, lr=0.002
+00:08:18,737 root INFO [Epoch 18, Batch=599] Train: loss=0.0695, lr=0.002
+00:08:18,940 root INFO [Epoch 18, Batch=699] Train: loss=0.2351, lr=0.002
+00:08:19,158 root INFO [Epoch 18, Batch=799] Train: loss=0.0430, lr=0.002
+00:08:20,65 root INFO [Epoch 18, Batch=99] Train(target): MCCloss=0.1326, lr=0.002
+00:08:20,380 root INFO [Epoch 18, Batch=199] Train(target): MCCloss=0.1097, lr=0.002
+00:08:20,633 root INFO [Epoch 18, Batch=299] Train(target): MCCloss=0.1497, lr=0.002
+00:08:20,703 root INFO Start to validate epoch 18
+00:08:21,437 root INFO Start to test epoch 18
+00:08:22,644 root INFO Epoch 18, lr=0.002 | Train: acc=0.7945 | Val: acc=0.6174 | Test: acc=0.6061 | Time: this epoch 6.95s, elapsed 940.69s
+00:08:22,645 root INFO Start to train epoch 19
+00:08:23,605 root INFO [Epoch 19, Batch=99] Train: loss=0.1955, lr=0.002
+00:08:24,200 root INFO [Epoch 19, Batch=199] Train: loss=0.2911, lr=0.002
+00:08:24,653 root INFO [Epoch 19, Batch=299] Train: loss=0.0723, lr=0.002
+00:08:25,48 root INFO [Epoch 19, Batch=399] Train: loss=0.2989, lr=0.002
+00:08:25,325 root INFO [Epoch 19, Batch=499] Train: loss=0.0112, lr=0.002
+00:08:25,558 root INFO [Epoch 19, Batch=599] Train: loss=0.0683, lr=0.002
+00:08:25,766 root INFO [Epoch 19, Batch=699] Train: loss=0.2362, lr=0.002
+00:08:26,37 root INFO [Epoch 19, Batch=799] Train: loss=0.0413, lr=0.002
+00:08:26,968 root INFO [Epoch 19, Batch=99] Train(target): MCCloss=0.1313, lr=0.002
+00:08:27,280 root INFO [Epoch 19, Batch=199] Train(target): MCCloss=0.1088, lr=0.002
+00:08:27,633 root INFO [Epoch 19, Batch=299] Train(target): MCCloss=0.1490, lr=0.002
+00:08:27,745 root INFO Start to validate epoch 19
+00:08:28,822 root INFO Start to test epoch 19
+00:08:30,734 root INFO Epoch 19, lr=0.002 | Train: acc=0.7971 | Val: acc=0.6163 | Test: acc=0.6021 | Time: this epoch 8.09s, elapsed 948.78s
+00:08:30,735 root INFO Best test acc=0.6181672215461731
+00:08:30,735 root INFO five fold acc: 0.6286275386810303

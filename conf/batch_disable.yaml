@@ -1,0 +1,14 @@
+idim: 768
+hidden_dim: 256
+
+accum_grad: 4
+nepochs: 1
+nworkers: 2
+log_interval: 100
+five_fold: True
+
+batch_enable: False
+
+train_json: "inputdata/sample.json"
+
+lr: 1e-4
