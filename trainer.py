@@ -1,7 +1,5 @@
-# - log
-# 11/22: train/valid-only dataloader implemented
-# 11/23: 5-fold implemented
-# 11/24: remove the train/valid-only
+# - not completed.
+# - the trainer with batch mech
 
 import json
 import os
@@ -15,13 +13,17 @@ import torch
 from torch.nn import DataParallel
 from torch.nn import CrossEntropyLoss
 from torch.optim import Adam
-from torch.optim.lr_scheduler import ReduceLROnPlateau # - currently we don't use scheduler
+from torch.optim.lr_scheduler import ReduceLROnPlateau
 from torch.utils.tensorboard import SummaryWriter
 
 from models.linear import MeanPoolingLinear
+#from loader import create_loader
 from utils import to_device
 
+from dataloader import create_loader
 from dataloader import create_loader_five_fold
+from dataloader import create_loader_ten_fold
+from dataloader import _create_loader
 
 from losses.mcc import MinimumClassConfusionLoss
 
@@ -52,15 +54,55 @@ class Trainer:
         self.transfer_loss_factor = params.transfer_loss_factor
         
         # - flag
+        self.batch_enable = params.batch_enable
         self.five_fold = params.five_fold
+        self.fold = params.fold
+        self.fold_prefix = "five"
+        if self.fold == 10:
+            self.fold_prefix = "ten"
+        self.fold_id = -1
         self.mcc = params.mcc
-        self.handcrafted_features = params.handcrafted_features
         
-        with open(params.train_json, "rb") as f:
-            train_json = json.load(f)
-        
-        # - dataloader
-        self.train_datasets, self.train_loaders, self.valid_datasets, self.valid_loaders, self.test_datasets, self.test_loaders = create_loader_five_fold(train_json, params, is_train = True, is_aug = False)
+        if self.batch_enable:
+            print("batch_enable.")
+            self.train_datasets = []
+            self.valid_datasets = []
+            self.test_datasets = []
+            self.train_loaders = []
+            self.valid_loaders = []
+            self.test_loaders = []
+            for fold_id in range(self.fold):
+                with open("inputdata/"+self.fold_prefix+"_fold_"+str(fold_id+1)+"_train.json", "rb") as f:
+                    train_json = json.load(f)
+                with open("inputdata/"+self.fold_prefix+"_fold_"+str(fold_id+1)+"_valid.json", "rb") as f:
+                    valid_json = json.load(f)
+                with open("inputdata/"+self.fold_prefix+"_fold_"+str(fold_id+1)+"_test.json", "rb") as f:
+                    test_json = json.load(f)
+                train_dataset, train_loader, _ =  _create_loader(
+                    train_json,
+                    params
+                )
+                valid_dataset, valid_loader, _ =  _create_loader(
+                    valid_json,
+                    params
+                )
+                test_dataset, test_loader, _ =  _create_loader(
+                    test_json,
+                    params
+                )
+                self.train_datasets.append(train_dataset)
+                self.valid_datasets.append(valid_dataset)
+                self.test_datasets.append(test_dataset)
+                self.train_loaders.append(train_loader)
+                self.valid_loaders.append(valid_loader)
+                self.test_loaders.append(test_loader)
+        else:
+            with open(params.train_json, "rb") as f:
+                train_json = json.load(f)
+            if self.fold == 10:
+                self.train_datasets, self.train_loaders, self.valid_datasets, self.valid_loaders, self.test_datasets, self.test_loaders = create_loader_ten_fold(train_json, params, is_train = True, is_aug = False)
+            else:
+                self.train_datasets, self.train_loaders, self.valid_datasets, self.valid_loaders, self.test_datasets, self.test_loaders = create_loader_five_fold(train_json, params, is_train = True, is_aug = False)
 
         ## Build Model: TODO need to check this part
         self.model = MeanPoolingLinear(params.idim, params.odim, params.hidden_dim)
@@ -112,18 +154,18 @@ class Trainer:
         """Performs ASR Training using the provided configuration.
         This is the main training wrapper that trains and evaluates the model across epochs
         """
-
-        five_fold_acc = 0
-        for fold_id in range(5):
-            logging.info(f"Start to run five fold {fold_id+1}/5")
+        fold_acc = 0
+        for fold_id in range(self.fold):
+            self.fold_id = fold_id
+            logging.info(f"Start to run {self.fold_prefix} fold {fold_id+1}/{self.fold}")
             self.model_init()
             self.train_sampler = self.train_loaders[fold_id]
             self.valid_sampler = self.valid_loaders[fold_id]
             self.test_sampler = self.test_loaders[fold_id]
-            self.reset_five_fold()
+            self.reset_each_fold()
             self._train()
-            five_fold_acc += self.test_stats["best_acc"]
-        logging.info(f"five fold acc: {five_fold_acc/5}")
+            fold_acc += self.test_stats["best_acc"]
+        logging.info(f"{self.fold_prefix} fold acc: {fold_acc/self.fold}")
 
     def _train(self):
         while self.epoch < self.nepochs:
@@ -151,7 +193,6 @@ class Trainer:
 
             self.save_model()
             self.epoch += 1
-        
         logging.info(f"Best test acc={self.test_stats['best_acc']}")
 
     def train_epoch(self):
@@ -159,28 +200,28 @@ class Trainer:
         self.model.train()
         
         # TODO: fix batch
-        for i, (feats, target) in enumerate(
+        for i, (feats, feat_len, target, key) in enumerate(
             self.train_sampler
         ):
             
-            feats, target = to_device(
-                (feats, target),
+            feats, feat_len, target = to_device(
+                (feats, feat_len, target),
                 next(self.model.parameters()).device,
             )
 
             # TODO: store the sample dim in json file
-            y = self.model(feats, [len(sample_dim) for sample_dim in feats])
-            train_acc = torch.sum(torch.argmax(y) == torch.argmax(target)).float()
+            y = self.model(feats, feat_len)
+            #print(y)
+            #print(target)
+            
+            
+            # list(tensor(4),tensor(4),tensor(4),tensor(4))
+            # torch.tensor(data)
+            # - B tensor[B][4]
+            # -> tensor[b][4]
+            
+            train_acc = torch.sum(torch.argmax(y, axis=-1) == torch.argmax(target, axis=-1)).float()/len(target)
             loss = self.loss(y, target)
-            
-            '''
-            print(y)
-            print(y.shape)
-            print(target)
-            print(target.shape)
-            print(loss)
-            '''
-            
             loss /= self.params.accum_grad
             loss.backward()
 
@@ -205,18 +246,18 @@ class Trainer:
             self.train_stats["nbatches"] += 1
             self.train_stats["loss"] += loss.item()
             self.train_stats["acc"] += train_acc
-        #print(BREAK)
+        
         # - NOTE: following method is not work due to the current batch size is 1
         if self.mcc: # - consider test domain as target domain here, we don't access target data here
-            for i, (feats, target) in enumerate(
+            for i, (feats, feat_len, target, key) in enumerate(
                 self.test_sampler
             ):
-                feats, target = to_device(
-                    (feats, target),
+                feats, feat_len, target = to_device(
+                    (feats, feat_len, target),
                     next(self.model.parameters()).device,
                 )
                 
-                y = self.model(feats, [len(sample_dim) for sample_dim in feats])
+                y = self.model(feats, feat_len)
                 loss = self.mcc_loss(y) * self.transfer_loss_factor
                 loss /= self.params.accum_grad
                 loss.backward()
@@ -247,19 +288,18 @@ class Trainer:
         self.model.eval()
 
         with torch.no_grad():
-            # TODO: batch
-            for i, (feats, target) in enumerate(
+            for i, (feats, feat_len, target, key) in enumerate(
                 self.valid_sampler
             ):
-                feats, target = to_device(
-                    (feats, target),
+                feats, feat_len, target = to_device(
+                    (feats, feat_len, target),
                     next(self.model.parameters()).device,
                 )
 
                 # TODO: store the sample dim
-                y = self.model(feats, [len(sample_dim) for sample_dim in feats])
+                y = self.model(feats, feat_len)
                 loss = self.loss(y, target)
-                val_acc = torch.sum(torch.argmax(y) == torch.argmax(target)).float()
+                val_acc = torch.sum(torch.argmax(y, axis = -1) == torch.argmax(target, axis = -1)).float()/len(target)
 
                 self.val_stats["nbatches"] += 1
                 self.val_stats["loss"] += loss.item()
@@ -274,18 +314,18 @@ class Trainer:
 
         with torch.no_grad():
             # TODO: batch
-            for i, (feats, target) in enumerate(
+            for i, (feats, feat_len, target, key) in enumerate(
                 self.test_sampler
             ):
-                feats, target = to_device(
-                    (feats, target),
+                feats, feat_len, target = to_device(
+                    (feats, feat_len, target),
                     next(self.model.parameters()).device,
                 )
 
                 # TODO: store the sample dim
-                y = self.model(feats, [len(sample_dim) for sample_dim in feats])
+                y = self.model(feats, feat_len)
                 loss = self.loss(y, target)
-                test_acc = torch.sum(torch.argmax(y) == torch.argmax(target)).float()
+                test_acc = torch.sum(torch.argmax(y, axis = -1) == torch.argmax(target, axis = -1)).float()/len(target)
 
                 self.test_stats["nbatches"] += 1
                 self.test_stats["loss"] += loss.item()
@@ -308,7 +348,7 @@ class Trainer:
         self.val_stats["best_loss"] = checkpoint["loss"]
         self.val_stats["best_acc"] = checkpoint["acc"]
 
-    def reset_five_fold(self):
+    def reset_each_fold(self):
         self.epoch = 0
         self.train_stats = {}
         self.val_stats = {"best_acc": 0, "best_loss": 1e9, "best_epoch": -1}
@@ -355,5 +395,6 @@ class Trainer:
 
     def log_epoch(self):
         """Write stats from the Training and Validation Statistics Dictionaries onto Tensorboard at the end of each epoch"""
-        self.writer.add_scalar("training/acc", self.train_stats["acc"], self.epoch)
-        self.writer.add_scalar("validation/acc", self.val_stats["acc"], self.epoch)
+        self.writer.add_scalar("training/"+str(self.fold_id)+"/acc", self.train_stats["acc"], self.epoch)
+        self.writer.add_scalar("validation/"+str(self.fold_id)+"/acc", self.val_stats["acc"], self.epoch)
+        self.writer.add_scalar("test/"+str(self.fold_id)+"/acc", self.test_stats["acc"], self.epoch)

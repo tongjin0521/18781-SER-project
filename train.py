@@ -4,8 +4,8 @@ import configargparse
 import random
 import torch
 import numpy as np
-
-from trainer import Trainer
+configargparse
+from trainer_batch import Trainer
 
 
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
@@ -64,6 +64,9 @@ def get_parser(parser=None, required=True):
     parser.add_argument(
         "--batch_enable", default=False, type=bool, help="This option impact how the dataloader interact with models"
     )
+    parser.add_argument(
+        "--fold", default=5, type=int, help="10 fold or 5 fold"
+    )
     
     ## I/O related
     parser.add_argument(
@@ -108,7 +111,7 @@ def get_parser(parser=None, required=True):
 
     ## Optimization related
     parser.add_argument("--lr", type=float, default=1e-4) # - s3prl use 1.0e-4
-    parser.add_argument("--grad_clip", type=float, default=1.0) # - s3prl use 1.0
+    parser.add_argument("--grad_clip", type=float, default=1) # - s3prl use 1.0
     parser.add_argument("--wdecay", type=float, default=0, help="Weight decay")
     parser.add_argument(
         "--accum_grad", default=8, type=int, help="Number of gradient accumuration" # - s3prl use 8
@@ -126,7 +129,7 @@ def get_parser(parser=None, required=True):
     )
     
     parser.add_argument(
-        "--nepochs", type=int, default=50, help="Number of training epochs" # - s3prl use 30000 step(?)
+        "--nepochs", type=int, default=50, help="Number of training epochs" # - s3prl use 30000
     ) 
     parser.add_argument(
         "--ngpu",
@@ -145,7 +148,11 @@ def main(cmd_args):
     ## Return the arguments from parser
     parser = get_parser()
     args, _ = parser.parse_known_args(cmd_args)
-
+    
+    if args.fold != 5 and args.fold != 10:
+        print(f'fold must be 5 or 10, it is {args.fold}')
+        return
+    
     ## Set Random Seed for Reproducibility
     random.seed(args.seed)
     np.random.seed(args.seed)
@@ -166,7 +173,6 @@ def main(cmd_args):
         os.makedirs(x, exist_ok=True)
 
     ## Start training
-    print(args)
     trainer = Trainer(args)
     trainer.train()
 

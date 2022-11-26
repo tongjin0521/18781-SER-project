@@ -15,6 +15,7 @@ from torch.utils.data import random_split
 import librosa
 import pickle
 from utils import pad_list
+import pdb
 
 def extractHandcraftedFeature(wav):
     sig_mean = np.mean(abs(wav))
@@ -173,8 +174,108 @@ def create_loader_five_fold(
         test_datasets.append(test_dataset)
         test_loaders.append(test_loader)
     
+    return train_datasets, train_loaders, valid_datasets, valid_loaders, test_datasets, test_loaders
+
+def create_loader_ten_fold(
+    data: dict,
+    params: configargparse.Namespace,
+    is_train: bool,
+    min_batch_size: int = 1,
+    shortest_first: bool = False,
+    is_aug: bool = False,
+    lambda_key: str = "wav_dim",
+    valid_ratio: float = 0.2,
+):
+    sorted_data = sorted(
+        data.items(),
+        key=lambda data: int(data[1]["input"][lambda_key][0]),
+        reverse=not shortest_first,
+    )
+    length = len(sorted_data)
+    idim = int(sorted_data[0][1]["input"][lambda_key][0]) 
+    odim = 1
     
+    sessions = [[] for _ in range(10)]
+    for sentence in sorted_data:
+        gender = 0
+        if sentence[0][5] == 'F':
+            gender = 1
+        index = (int(sentence[0][4])-1)*2 + gender
+        sessions[index].append(sentence)
     
+    # - group by session
+    test_sessions  = []
+    train_sessions = []
+    for test_id in range(10):
+        test_sessions.append(sessions[test_id])
+        temp = []
+        for session_id in range(5):
+            if session_id != test_id:
+                temp += sessions[session_id]
+        train_sessions.append(temp)
+    
+        
+    
+    train_datasets, train_loaders, valid_datasets, valid_loaders, test_datasets, test_loaders = [], [], [], [], [], []
+    for fold_id in range(10):
+        test_dataset = EmoDataset(test_sessions[fold_id], params, is_train = is_train, is_aug = is_aug)
+        dev_dataset = EmoDataset(train_sessions[fold_id], params, is_train = is_train, is_aug = is_aug)
+        
+        
+        # - use to create json files
+        '''
+        D = test_dataset.data
+        d1 = dict(D)
+        json_object = json.dumps(d1, indent=4)
+        with open("ten_fold_"+str(fold_id+1)+"_test.json", "w") as outfile:
+            outfile.write(json_object)
+
+        D = dev_dataset.data
+        ratio = 0.2
+        split_index = int(len(D)*0.8)
+        d1 = dict(D[:split_index])
+        d2 = dict(D[split_index:])
+        json_object = json.dumps(d1, indent=4)
+        with open("ten_fold_"+str(fold_id+1)+"_train.json", "w") as outfile:
+            outfile.write(json_object)
+        json_object = json.dumps(d1, indent=4)
+        with open("ten_fold_"+str(fold_id+1)+"_valid.json", "w") as outfile:
+            outfile.write(json_object)
+        '''
+            
+        
+        
+        train_len = int((1 - valid_ratio) * len(dev_dataset))
+        train_valid_lens = [train_len, len(dev_dataset) - train_len]
+        
+        train_dataset, valid_dataset = random_split(dev_dataset, train_valid_lens)
+    
+        test_loader = DataLoader(
+            dataset=test_dataset,
+            num_workers=params.nworkers,
+            pin_memory=True,
+        )
+        
+        train_loader = DataLoader(
+            dataset=train_dataset,
+            num_workers=params.nworkers,
+            pin_memory=True,
+        )
+        
+        valid_loader = DataLoader(
+            dataset=valid_dataset,
+            num_workers=params.nworkers,
+            pin_memory=True,
+        )
+            
+        
+        train_datasets.append(train_dataset)
+        train_loaders.append(train_loader)
+        valid_datasets.append(valid_dataset)
+        valid_loaders.append(valid_loader)
+        test_datasets.append(test_dataset)
+        test_loaders.append(test_loader)
+        
     return train_datasets, train_loaders, valid_datasets, valid_loaders, test_datasets, test_loaders
 
     

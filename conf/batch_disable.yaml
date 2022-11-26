@@ -2,13 +2,13 @@ idim: 768
 hidden_dim: 256
 
 accum_grad: 4
-nepochs: 1
+nepochs: 40
 nworkers: 2
 log_interval: 100
 five_fold: True
-batch_size: 4
+batch_size: 1
 batch_bins: 6000000
-mcc: True
+#mcc: True
 
 train_json: "inputdata/sample.json"
 
