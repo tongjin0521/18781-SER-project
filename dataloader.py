@@ -37,7 +37,7 @@ def create_loader_with_folds(
     idim = int(sorted_data[0][1]["input"][lambda_key][0]) 
     odim = 1
     
-    num_folds = param.fold
+    num_folds = params.fold
 
     sessions = [[] for _ in range(num_folds)]
     for sentence in sorted_data:
@@ -157,7 +157,6 @@ def _create_loader(
         if shortest_first:
             batch.reverse()
         minibatches.append(batch)
-        # Check for min_batch_size and fixes the batches if needed
         i = -1
         while len(minibatches[i]) < min_batch_size:
             missing = min_batch_size - len(minibatches[i])
@@ -223,13 +222,13 @@ class EmoDataset(data.Dataset):
         self.target_pad = params.target_pad
         self.batch_enable = params.batch_enable
         self.handcrafted_features = params.handcrafted_features
-        #params.batch_enable
         
     def __len__(self):
         """Returns the number of examples in the dataset"""
         return len(self.data)
     
     # - the file structure I prepared for the batch enable version is slightly different
+    # - TODO: fix the file difference and make interface clean
     def __getitem__(self, idx: str):
         if self.batch_enable:
             embedding_file = self.data[idx]["input"]["embedding"]
@@ -257,7 +256,6 @@ class EmoDataset(data.Dataset):
     def getData(self):
         return self.data
     
-    # TODO: collate_function for batch
     def collate_function(self, batch):
         """Retrieves an item from the dataset given the index
 
@@ -272,7 +270,6 @@ class EmoDataset(data.Dataset):
         feat_len = [x[1] for x in batch]
         for i,x in enumerate(batch):
             targets[i] = x[2]
-        # - targets = torch.stack([torch.tensor(x[1]) for x in batch])
         id_keys = [x[3] for x in batch]
         return padded_feats, feat_len, targets, id_keys
     

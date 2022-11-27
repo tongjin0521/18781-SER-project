@@ -296,7 +296,6 @@ class Trainer:
                     next(self.model.parameters()).device,
                 )
 
-                # TODO: store the sample dim
                 y = self.model(feats, feat_len)
                 loss = self.loss(y, target)
                 val_acc = torch.sum(torch.argmax(y, axis = -1) == torch.argmax(target, axis = -1)).float()/len(target)
@@ -313,7 +312,6 @@ class Trainer:
         self.model.eval()
 
         with torch.no_grad():
-            # TODO: batch
             for i, (feats, feat_len, target, key) in enumerate(
                 self.test_sampler
             ):
@@ -322,7 +320,6 @@ class Trainer:
                     next(self.model.parameters()).device,
                 )
 
-                # TODO: store the sample dim
                 y = self.model(feats, feat_len)
                 loss = self.loss(y, target)
                 test_acc = torch.sum(torch.argmax(y, axis = -1) == torch.argmax(target, axis = -1)).float()/len(target)

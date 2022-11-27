@@ -2,7 +2,7 @@ idim: 768
 hidden_dim: 256
 
 accum_grad: 4
-nepochs: 40
+nepochs: 1
 nworkers: 2
 log_interval: 100
 batch_size: 1
