@@ -260,11 +260,7 @@ class EmoDataset(data.Dataset):
             else:
                 handcrafted_features_file = self.data[idx][1]["input"]["handcraft"]
             handcrafted_features = torch.load(handcrafted_features_file)
-
-            handcrafted_features = np.append(handcrafted_features, np.array([float(self.data[idx][0][5] == 'F')]).astype(np.float32))
-            if (len(handcrafted_features) != 9):
-                print("WRONG LENGTH OF handcrafted_features as" + str(len(handcrafted_features)))
-                exit(-1)
+            handcrafted_features = np.append(handcrafted_features, np.array([float(handcrafted_features_file.split("/")[-1][5] == 'F')]).astype(np.float32))
             if self.batch_enable:
                 return audio_feat, feat_len, handcrafted_features, target, idx
             return audio_feat, feat_len, handcrafted_features, target, idx
@@ -284,8 +280,9 @@ class EmoDataset(data.Dataset):
         padded_feats = pad_list([torch.from_numpy(x[0]) for x in batch], self.pad)
         targets = torch.zeros([len(batch), 4], dtype=torch.float32)
         feat_len = [x[1] for x in batch]
+        handcrafted_features = torch.FloatTensor([x[2] for x in batch])
         for i,x in enumerate(batch):
-            targets[i] = x[2]
-        id_keys = [x[3] for x in batch]
-        return padded_feats, feat_len, targets, id_keys
+            targets[i] = x[3]
+        id_keys = [x[4] for x in batch]
+        return padded_feats, feat_len, handcrafted_features, targets, id_keys
     
