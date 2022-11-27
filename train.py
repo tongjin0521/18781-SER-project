@@ -5,7 +5,7 @@ import random
 import torch
 import numpy as np
 configargparse
-from trainer_batch import Trainer
+from trainer import Trainer
 
 
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"

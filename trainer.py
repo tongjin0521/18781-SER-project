@@ -13,20 +13,18 @@ import torch
 from torch.nn import DataParallel
 from torch.nn import CrossEntropyLoss
 from torch.optim import Adam
-from torch.optim.lr_scheduler import ReduceLROnPlateau
+#from torch.optim.lr_scheduler import ReduceLROnPlateau
 from torch.utils.tensorboard import SummaryWriter
 
 from models.linear import MeanPoolingLinear
-#from loader import create_loader
 from utils import to_device
 
-from dataloader import create_loader
-from dataloader import create_loader_five_fold
-from dataloader import create_loader_ten_fold
+from dataloader import create_loader_with_folds
 from dataloader import _create_loader
 
 from losses.mcc import MinimumClassConfusionLoss
 
+# - To initialize the weights in each fold
 def weight_reset(m):
     if isinstance(m, torch.nn.Conv2d) or isinstance(m, torch.nn.Linear):
         m.reset_parameters()
@@ -70,6 +68,10 @@ class Trainer:
             self.train_loaders = []
             self.valid_loaders = []
             self.test_loaders = []
+            
+            # - because batch sampler is created in _create_loader, 
+            # - batch has different dataset creation method. In the
+            # - end, we have to standarlize this interface
             for fold_id in range(self.fold):
                 with open("inputdata/"+self.fold_prefix+"_fold_"+str(fold_id+1)+"_train.json", "rb") as f:
                     train_json = json.load(f)
@@ -95,12 +97,16 @@ class Trainer:
                 self.train_loaders.append(train_loader)
                 self.valid_loaders.append(valid_loader)
                 self.test_loaders.append(test_loader)
-        else:
+        else: # - TODO: sync with batch dataset creation
             with open(params.train_json, "rb") as f:
                 train_json = json.load(f)
             self.train_datasets, self.train_loaders, self.valid_datasets, self.valid_loaders, self.test_datasets, self.test_loaders = create_loader_with_folds(train_json, params, is_train = True, is_aug = False)
 
-        ## Build Model: TODO need to check this part
+        # - TODO: in some paper, they apply the pooling first then project.
+        # - In this model, we apply the project->pooling->project method.
+        # - the downside is that our padding in minibatch will impact the 
+        # - accuracy. If we pooling first, we can pool the feature in dataloader
+        # - and make things easy.
         self.model = MeanPoolingLinear(params.idim, params.odim, params.hidden_dim)
         
         if torch.cuda.is_available():
@@ -123,10 +129,11 @@ class Trainer:
         with open(os.path.join(params.expdir, "model.json"), "wb") as f:
             f.write(json.dumps(vars(params), indent=4, sort_keys=True).encode("utf_8"))
 
-        ## Optimizer: s3prl also use Adam
+        
         self.opt = Adam(
             self.model.parameters(), lr=params.lr, weight_decay=params.wdecay
         )
+        # - TODO: add scheduler for better performance
         #self.scheduler = WarmupLR(self.opt, warmup_steps=params.warmup_steps)
 
         ## Initialize Stats for Logging
@@ -135,30 +142,34 @@ class Trainer:
         self.test_stats = {}
         self.writer = SummaryWriter(self.params.tb_dir)  # for tensorboard
 
-        ## Resume/Load Model
+        ## Resume/Load Model (TODO: this function is not tested.)
         if params.resume != "":
             self.resume_training(params.resume)
         else:
             self.epoch = 0
         self.start_time = time.time()
 
+    # - To initialize the weights in each fold
     def model_init(self):
         logging.info(f"Model initialized")
         self.model.apply(weight_reset)
 
     def train(self):
-        """Performs ASR Training using the provided configuration.
+        """Performs SER Training using the provided configuration.
         This is the main training wrapper that trains and evaluates the model across epochs
         """
         fold_acc = 0
         for fold_id in range(self.fold):
             self.fold_id = fold_id
-            logging.info(f"Start to run {self.fold_prefix} fold {fold_id+1}/{self.fold}")
+
             self.model_init()
+            self.reset_statistic()
+            
             self.train_sampler = self.train_loaders[fold_id]
             self.valid_sampler = self.valid_loaders[fold_id]
             self.test_sampler = self.test_loaders[fold_id]
-            self.reset_each_fold()
+            
+            logging.info(f"Start to run {self.fold_prefix} fold {fold_id+1}/{self.fold}")
             self._train()
             fold_acc += self.test_stats["best_acc"]
         logging.info(f"{self.fold_prefix} fold acc: {fold_acc/self.fold}")
@@ -205,16 +216,7 @@ class Trainer:
                 next(self.model.parameters()).device,
             )
 
-            # TODO: store the sample dim in json file
             y = self.model(feats, feat_len)
-            #print(y)
-            #print(target)
-            
-            
-            # list(tensor(4),tensor(4),tensor(4),tensor(4))
-            # torch.tensor(data)
-            # - B tensor[B][4]
-            # -> tensor[b][4]
             
             train_acc = torch.sum(torch.argmax(y, axis=-1) == torch.argmax(target, axis=-1)).float()/len(target)
             loss = self.loss(y, target)
@@ -243,8 +245,11 @@ class Trainer:
             self.train_stats["loss"] += loss.item()
             self.train_stats["acc"] += train_acc
         
-        # - NOTE: following method is not work due to the current batch size is 1
-        if self.mcc: # - consider test domain as target domain here, we don't access target data here
+        '''
+        In current setting, we consider test domain as 
+        target domain here.
+        '''
+        if self.mcc: 
             for i, (feats, feat_len, target, key) in enumerate(
                 self.test_sampler
             ):
@@ -270,8 +275,7 @@ class Trainer:
                         logging.info("[Warning] Grad norm is nan. Do not update model.")
                     else:
                         self.opt.step()
-                        # TODO: scheduler
-                        #self.scheduler.step()
+                        #self.scheduler.step() - TODO: scheduler
 
                     self.opt.zero_grad()
                 
@@ -344,7 +348,7 @@ class Trainer:
         self.val_stats["best_loss"] = checkpoint["loss"]
         self.val_stats["best_acc"] = checkpoint["acc"]
 
-    def reset_each_fold(self):
+    def reset_statistic(self):
         self.epoch = 0
         self.train_stats = {}
         self.val_stats = {"best_acc": 0, "best_loss": 1e9, "best_epoch": -1}
