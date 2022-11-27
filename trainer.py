@@ -53,6 +53,7 @@ class Trainer:
         
         # - flag
         self.batch_enable = params.batch_enable
+        self.handcrafted_features = params.handcrafted_features
         self.fold = params.fold
         self.fold_prefix = "five"
         if self.fold == 10:
@@ -107,7 +108,7 @@ class Trainer:
         # - the downside is that our padding in minibatch will impact the 
         # - accuracy. If we pooling first, we can pool the feature in dataloader
         # - and make things easy.
-        self.model = MeanPoolingLinear(params.idim, params.odim, params.hidden_dim)
+        self.model = MeanPoolingLinear(params.idim, params.odim, params.hidden_dim, self.handcrafted_features)
         
         if torch.cuda.is_available():
             self.model = self.model.cuda()
@@ -207,22 +208,23 @@ class Trainer:
         self.model.train()
         
         # TODO: fix batch
-        for i, (feats, feat_len, target, key) in enumerate(
+        for i, (feats, feat_len, handcrafted_features, target, key) in enumerate(
             self.train_sampler
         ):
             
-            feats, feat_len, target = to_device(
-                (feats, feat_len, target),
+            feats, feat_len,handcrafted_features, target = to_device(
+                (feats, feat_len,handcrafted_features, target),
                 next(self.model.parameters()).device,
             )
 
-            y = self.model(feats, feat_len)
+            y = self.model(feats, feat_len, handcrafted_features)
             
             train_acc = torch.sum(torch.argmax(y, axis=-1) == torch.argmax(target, axis=-1)).float()/len(target)
             loss = self.loss(y, target)
             loss /= self.params.accum_grad
             loss.backward()
 
+            # TODO: CHANGE HERE
             if (i + 1) % self.params.log_interval == 0:
                 logging.info(
                     f"[Epoch {self.epoch}, Batch={i}] Train: loss={loss.item():.4f}, lr={self.opt.param_groups[0]['lr']}"
@@ -250,15 +252,15 @@ class Trainer:
         target domain here.
         '''
         if self.mcc: 
-            for i, (feats, feat_len, target, key) in enumerate(
+            for i, (feats, feat_len,handcrafted_features, target, key) in enumerate(
                 self.test_sampler
             ):
-                feats, feat_len, target = to_device(
-                    (feats, feat_len, target),
+                feats, feat_len, handcrafted_features, target = to_device(
+                    (feats, feat_len,handcrafted_features, target),
                     next(self.model.parameters()).device,
                 )
                 
-                y = self.model(feats, feat_len)
+                y = self.model(feats, feat_len, handcrafted_features)
                 loss = self.mcc_loss(y) * self.transfer_loss_factor
                 loss /= self.params.accum_grad
                 loss.backward()
@@ -288,15 +290,15 @@ class Trainer:
         self.model.eval()
 
         with torch.no_grad():
-            for i, (feats, feat_len, target, key) in enumerate(
+            for i, (feats, feat_len,handcrafted_features, target, key) in enumerate(
                 self.valid_sampler
             ):
-                feats, feat_len, target = to_device(
-                    (feats, feat_len, target),
+                feats, feat_len, handcrafted_features, target = to_device(
+                    (feats, feat_len, handcrafted_features, target),
                     next(self.model.parameters()).device,
                 )
 
-                y = self.model(feats, feat_len)
+                y = self.model(feats, feat_len, handcrafted_features)
                 loss = self.loss(y, target)
                 val_acc = torch.sum(torch.argmax(y, axis = -1) == torch.argmax(target, axis = -1)).float()/len(target)
 
@@ -312,15 +314,15 @@ class Trainer:
         self.model.eval()
 
         with torch.no_grad():
-            for i, (feats, feat_len, target, key) in enumerate(
+            for i, (feats, feat_len,handcrafted_features, target, key) in enumerate(
                 self.test_sampler
             ):
-                feats, feat_len, target = to_device(
-                    (feats, feat_len, target),
+                feats, feat_len,handcrafted_features, target = to_device(
+                    (feats, feat_len,handcrafted_features, target),
                     next(self.model.parameters()).device,
                 )
 
-                y = self.model(feats, feat_len)
+                y = self.model(feats, feat_len, handcrafted_features)
                 loss = self.loss(y, target)
                 test_acc = torch.sum(torch.argmax(y, axis = -1) == torch.argmax(target, axis = -1)).float()/len(target)
 

@@ -249,9 +249,25 @@ class EmoDataset(data.Dataset):
             
         if target != None:
             target = torch.nn.functional.one_hot(torch.tensor(target), num_classes = 4).float()
-        if self.batch_enable:
-            return audio_feat, feat_len, target, idx
-        return audio_feat, feat_len, target, idx
+        
+        if not self.handcrafted_features:
+            if self.batch_enable:
+                return audio_feat, feat_len, -1, target, idx
+            return audio_feat, feat_len, -1, target, idx
+        else:
+            if self.batch_enable:
+                handcrafted_features_file = self.data[idx]["input"]["handcraft"]
+            else:
+                handcrafted_features_file = self.data[idx][1]["input"]["handcraft"]
+            handcrafted_features = torch.load(handcrafted_features_file)
+
+            handcrafted_features = np.append(handcrafted_features, np.array([float(self.data[idx][0][5] == 'F')]).astype(np.float32))
+            if (len(handcrafted_features) != 9):
+                print("WRONG LENGTH OF handcrafted_features as" + str(len(handcrafted_features)))
+                exit(-1)
+            if self.batch_enable:
+                return audio_feat, feat_len, handcrafted_features, target, idx
+            return audio_feat, feat_len, handcrafted_features, target, idx
     
     def getData(self):
         return self.data

@@ -3,7 +3,7 @@
 from typing import List
 
 import torch.nn as nn
-
+import torch
 import models.pooling as pooling
 
 
@@ -33,10 +33,12 @@ class UtteranceLevel(nn.Module):
         activation_conf: dict = None,
         pooling_type: str = "MeanPooling",
         pooling_conf: dict = None,
+        handcrafted_features: bool = False,
     ):
         super().__init__()
         self._indim = input_size
         self._outdim = output_size
+        self.handcrafted_features = handcrafted_features
         hidden_sizes = hidden_sizes or [256]
 
         latest_size = input_size
@@ -54,7 +56,12 @@ class UtteranceLevel(nn.Module):
 
         pooling_conf = pooling_conf or {}
         self.pooling = getattr(pooling, pooling_type)(latest_size, **pooling_conf)
-        latest_size = self.pooling.output_size
+        if not self.handcrafted_features:
+            latest_size = self.pooling.output_size
+        else:
+            latest_size = self.pooling.output_size + 9
+            # TODO: MAKE 9 A CONSTANT / OBTAINED FROM SOMEWHERE ELSE
+
         self.final_proj = nn.Linear(latest_size, output_size)
 
     @property
@@ -65,7 +72,7 @@ class UtteranceLevel(nn.Module):
     def output_size(self) -> int:
         return self._outdim
 
-    def forward(self, x, x_len):
+    def forward(self, x, x_len, handcrafted_features):
         """
         Args:
             x (torch.FloatTensor): (batch_size, seq_len, input_size)
@@ -76,5 +83,9 @@ class UtteranceLevel(nn.Module):
         """
         x = self.hidden_layers(x)
         x_pooled = self.pooling(x, x_len)
-        y = self.final_proj(x_pooled)
+        if not self.handcrafted_features:
+            y = self.final_proj(x_pooled)
+        else:
+            combined_data = torch.cat((x_pooled, handcrafted_features),1)
+            y = self.final_proj(combined_data)
         return y
