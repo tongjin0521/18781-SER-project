@@ -57,6 +57,9 @@ def get_parser(parser=None, required=True):
         "--handcrafted_features", default=False, type=bool, help="Include handcrafted features"
     )
     parser.add_argument(
+        "--only_handcrafted_features", default=False, type=bool, help="Train&test on only handcrafted features"
+    )
+    parser.add_argument(
         "--target_pad", default=0, type=int, help="???"
     )
     parser.add_argument(

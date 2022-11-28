@@ -13,7 +13,7 @@ from torch.optim import Adam
 #from torch.optim.lr_scheduler import ReduceLROnPlateau
 from torch.utils.tensorboard import SummaryWriter
 
-from models.linear import MeanPoolingLinear
+from models.linear import MeanPoolingLinear,OnlyLinear
 from utils import to_device
 
 from dataloader import create_loader_with_folds
@@ -51,6 +51,7 @@ class Trainer:
         # - flag
         self.batch_enable = params.batch_enable
         self.handcrafted_features = params.handcrafted_features
+        self.only_handcrafted_features = params.only_handcrafted_features
         self.fold = params.fold
         self.fold_prefix = "five"
         if self.fold == 10:
@@ -105,7 +106,12 @@ class Trainer:
         # - the downside is that our padding in minibatch will impact the 
         # - accuracy. If we pooling first, we can pool the feature in dataloader
         # - and make things easy.
-        self.model = MeanPoolingLinear(params.idim, params.odim, params.hidden_dim, self.handcrafted_features)
+        if not self.only_handcrafted_features:
+            self.model = MeanPoolingLinear(params.idim, params.odim, params.hidden_dim, self.handcrafted_features)
+        else:
+            # TODO: hidden_dim is int, 1 dimensional; ignore here
+            # TODO: 9 is the number of handcrafted features
+            self.model = OnlyLinear(9,params.odim)
         
         if torch.cuda.is_available():
             self.model = self.model.cuda()
@@ -220,8 +226,7 @@ class Trainer:
             loss = self.loss(y, target)
             loss /= self.params.accum_grad
             loss.backward()
-
-            # TODO: CHANGE HERE
+            
             if (i + 1) % self.params.log_interval == 0:
                 logging.info(
                     f"[Epoch {self.epoch}, Batch={i}] Train: loss={loss.item():.4f}, lr={self.opt.param_groups[0]['lr']}"

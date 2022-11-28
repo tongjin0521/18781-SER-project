@@ -222,6 +222,7 @@ class EmoDataset(data.Dataset):
         self.target_pad = params.target_pad
         self.batch_enable = params.batch_enable
         self.handcrafted_features = params.handcrafted_features
+        self.only_handcrafted_features = params.only_handcrafted_features
         
     def __len__(self):
         """Returns the number of examples in the dataset"""
@@ -251,8 +252,6 @@ class EmoDataset(data.Dataset):
             target = torch.nn.functional.one_hot(torch.tensor(target), num_classes = 4).float()
         
         if not self.handcrafted_features:
-            if self.batch_enable:
-                return audio_feat, feat_len, -1, target, idx
             return audio_feat, feat_len, -1, target, idx
         else:
             if self.batch_enable:
@@ -261,8 +260,6 @@ class EmoDataset(data.Dataset):
                 handcrafted_features_file = self.data[idx][1]["input"]["handcraft"]
             handcrafted_features = torch.load(handcrafted_features_file)
             handcrafted_features = np.append(handcrafted_features, np.array([float(handcrafted_features_file.split("/")[-1][5] == 'F')]).astype(np.float32))
-            if self.batch_enable:
-                return audio_feat, feat_len, handcrafted_features, target, idx
             return audio_feat, feat_len, handcrafted_features, target, idx
     
     def getData(self):

@@ -20,3 +20,12 @@ class MeanPoolingLinear(UtteranceLevel):
         handcrafted_features: bool = False,
     ):
         super().__init__(input_size, output_size, hidden_sizes=[hidden_size], handcrafted_features = handcrafted_features)
+
+class OnlyLinear(Simple_FC):
+    def __init__(
+        self,
+        input_size: int,
+        output_size: int,
+        hidden_sizes = [256,32], 
+    ):
+        super().__init__(input_size, output_size, hidden_sizes=hidden_sizes)
