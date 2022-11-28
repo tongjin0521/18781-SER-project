@@ -14,4 +14,6 @@ train_json: "inputdata/sample.json"
 
 lr: 1e-3
 
-transfer_loss_factor: 0.01
+transfer_loss_factor: 0.1
+
+handcrafted_features: True

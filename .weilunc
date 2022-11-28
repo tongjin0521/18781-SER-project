@@ -1,2 +1,2 @@
 module load anaconda3/2020.11
-conda activate /ocean/projects/tra220029p/tjin1/anaconda3/envs/e2e-asr
+conda activate /ocean/projects/tra220029p/tjin1/anaconda3/envs/e2e-ser

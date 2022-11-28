@@ -1,6 +1,3 @@
-# - not completed.
-# - the trainer with batch mech
-
 import json
 import os
 import os.path

@@ -1,3 +1,4 @@
+# 
 import sys
 import os
 import configargparse
@@ -63,6 +64,12 @@ def get_parser(parser=None, required=True):
     )
     parser.add_argument(
         "--fold", default=5, type=int, help="10 fold or 5 fold"
+    )
+    parser.add_argument(
+        "--final_dropout", default=0.1, type=float, help="pretrain last layer drop out"
+    )
+    parser.add_argument(
+        "--vocab_size", default=32, type=int, help="voacbulary size for ASR in MTL"
     )
     
     ## I/O related

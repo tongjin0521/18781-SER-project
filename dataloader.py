@@ -278,11 +278,15 @@ class EmoDataset(data.Dataset):
         """
  
         padded_feats = pad_list([torch.from_numpy(x[0]) for x in batch], self.pad)
-        targets = torch.zeros([len(batch), 4], dtype=torch.float32)
         feat_len = [x[1] for x in batch]
-        handcrafted_features = torch.FloatTensor([x[2] for x in batch])
+        # - [weilunc, 11/27/13:44] Fix the nparray -> tensor issue
+        # handcrafted_features = torch.FloatTensor([x[2] for x in batch])
+        handcrafted_features = torch.zeros([len(batch), len(batch[0][2])], dtype=torch.float32)
+        targets = torch.zeros([len(batch), len(batch[0][3])], dtype=torch.float32)
         for i,x in enumerate(batch):
+            handcrafted_features[i] = torch.from_numpy(x[2])
             targets[i] = x[3]
+        
         id_keys = [x[4] for x in batch]
         return padded_feats, feat_len, handcrafted_features, targets, id_keys
     
