@@ -52,6 +52,7 @@ class Trainer:
         self.batch_enable = params.batch_enable
         self.handcrafted_features = params.handcrafted_features
         self.only_handcrafted_features = params.only_handcrafted_features
+        self.mfcc_included = params.mfcc_included
         self.fold = params.fold
         self.fold_prefix = "five"
         if self.fold == 10:
@@ -107,7 +108,7 @@ class Trainer:
         # - accuracy. If we pooling first, we can pool the feature in dataloader
         # - and make things easy.
         if not self.only_handcrafted_features:
-            self.model = MeanPoolingLinear(params.idim, params.odim, params.hidden_dim, self.handcrafted_features)
+            self.model = MeanPoolingLinear(params.idim, params.odim, params.hidden_dim, self.handcrafted_features,self.mfcc_included)
         else:
             # TODO: hidden_dim is int, 1 dimensional; ignore here
             # TODO: 9 is the number of handcrafted features
@@ -211,16 +212,16 @@ class Trainer:
         self.model.train()
         
         # TODO: fix batch
-        for i, (feats, feat_len, handcrafted_features, target, key) in enumerate(
+        for i, (feats, feat_len,mfcc_feat, mfcc_feat_len, handcrafted_features, target, key) in enumerate(
             self.train_sampler
         ):
             
-            feats, feat_len,handcrafted_features, target = to_device(
-                (feats, feat_len,handcrafted_features, target),
+            feats, feat_len, mfcc_feat, mfcc_feat_len,handcrafted_features, target = to_device(
+                (feats, feat_len, mfcc_feat, mfcc_feat_len,handcrafted_features, target),
                 next(self.model.parameters()).device,
             )
 
-            y = self.model(feats, feat_len, handcrafted_features)
+            y = self.model(feats, feat_len, mfcc_feat, mfcc_feat_len, handcrafted_features)
             
             train_acc = torch.sum(torch.argmax(y, axis=-1) == torch.argmax(target, axis=-1)).float()/len(target)
             loss = self.loss(y, target)
@@ -292,15 +293,15 @@ class Trainer:
         self.model.eval()
 
         with torch.no_grad():
-            for i, (feats, feat_len,handcrafted_features, target, key) in enumerate(
+            for i, (feats, feat_len, mfcc_feat, mfcc_feat_len,handcrafted_features, target, key) in enumerate(
                 self.valid_sampler
             ):
-                feats, feat_len, handcrafted_features, target = to_device(
-                    (feats, feat_len, handcrafted_features, target),
+                feats, feat_len, mfcc_feat, mfcc_feat_len, handcrafted_features, target = to_device(
+                    (feats, feat_len, mfcc_feat, mfcc_feat_len, handcrafted_features, target),
                     next(self.model.parameters()).device,
                 )
 
-                y = self.model(feats, feat_len, handcrafted_features)
+                y = self.model(feats, feat_len, mfcc_feat, mfcc_feat_len, handcrafted_features)
                 loss = self.loss(y, target)
                 val_acc = torch.sum(torch.argmax(y, axis = -1) == torch.argmax(target, axis = -1)).float()/len(target)
 
@@ -316,15 +317,15 @@ class Trainer:
         self.model.eval()
 
         with torch.no_grad():
-            for i, (feats, feat_len,handcrafted_features, target, key) in enumerate(
+            for i, (feats, feat_len, mfcc_feat, mfcc_feat_len,handcrafted_features, target, key) in enumerate(
                 self.test_sampler
             ):
-                feats, feat_len,handcrafted_features, target = to_device(
-                    (feats, feat_len,handcrafted_features, target),
+                feats, feat_len, mfcc_feat, mfcc_feat_len,handcrafted_features, target = to_device(
+                    (feats, feat_len, mfcc_feat, mfcc_feat_len,handcrafted_features, target),
                     next(self.model.parameters()).device,
                 )
 
-                y = self.model(feats, feat_len, handcrafted_features)
+                y = self.model(feats, feat_len, mfcc_feat, mfcc_feat_len, handcrafted_features)
                 loss = self.loss(y, target)
                 test_acc = torch.sum(torch.argmax(y, axis = -1) == torch.argmax(target, axis = -1)).float()/len(target)
 

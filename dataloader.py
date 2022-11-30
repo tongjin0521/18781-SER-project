@@ -223,6 +223,7 @@ class EmoDataset(data.Dataset):
         self.batch_enable = params.batch_enable
         self.handcrafted_features = params.handcrafted_features
         self.only_handcrafted_features = params.only_handcrafted_features
+        self.mfcc_included = params.mfcc_included
         
     def __len__(self):
         """Returns the number of examples in the dataset"""
@@ -250,9 +251,18 @@ class EmoDataset(data.Dataset):
             
         if target != None:
             target = torch.nn.functional.one_hot(torch.tensor(target), num_classes = 4).float()
-        
+        mfcc_feat = -1
+        mfcc_feat_len  = -1        
+        if self.mfcc_included:
+            if self.batch_enable:
+                mfcc_file = self.data[idx]["input"]["mfcc"]
+                mfcc_feat_len = self.data[ind]["input"]["mfcc_dim"][1]
+            else:
+                mfcc_file = self.data[idx][1]["input"]["mfcc"]
+                mfcc_feat_len = self.data[ind][1]["input"]["mfcc_dim"][1]
+            mfcc_feat = torch.t(torch.load(mfcc_file)) 
         if not self.handcrafted_features:
-            return audio_feat, feat_len, -1, target, idx
+            return audio_feat, feat_len, mfcc_feat, mfcc_feat_len, -1, target, idx
         else:
             if self.batch_enable:
                 handcrafted_features_file = self.data[idx]["input"]["handcraft"]
@@ -260,7 +270,7 @@ class EmoDataset(data.Dataset):
                 handcrafted_features_file = self.data[idx][1]["input"]["handcraft"]
             handcrafted_features = torch.load(handcrafted_features_file)
             handcrafted_features = np.append(handcrafted_features, np.array([float(handcrafted_features_file.split("/")[-1][5] == 'F')]).astype(np.float32))
-            return audio_feat, feat_len, handcrafted_features, target, idx
+            return audio_feat, feat_len, mfcc_feat, mfcc_feat_len, handcrafted_features, target, idx
     
     def getData(self):
         return self.data
@@ -278,18 +288,24 @@ class EmoDataset(data.Dataset):
         feat_len = [x[1] for x in batch]
         # - [weilunc, 11/27/13:44] Fix the nparray -> tensor issue
         # handcrafted_features = torch.FloatTensor([x[2] for x in batch])
+        mfcc_feat = None
+        mfcc_feat_len = None
+        if not isinstance(batch[0][2], int):
+            mfcc_feat = torch.Tensor([torch.from_numpy(x[2]) for x in batch],dtype=torch.float32)
+            mfcc_feat_len = [x[3] for x in batch]
+            
         handcrafted_features = None
-        if isinstance(batch[0][2], int):
+        if isinstance(batch[0][4], int):
             pass
         else:
-            handcrafted_features = torch.zeros([len(batch), len(batch[0][2])], dtype=torch.float32)
+            handcrafted_features = torch.zeros([len(batch), len(batch[0][4])], dtype=torch.float32)
             for i,x in enumerate(batch):
-                handcrafted_features[i] = torch.from_numpy(x[2])
+                handcrafted_features[i] = torch.from_numpy(x[4])
                 
-        targets = torch.zeros([len(batch), len(batch[0][3])], dtype=torch.float32)
+        targets = torch.zeros([len(batch), len(batch[0][5])], dtype=torch.float32)
         for i,x in enumerate(batch):
-            targets[i] = x[3]
+            targets[i] = x[5]
         
-        id_keys = [x[4] for x in batch]
-        return padded_feats, feat_len, handcrafted_features, targets, id_keys
+        id_keys = [x[6] for x in batch]
+        return padded_feats, feat_len, mfcc_feat, mfcc_feat_len, handcrafted_features, targets, id_keys
     

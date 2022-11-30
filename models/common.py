@@ -34,11 +34,13 @@ class UtteranceLevel(nn.Module):
         pooling_type: str = "MeanPooling",
         pooling_conf: dict = None,
         handcrafted_features: bool = False,
+        mfcc_features: bool = False,
     ):
         super().__init__()
         self._indim = input_size
         self._outdim = output_size
         self.handcrafted_features = handcrafted_features
+        self.mfcc_features = mfcc_features
         hidden_sizes = hidden_sizes or [256]
 
         latest_size = input_size
@@ -53,6 +55,12 @@ class UtteranceLevel(nn.Module):
                 latest_size = size
 
         self.hidden_layers = nn.Sequential(*hidden_layers)
+        
+        self.mfcc_layer_output_len = 0
+        if self.mfcc_features:
+            self.mfcc_layer_output_len = 16
+            self.mfcc_layer = nn.Linear(13,self.mfcc_layer_output_len)
+            self.mfcc_pooling = getattr(pooling, pooling_type)(self.mfcc_layer_output_len)
 
         pooling_conf = pooling_conf or {}
         self.pooling = getattr(pooling, pooling_type)(latest_size, **pooling_conf)
@@ -61,6 +69,9 @@ class UtteranceLevel(nn.Module):
         else:
             latest_size = self.pooling.output_size + 9
             # TODO: MAKE 9 A CONSTANT / OBTAINED FROM SOMEWHERE ELSE
+        
+    
+        latest_size += self.mfcc_layer_output_len
 
         self.final_proj = nn.Linear(latest_size, output_size)
 
@@ -72,7 +83,7 @@ class UtteranceLevel(nn.Module):
     def output_size(self) -> int:
         return self._outdim
 
-    def forward(self, x, x_len, handcrafted_features):
+    def forward(self, x, x_len, mfcc_feat, mfcc_feat_len, handcrafted_features):
         """
         Args:
             x (torch.FloatTensor): (batch_size, seq_len, input_size)
@@ -83,11 +94,23 @@ class UtteranceLevel(nn.Module):
         """
         x = self.hidden_layers(x)
         x_pooled = self.pooling(x, x_len)
+        if self.mfcc_features:
+            mfcc_tmp = self.mfcc_layer(mfcc_feat)
+            mfcc_pooled = self.pooling(mfcc_tmp,mfcc_feat_len)
         if not self.handcrafted_features:
-            y = self.final_proj(x_pooled)
+            if not self.mfcc_features:
+                y = self.final_proj(x_pooled)
+            else:
+                combined_data = torch.cat((x_pooled, mfcc_pooled),1)
+                y = self.final_proj(combined_data)
         else:
-            combined_data = torch.cat((x_pooled, handcrafted_features),1)
-            y = self.final_proj(combined_data)
+            if not self.mfcc_features:
+                combined_data = torch.cat((x_pooled, handcrafted_features),1)
+                y = self.final_proj(combined_data)
+            else:
+                combined_data = torch.cat((x_pooled, handcrafted_features),1)
+                combined_data = torch.cat((combined_data, mfcc_pooled),1)
+                y = self.final_proj(combined_data)   
         return y
 
 
