@@ -14,4 +14,4 @@ train_json: "inputdata/sample.json"
 
 lr: 1e-3
 
-transfer_loss_factor: 0.001
+transfer_loss_factor: 0.0

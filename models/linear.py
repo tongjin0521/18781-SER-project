@@ -5,7 +5,7 @@ Authors:
   * Leo 2022
 """
 
-from .common import UtteranceLevel
+from .common import UtteranceLevel, Simple_FC
 
 class MeanPoolingLinear(UtteranceLevel):
     """
@@ -26,6 +26,6 @@ class OnlyLinear(Simple_FC):
         self,
         input_size: int,
         output_size: int,
-        hidden_sizes = [256,32], 
+        hidden_sizes = [32,16], 
     ):
         super().__init__(input_size, output_size, hidden_sizes=hidden_sizes)

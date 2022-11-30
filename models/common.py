@@ -120,7 +120,7 @@ class Simple_FC(nn.Module):
         super().__init__()
         self._indim = input_size
         self._outdim = output_size
-        hidden_sizes = hidden_sizes or [256,32]
+        hidden_sizes = hidden_sizes or [9,9]
         hidden_sizes.append(output_size)
 
         latest_size = input_size
