@@ -256,11 +256,11 @@ class EmoDataset(data.Dataset):
         if self.mfcc_included:
             if self.batch_enable:
                 mfcc_file = self.data[idx]["input"]["mfcc"]
-                mfcc_feat_len = self.data[ind]["input"]["mfcc_dim"][1]
+                mfcc_feat_len = self.data[idx]["input"]["mfcc_dim"][1]
             else:
                 mfcc_file = self.data[idx][1]["input"]["mfcc"]
-                mfcc_feat_len = self.data[ind][1]["input"]["mfcc_dim"][1]
-            mfcc_feat = torch.t(torch.load(mfcc_file)) 
+                mfcc_feat_len = self.data[idx][1]["input"]["mfcc_dim"][1]
+            mfcc_feat = (torch.load(mfcc_file)).T 
         if not self.handcrafted_features:
             return audio_feat, feat_len, mfcc_feat, mfcc_feat_len, -1, target, idx
         else:

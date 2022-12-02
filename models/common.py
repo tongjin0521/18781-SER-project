@@ -167,7 +167,7 @@ class Simple_FC(nn.Module):
     def output_size(self) -> int:
         return self._outdim
 
-    def forward(self, x, x_len, handcrafted_features):
+    def forward(self, x, x_len, mfcc_feat, mfcc_feat_len, handcrafted_features):
         """
         Args:
             x (torch.FloatTensor): (batch_size, seq_len, input_size)
